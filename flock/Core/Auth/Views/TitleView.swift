@@ -10,7 +10,6 @@ import SwiftUI
 struct TitleView: View {
     var body: some View {
         Text("Hello, World")
-        Text("Git testing")
     }
 }
 
