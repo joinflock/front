@@ -11,7 +11,11 @@ struct LoginView: View {
     var body: some View {
         // parent container
         VStack(alignment: .leading) {
-            Text("")
+            Text("flock")
+                .font(.poppins(.light, size: 60))
+            Text("flock")
+                .font(.poppins(.semibold, size: 24))
+                
             
         }
     }
