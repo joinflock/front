@@ -11,11 +11,36 @@ struct LoginView: View {
     var body: some View {
         // parent container
         VStack(alignment: .leading) {
-            Text("flock")
-                .font(.poppins(.light, size: 60))
-            Text("flock")
-                .font(.poppins(.semibold, size: 24))
+            
+            VStack(spacing: 15) {
                 
+                Text("welcome back")
+                    .font(.poppins(.semibold))
+                    .foregroundColor(Color.theme.text)
+                    .padding(.top, 100)
+                
+                CustomInputField(imageName: "circle", placeholderText: "phone number", text: .constant(""))
+                
+                Text("log back in using your phone number")
+                    .font(.poppins(.regular, size: 12))
+                    .foregroundColor(Color.theme.text)
+                
+                Button{
+                    
+                } label: {
+                    Text("next")
+                        .font(.poppins(.semibold, size: 18))
+                        .frame(width: 280, height: 16)
+                }
+                .buttonStyle(FilledButton())
+                .padding(.top, 200)
+            }
+            .padding(.horizontal, 60)
+            
+            
+            
+
+            
             
         }
     }

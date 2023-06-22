@@ -34,6 +34,9 @@
 		5BA73F422A448D5800D30795 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA73F302A448D5800D30795 /* Poppins-ExtraBold.ttf */; };
 		5BA73F432A448D5800D30795 /* Poppins-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5BA73F312A448D5800D30795 /* Poppins-ExtraBoldItalic.ttf */; };
 		5BA73F462A44981000D30795 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F452A44981000D30795 /* Font.swift */; };
+		5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F4B2A44A86800D30795 /* FilledButton.swift */; };
+		5BA73F502A44BC6600D30795 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F4F2A44BC6600D30795 /* ChoiceView.swift */; };
+		5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F512A44BC9200D30795 /* OutlinedButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +70,9 @@
 		5BA73F312A448D5800D30795 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		5BA73F442A4496F700D30795 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5BA73F452A44981000D30795 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		5BA73F4B2A44A86800D30795 /* FilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
+		5BA73F4F2A44BC6600D30795 /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
+		5BA73F512A44BC9200D30795 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,8 @@
 			isa = PBXGroup;
 			children = (
 				5BA73F1A2A4235D800D30795 /* CustomInputField.swift */,
+				5BA73F4B2A44A86800D30795 /* FilledButton.swift */,
+				5BA73F512A44BC9200D30795 /* OutlinedButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -183,6 +191,7 @@
 			children = (
 				5BA73F162A422C9C00D30795 /* TitleView.swift */,
 				5BA73F182A4232A800D30795 /* LoginView.swift */,
+				5BA73F4F2A44BC6600D30795 /* ChoiceView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,8 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA73F1B2A4235D800D30795 /* CustomInputField.swift in Sources */,
+				5BA73F502A44BC6600D30795 /* ChoiceView.swift in Sources */,
+				5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */,
 				5B409F282A422B0900F07255 /* ContentView.swift in Sources */,
 				5BA73F462A44981000D30795 /* Font.swift in Sources */,
+				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
 				5B409F262A422B0900F07255 /* flockApp.swift in Sources */,
 				5BA73F192A4232A800D30795 /* LoginView.swift in Sources */,
 				5BA73F172A422C9C00D30795 /* TitleView.swift in Sources */,

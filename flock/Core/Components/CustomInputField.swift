@@ -19,9 +19,10 @@ struct CustomInputField: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: 20, height: 20)
-                    .foregroundColor(Color(.purple))
+                    .foregroundColor(Color.theme.accent)
                 
                 TextField(placeholderText, text: $text)
+                    .padding(.leading, 10)
             }
             
             Divider()
