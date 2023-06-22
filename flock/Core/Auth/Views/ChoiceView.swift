@@ -24,7 +24,7 @@ struct ChoiceView: View {
                     
                 } label: {
                     Text("get started")
-                        .font(.poppins(.semibold, size: 18))
+                        .font(.poppins(.semibold, size: 16))
                         .frame(width: 200, height: 16)
                 }
                 .buttonStyle(FilledButton())
@@ -32,7 +32,7 @@ struct ChoiceView: View {
                     
                 } label: {
                     Text("login")
-                        .font(.poppins(.semibold, size: 18))
+                        .font(.poppins(.semibold, size: 16))
                         .frame(width: 200, height: 16)
                 }
                 .buttonStyle(OutlinedButton())

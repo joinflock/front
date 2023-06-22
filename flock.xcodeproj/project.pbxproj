@@ -37,6 +37,12 @@
 		5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F4B2A44A86800D30795 /* FilledButton.swift */; };
 		5BA73F502A44BC6600D30795 /* ChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F4F2A44BC6600D30795 /* ChoiceView.swift */; };
 		5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F512A44BC9200D30795 /* OutlinedButton.swift */; };
+		5BA73F542A44C52800D30795 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F532A44C52800D30795 /* EmailView.swift */; };
+		5BA73F562A44C6E700D30795 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F552A44C6E700D30795 /* NameView.swift */; };
+		5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F572A44C8C100D30795 /* WelcomeView.swift */; };
+		5BA73F5A2A44CFC600D30795 /* LogisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F592A44CFC600D30795 /* LogisticsView.swift */; };
+		5BA73F5C2A44D25700D30795 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F5B2A44D25700D30795 /* BirthdayView.swift */; };
+		5BA73F5E2A44D37E00D30795 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F5D2A44D37E00D30795 /* PhoneNumberView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +79,12 @@
 		5BA73F4B2A44A86800D30795 /* FilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
 		5BA73F4F2A44BC6600D30795 /* ChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoiceView.swift; sourceTree = "<group>"; };
 		5BA73F512A44BC9200D30795 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
+		5BA73F532A44C52800D30795 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
+		5BA73F552A44C6E700D30795 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		5BA73F572A44C8C100D30795 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		5BA73F592A44CFC600D30795 /* LogisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticsView.swift; sourceTree = "<group>"; };
+		5BA73F5B2A44D25700D30795 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
+		5BA73F5D2A44D37E00D30795 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +204,12 @@
 				5BA73F162A422C9C00D30795 /* TitleView.swift */,
 				5BA73F182A4232A800D30795 /* LoginView.swift */,
 				5BA73F4F2A44BC6600D30795 /* ChoiceView.swift */,
+				5BA73F572A44C8C100D30795 /* WelcomeView.swift */,
+				5BA73F532A44C52800D30795 /* EmailView.swift */,
+				5BA73F5B2A44D25700D30795 /* BirthdayView.swift */,
+				5BA73F5D2A44D37E00D30795 /* PhoneNumberView.swift */,
+				5BA73F592A44CFC600D30795 /* LogisticsView.swift */,
+				5BA73F552A44C6E700D30795 /* NameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,15 +327,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BA73F5C2A44D25700D30795 /* BirthdayView.swift in Sources */,
+				5BA73F5A2A44CFC600D30795 /* LogisticsView.swift in Sources */,
 				5BA73F1B2A4235D800D30795 /* CustomInputField.swift in Sources */,
 				5BA73F502A44BC6600D30795 /* ChoiceView.swift in Sources */,
 				5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */,
+				5BA73F542A44C52800D30795 /* EmailView.swift in Sources */,
 				5B409F282A422B0900F07255 /* ContentView.swift in Sources */,
+				5BA73F562A44C6E700D30795 /* NameView.swift in Sources */,
 				5BA73F462A44981000D30795 /* Font.swift in Sources */,
+				5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */,
 				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
 				5B409F262A422B0900F07255 /* flockApp.swift in Sources */,
 				5BA73F192A4232A800D30795 /* LoginView.swift in Sources */,
 				5BA73F172A422C9C00D30795 /* TitleView.swift in Sources */,
+				5BA73F5E2A44D37E00D30795 /* PhoneNumberView.swift in Sources */,
 				5BA73F1E2A433B1F00D30795 /* Color.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
