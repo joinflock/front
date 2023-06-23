@@ -23,10 +23,12 @@ struct CustomInputField: View {
                 
                 TextField(placeholderText, text: $text)
                     .padding(.leading, 10)
+                
             }
             
             Divider()
                 .background(Color(.darkGray))
+            
         }
     }
 }

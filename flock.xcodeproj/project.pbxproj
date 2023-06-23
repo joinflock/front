@@ -43,6 +43,9 @@
 		5BA73F5A2A44CFC600D30795 /* LogisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F592A44CFC600D30795 /* LogisticsView.swift */; };
 		5BA73F5C2A44D25700D30795 /* BirthdayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F5B2A44D25700D30795 /* BirthdayView.swift */; };
 		5BA73F5E2A44D37E00D30795 /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F5D2A44D37E00D30795 /* PhoneNumberView.swift */; };
+		5BA73F602A44D47A00D30795 /* IdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F5F2A44D47A00D30795 /* IdentityView.swift */; };
+		5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F612A45D4CA00D30795 /* VerificationView.swift */; };
+		5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F632A45D64C00D30795 /* OTPViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -85,6 +88,9 @@
 		5BA73F592A44CFC600D30795 /* LogisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticsView.swift; sourceTree = "<group>"; };
 		5BA73F5B2A44D25700D30795 /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		5BA73F5D2A44D37E00D30795 /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
+		5BA73F5F2A44D47A00D30795 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityView.swift; sourceTree = "<group>"; };
+		5BA73F612A45D4CA00D30795 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
+		5BA73F632A45D64C00D30795 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,7 @@
 		5BA73F142A422BFD00D30795 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				5BA73F632A45D64C00D30795 /* OTPViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -205,11 +212,13 @@
 				5BA73F182A4232A800D30795 /* LoginView.swift */,
 				5BA73F4F2A44BC6600D30795 /* ChoiceView.swift */,
 				5BA73F572A44C8C100D30795 /* WelcomeView.swift */,
+				5BA73F5F2A44D47A00D30795 /* IdentityView.swift */,
 				5BA73F532A44C52800D30795 /* EmailView.swift */,
 				5BA73F5B2A44D25700D30795 /* BirthdayView.swift */,
 				5BA73F5D2A44D37E00D30795 /* PhoneNumberView.swift */,
 				5BA73F592A44CFC600D30795 /* LogisticsView.swift */,
 				5BA73F552A44C6E700D30795 /* NameView.swift */,
+				5BA73F612A45D4CA00D30795 /* VerificationView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -337,10 +346,13 @@
 				5BA73F562A44C6E700D30795 /* NameView.swift in Sources */,
 				5BA73F462A44981000D30795 /* Font.swift in Sources */,
 				5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */,
+				5BA73F602A44D47A00D30795 /* IdentityView.swift in Sources */,
+				5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */,
 				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
 				5B409F262A422B0900F07255 /* flockApp.swift in Sources */,
 				5BA73F192A4232A800D30795 /* LoginView.swift in Sources */,
 				5BA73F172A422C9C00D30795 /* TitleView.swift in Sources */,
+				5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */,
 				5BA73F5E2A44D37E00D30795 /* PhoneNumberView.swift in Sources */,
 				5BA73F1E2A433B1F00D30795 /* Color.swift in Sources */,
 			);

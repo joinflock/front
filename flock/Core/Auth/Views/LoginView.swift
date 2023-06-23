@@ -20,6 +20,7 @@ struct LoginView: View {
                     .padding(.top, 100)
                 
                 CustomInputField(imageName: "circle", placeholderText: "phone number", text: .constant(""))
+                    
                 
                 Text("log back in using your phone number")
                     .font(.poppins(.regular, size: 12))
