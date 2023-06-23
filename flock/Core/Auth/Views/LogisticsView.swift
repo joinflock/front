@@ -25,36 +25,37 @@ struct LogisticsView: View {
                     .multilineTextAlignment(.center)
                 ( Text("let's ")
                     .font(.poppins(.medium, size: 20)) +
-                Text("build your profile ")
+                  Text("build your profile ")
                     .font(.poppins(.medium, size: 20))
                     .foregroundColor(Color.theme.accent) +
-                Text("in less than two minutes")
+                  Text("in less than two minutes")
                     .font(.poppins(.medium, size: 20)) )
                 .multilineTextAlignment(.center)
-                    
-                    
                 
-                CustomInputField(imageName: "circle", placeholderText: "university", text: $university)
-                    .padding(.top, 30)
-                CustomInputField(imageName: "circle", placeholderText: "spoken languages", text: $langs)
-                CustomInputField(imageName: "circle", placeholderText: "hometown", text: $hometown)
                 
-                Text("we'll only use this information to \n find your intersections!")
-                    .font(.poppins(.regular, size: 12))
-                    .foregroundColor(Color.theme.text)
-                    .multilineTextAlignment(.center)
-                
-                Button{
-                    
-                } label: {
-                    Text("next")
-                        .font(.poppins(.semibold, size: 18))
-                        .frame(width: 280, height: 16)
-                }
-                .buttonStyle(FilledButton())
-                .padding(.top, 100)
             }
-            .padding(.horizontal, 60)
+            .padding()
+//                CustomInputField(imageName: "circle", placeholderText: "university", text: $university)
+//                    .padding(.top, 30)
+//                CustomInputField(imageName: "circle", placeholderText: "spoken languages", text: $langs)
+//                CustomInputField(imageName: "circle", placeholderText: "hometown", text: $hometown)
+//
+//                Text("we'll only use this information to \n find your intersections!")
+//                    .font(.poppins(.regular, size: 12))
+//                    .foregroundColor(Color.theme.text)
+//                    .multilineTextAlignment(.center)
+//
+//                Button{
+//
+//                } label: {
+//                    Text("next")
+//                        .font(.poppins(.semibold, size: 18))
+//                        .frame(width: 280, height: 16)
+//                }
+//                .buttonStyle(FilledButton())
+//                .padding(.top, 100)
+//            }
+//            .padding(.horizontal, 60)
                 
         }
     }
