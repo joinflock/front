@@ -12,8 +12,19 @@ struct VerificationView: View {
     // TextField FocusState
     @FocusState var activeField: OTPField?
     var body: some View {
-        VStack {
+        VStack(alignment: .center, spacing: 10) {
+            Text("verify your number")
+                .font(.poppins(.semibold, size: 30))
+                .padding(.top, 200)
+                
+            Text("enter the verification code sent to you")
+                .font(.poppins(.regular, size: 16))
             OTPField()
+                .padding(.top, 30)
+            
+            Text("didn't receive a verification code? [resend in 1:00](https://www.google.com)")
+                .font(.poppins(.light, size: 13))
+                .padding(.top, 20)
         }
         .padding()
         .frame(maxHeight: .infinity, alignment: .top)
@@ -60,9 +71,8 @@ struct VerificationView: View {
         case 0: return .field1
         case 1: return .field2
         case 2: return .field3
-        case 3: return .field4
-        case 4: return .field5
-        default: return .field6
+        default: return .field4
+
         }
     }
 }
@@ -79,6 +89,4 @@ enum OTPField {
     case field2
     case field3
     case field4
-    case field5
-    case field6
 }
