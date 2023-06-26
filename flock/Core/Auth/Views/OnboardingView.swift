@@ -17,13 +17,17 @@ struct OnboardingView: View {
      3 - Add phone number
      
      */
-    @State var onboardingState: Int = 1
+    @State var onboardingState: Int = 0
     
-    
+    // state variables to be uploaded
     @State var first_name: String = ""
     @State var last_name: String = ""
     @State var birthday: String = ""
     @State var phone: String = ""
+    
+    // alert for validity
+    @State var alertTitle: String = ""
+    @State var showAlert: Bool = false
     
     
     var body: some View {
@@ -40,6 +44,8 @@ struct OnboardingView: View {
                 }
             }
             .padding(.horizontal, 60)
+            
+            
             // buttons
             VStack {
                 Spacer()
@@ -55,16 +61,22 @@ struct OnboardingView: View {
                 nil
                 
                 
+                // typical button
                 Button{
-                    
+                    handleNextButtonPressed()
                 } label: {
+                    onboardingState == 0 ?
+                    Text("get started")
+                        .frame(width: 280, height: 16):
                     Text("next")
-                        .font(.poppins(.semibold, size: 18))
                         .frame(width: 280, height: 16)
                 }
+                .font(.poppins(.semibold, size: 18))
                 .buttonStyle(FilledButton())
                 .padding(.top, 5)
                 
+                
+                // if on choices screen, show bottom text
                 onboardingState == 0 ?
                 Text("by creating an account, you are agreeing to \n our [terms and conditions](https://www.google.com) and [privacy policy](https://www.google.com)")
                     .padding(.bottom, 40)
@@ -84,7 +96,11 @@ struct OnboardingView_Previews: PreviewProvider {
     }
 }
 
+// MARK: Components
+
 extension OnboardingView {
+    
+    // initial choices screen
     private var choicesSection: some View {
         VStack(alignment: .center) {
             Text("flock")
@@ -95,6 +111,7 @@ extension OnboardingView {
         }
     }
     
+    // name screen
     private var nameSection: some View {
         VStack(spacing: 15) {
             
@@ -113,6 +130,7 @@ extension OnboardingView {
         }
     }
     
+    // birthday screen
     private var birthdaySection: some View {
         VStack(spacing: 15) {
             
@@ -130,6 +148,7 @@ extension OnboardingView {
         }
     }
     
+    // phone screen
     private var phoneSection: some View {
         VStack(spacing: 15) {
             
@@ -145,4 +164,42 @@ extension OnboardingView {
                 .padding(.bottom, 100)
         }
     }
+}
+
+// MARK: Functions
+
+extension OnboardingView {
+    
+    func handleNextButtonPressed() {
+        // check inputs
+        switch onboardingState {
+        case 1:
+            guard first_name.count >= 2 && last_name.count >= 2 else {
+                showAlert(title: "your name must be at least two characters long!")
+                    return
+            }
+        case 2: break
+            // make sure birthday is valid
+//            guard
+        case 3: break
+            // make sure phone number is valid
+        default: break
+        }
+        
+        if onboardingState == 3 {
+            // sign in function here
+        } else {
+            // transition here
+            
+            onboardingState += 1
+        }
+        
+    }
+    
+    
+    func showAlert(title: String) {
+        alertTitle = title
+        showAlert.toggle()
+    }
+    
 }

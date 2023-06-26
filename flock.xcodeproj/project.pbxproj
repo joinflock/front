@@ -36,7 +36,6 @@
 		5BA73F462A44981000D30795 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F452A44981000D30795 /* Font.swift */; };
 		5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F4B2A44A86800D30795 /* FilledButton.swift */; };
 		5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F512A44BC9200D30795 /* OutlinedButton.swift */; };
-		5BA73F542A44C52800D30795 /* EmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F532A44C52800D30795 /* EmailView.swift */; };
 		5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F572A44C8C100D30795 /* WelcomeView.swift */; };
 		5BA73F5A2A44CFC600D30795 /* LogisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F592A44CFC600D30795 /* LogisticsView.swift */; };
 		5BA73F602A44D47A00D30795 /* IdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F5F2A44D47A00D30795 /* IdentityView.swift */; };
@@ -78,7 +77,6 @@
 		5BA73F452A44981000D30795 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5BA73F4B2A44A86800D30795 /* FilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
 		5BA73F512A44BC9200D30795 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
-		5BA73F532A44C52800D30795 /* EmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailView.swift; sourceTree = "<group>"; };
 		5BA73F572A44C8C100D30795 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		5BA73F592A44CFC600D30795 /* LogisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticsView.swift; sourceTree = "<group>"; };
 		5BA73F5F2A44D47A00D30795 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityView.swift; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 				5BA73F162A422C9C00D30795 /* TitleView.swift */,
 				5BE4B0152A49D2AA007392C6 /* OnboardingView.swift */,
 				5BA73F182A4232A800D30795 /* LoginView.swift */,
-				5BA73F532A44C52800D30795 /* EmailView.swift */,
 				5BA73F612A45D4CA00D30795 /* VerificationView.swift */,
 				5BA73F592A44CFC600D30795 /* LogisticsView.swift */,
 				5BA73F5F2A44D47A00D30795 /* IdentityView.swift */,
@@ -330,7 +327,6 @@
 				5BA73F5A2A44CFC600D30795 /* LogisticsView.swift in Sources */,
 				5BA73F1B2A4235D800D30795 /* CustomInputField.swift in Sources */,
 				5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */,
-				5BA73F542A44C52800D30795 /* EmailView.swift in Sources */,
 				5B409F282A422B0900F07255 /* ContentView.swift in Sources */,
 				5BA73F462A44981000D30795 /* Font.swift in Sources */,
 				5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */,
