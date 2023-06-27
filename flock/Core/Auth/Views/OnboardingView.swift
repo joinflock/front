@@ -15,7 +15,7 @@ struct OnboardingView: View {
      1 - Add name
      2 - Add birthday
      3 - Add phone number
-     
+     4 - Welcome screen
      */
     @State var onboardingState: Int = 0
     
@@ -39,6 +39,7 @@ struct OnboardingView: View {
                 case 1: nameSection
                 case 2: birthdaySection
                 case 3: phoneSection
+                case 4: welcomeSection
                 default: RoundedRectangle(cornerRadius: 25.0)
                         .foregroundColor(Color.theme.accent)
                 }
@@ -50,12 +51,12 @@ struct OnboardingView: View {
             VStack {
                 Spacer()
                 
-                onboardingState == 0 ? Button {
-                    
+                onboardingState == 0 ? NavigationLink {
+                    LoginView()
                 } label: {
-                    Text("login")
-                        .font(.poppins(.semibold, size: 18))
-                        .frame(width: 280, height: 16)
+                        Text("login")
+                            .font(.poppins(.semibold, size: 18))
+                            .frame(width: 280, height: 16)
                 }
                 .buttonStyle(OutlinedButton()) :
                 nil
@@ -164,6 +165,21 @@ extension OnboardingView {
                 .padding(.bottom, 100)
         }
     }
+    
+    // animation after completing initial onboarding
+    private var welcomeSection: some View {
+        VStack {
+            Text("welcome to \n flock")
+                .font(.poppins(.bold, size: 40))
+                .multilineTextAlignment(.center)
+            Text("swipe to build your profile")
+                .font(.poppins(.regular, size: 18))
+                .foregroundColor(Color.theme.accent)
+                .padding(.top, 120)
+            
+            //TODO: add arrows here
+        }
+    }
 }
 
 // MARK: Functions
@@ -180,7 +196,7 @@ extension OnboardingView {
             }
         case 2: break
             // make sure birthday is valid
-//            guard
+            // guard
         case 3: break
             // make sure phone number is valid
         default: break

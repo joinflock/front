@@ -8,7 +8,7 @@ struct OutlinedButton: ButtonStyle {
             .label
             .foregroundColor(configuration.isPressed ? Color.theme.grey : Color.theme.accent)
             .padding()
-            .background(isEnabled ? Color.theme.background : Color.theme.grey)
+            .background(Color.theme.background)
             .overlay(
                 RoundedRectangle(cornerRadius: 30)
                     .stroke(Color.theme.accent, lineWidth: 2)
