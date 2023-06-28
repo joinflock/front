@@ -9,10 +9,8 @@ import SwiftUI
 
 struct LoginView: View {
     var body: some View {
-        // parent container
-        VStack(alignment: .leading) {
-            
-            VStack(spacing: 15) {
+   
+        VStack(alignment: .leading, spacing: 15) {
                 
                 Text("welcome back")
                     .font(.poppins(.semibold))
@@ -29,21 +27,15 @@ struct LoginView: View {
                 Button{
                     
                 } label: {
-                    Text("next")
+                    Text("login")
                         .font(.poppins(.semibold, size: 18))
                         .frame(width: 280, height: 16)
                 }
                 .buttonStyle(FilledButton())
                 .padding(.top, 200)
+           
             }
             .padding(.horizontal, 60)
-            
-            
-            
-
-            
-            
-        }
     }
 }
 

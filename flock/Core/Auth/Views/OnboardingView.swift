@@ -51,8 +51,7 @@ struct OnboardingView: View {
             VStack {
                 Spacer()
                 
-                
-                // typical button
+                // For new users, leads to onboarding.
                 Button{
                     handleNextButtonPressed()
                 } label: {
@@ -66,6 +65,8 @@ struct OnboardingView: View {
                 .buttonStyle(FilledButton())
                 .padding(.top, 5)
                 
+                
+                // Returning users, login
                 onboardingState == 0 ? NavigationLink {
                     LoginView()
                 } label: {
