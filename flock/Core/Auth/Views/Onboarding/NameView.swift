@@ -13,11 +13,13 @@ struct NameView: View {
     var body: some View {
         ZStack {
             VStack (spacing: 15) {
+                
                 Text("what's your name?")
                     .font(.poppins(.semibold))
                     .foregroundColor(Color.theme.text)
                     .padding(.bottom, 5)
                 
+                // Get and store inputs. 
                 CustomInputField(imageName: "circle", placeholderText: "first name", text: $profile.firstName)
                     .padding(.bottom, 15)
                 CustomInputField(imageName: "circle", placeholderText: "last name", text: $profile.lastName)
@@ -29,8 +31,10 @@ struct NameView: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom, 100)
                 
+                
+                // Move onto next onboarding step.
                 NavigationLink {
-                    BirthdayView()
+                    BirthdayView(profile: $profile)
                 } label: {
                     Text("next")
                         .frame(width: 280, height: 16)
