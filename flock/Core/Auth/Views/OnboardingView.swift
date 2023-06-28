@@ -19,7 +19,7 @@ struct OnboardingView: View {
      */
     @State var onboardingState: Int = 0
     
-    // state variables to be uploaded
+    // state variables to be inputted
     @State var first_name: String = ""
     @State var last_name: String = ""
     @State var birthday: String = ""
@@ -51,16 +51,6 @@ struct OnboardingView: View {
             VStack {
                 Spacer()
                 
-                onboardingState == 0 ? NavigationLink {
-                    LoginView()
-                } label: {
-                        Text("login")
-                            .font(.poppins(.semibold, size: 18))
-                            .frame(width: 280, height: 16)
-                }
-                .buttonStyle(OutlinedButton()) :
-                nil
-                
                 
                 // typical button
                 Button{
@@ -75,6 +65,15 @@ struct OnboardingView: View {
                 .font(.poppins(.semibold, size: 18))
                 .buttonStyle(FilledButton())
                 .padding(.top, 5)
+                
+                onboardingState == 0 ? NavigationLink {
+                    LoginView()
+                } label: {
+                        Text("login")
+                            .font(.poppins(.semibold, size: 18))
+                            .frame(width: 280, height: 16)
+                }
+                .buttonStyle(OutlinedButton()) : nil
                 
                 
                 // if on choices screen, show bottom text

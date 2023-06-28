@@ -29,7 +29,7 @@ struct IdentityView: View {
                 CustomInputField(imageName: "circle", placeholderText: "affinity groups", text: $affinities)
 
                 // TODO: figure out why the bottom line isn't there
-                Text("we'll onl3y use this information to find your intersections")
+                Text("we'll only use this information to find your intersections")
                     .font(.poppins(.regular, size: 12))
                     .foregroundColor(Color.theme.text)
                     .multilineTextAlignment(.center)
