@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		240179472A4C8B7A0081A1AB /* StarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240179462A4C8B7A0081A1AB /* StarterView.swift */; };
+		240179492A4C8C030081A1AB /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240179482A4C8C030081A1AB /* Profile.swift */; };
+		2401794B2A4CA4200081A1AB /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401794A2A4CA4200081A1AB /* ModelData.swift */; };
+		2401794D2A4CA9D00081A1AB /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401794C2A4CA9D00081A1AB /* NameView.swift */; };
 		5B409F262A422B0900F07255 /* flockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B409F252A422B0900F07255 /* flockApp.swift */; };
 		5B409F282A422B0900F07255 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B409F272A422B0900F07255 /* ContentView.swift */; };
 		5B409F2A2A422B0A00F07255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B409F292A422B0A00F07255 /* Assets.xcassets */; };
@@ -45,6 +49,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		240179462A4C8B7A0081A1AB /* StarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterView.swift; sourceTree = "<group>"; };
+		240179482A4C8C030081A1AB /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Profile.swift; path = flock/Core/Auth/Views/Profile.swift; sourceTree = SOURCE_ROOT; };
+		2401794A2A4CA4200081A1AB /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ModelData.swift; path = flock/Core/Auth/Views/ModelData.swift; sourceTree = SOURCE_ROOT; };
+		2401794C2A4CA9D00081A1AB /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		5B409F222A422B0900F07255 /* flock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B409F252A422B0900F07255 /* flockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flockApp.swift; sourceTree = "<group>"; };
 		5B409F272A422B0900F07255 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		240179452A4C87DE0081A1AB /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2401794C2A4CA9D00081A1AB /* NameView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
 		5B409F192A422B0800F07255 = {
 			isa = PBXGroup;
 			children = (
@@ -157,6 +173,8 @@
 		5BA73F102A422B9500D30795 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				240179482A4C8C030081A1AB /* Profile.swift */,
+				2401794A2A4CA4200081A1AB /* ModelData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,7 +218,9 @@
 		5BA73F152A422C0300D30795 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				240179452A4C87DE0081A1AB /* Onboarding */,
 				5BA73F162A422C9C00D30795 /* TitleView.swift */,
+				240179462A4C8B7A0081A1AB /* StarterView.swift */,
 				5BE4B0152A49D2AA007392C6 /* OnboardingView.swift */,
 				5BA73F182A4232A800D30795 /* LoginView.swift */,
 				5BA73F612A45D4CA00D30795 /* VerificationView.swift */,
@@ -324,6 +344,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				240179492A4C8C030081A1AB /* Profile.swift in Sources */,
 				5BA73F5A2A44CFC600D30795 /* LogisticsView.swift in Sources */,
 				5BA73F1B2A4235D800D30795 /* CustomInputField.swift in Sources */,
 				5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */,
@@ -334,8 +355,11 @@
 				5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */,
 				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
 				5BE4B0162A49D2AA007392C6 /* OnboardingView.swift in Sources */,
+				2401794B2A4CA4200081A1AB /* ModelData.swift in Sources */,
 				5B409F262A422B0900F07255 /* flockApp.swift in Sources */,
+				2401794D2A4CA9D00081A1AB /* NameView.swift in Sources */,
 				5BA73F192A4232A800D30795 /* LoginView.swift in Sources */,
+				240179472A4C8B7A0081A1AB /* StarterView.swift in Sources */,
 				5BA73F172A422C9C00D30795 /* TitleView.swift in Sources */,
 				5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */,
 				5BA73F1E2A433B1F00D30795 /* Color.swift in Sources */,

@@ -8,7 +8,7 @@ struct FilledButton: ButtonStyle {
             .label
             .foregroundColor(configuration.isPressed ? Color.theme.grey : Color.theme.background)
             .padding()
-            .background(isEnabled ? Color.theme.accent : Color.theme.grey)
+            .background(Color.theme.accent)
             .cornerRadius(30)
         
     }
