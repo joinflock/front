@@ -14,7 +14,9 @@ struct CustomInputField: View {
     
     var body: some View {
         VStack {
+        
             HStack {
+                Spacer()
                 Image(systemName: imageName)
                     .resizable()
                     .scaledToFit()
@@ -23,11 +25,12 @@ struct CustomInputField: View {
                 
                 TextField(placeholderText, text: $text)
                     .padding(.leading, 10)
-                
             }
-            
-            Divider()
-                .background(Color(.darkGray))
+            .overlay(
+                RoundedRectangle(cornerRadius: 10)
+                    .stroke(Color.black, lineWidth: 1)
+                    .frame(height: 40)
+            )
             
         }
     }

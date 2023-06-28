@@ -11,9 +11,8 @@ struct Profile {
     var firstName: String
     var lastName: String
     var phoneNum: String
-    
     var birthday = Date()
     
-    static let `default` = Profile(firstName: "James", lastName: "Jack", phoneNum: "9088123201")
+    static let `default` = Profile(firstName: "", lastName: "", phoneNum: "")
     
 }

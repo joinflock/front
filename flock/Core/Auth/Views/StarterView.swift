@@ -16,14 +16,14 @@ struct StarterView: View {
                     .font(.poppins(.bold, size: 40))
                 Text("find your people.")
                     .font(.poppins(.medium, size: 20))
-                    .padding(.bottom, 200)
+                    .padding(.bottom, 150)
             }
             
             VStack{
                 Spacer()
                 
                 NavigationLink {
-                    NameView()
+                    NameView(profile: .constant(.default))
                 } label: {
                     Text("get started")
                         .frame(width: 280, height: 16)
@@ -31,7 +31,6 @@ struct StarterView: View {
                 }
                 .buttonStyle(FilledButton())
                 .padding(.bottom, 5)
-                
                 
                 NavigationLink {
                     LoginView()
@@ -41,8 +40,14 @@ struct StarterView: View {
                         .frame(width: 280, height: 16)
                 }
                 .buttonStyle(OutlinedButton())
+                .padding(.bottom, 5)
+                
+                
+                Text("by creating an account, you are agreeing to \n our [terms and conditions](https://www.google.com) and [privacy policy](https://www.google.com)")
+                    .padding(.bottom, 40)
+                    .font(.poppins(.light, size: 10))
             }
-            .padding(.bottom, 200)
+            .padding(.bottom, 20)
         }
     }
 }

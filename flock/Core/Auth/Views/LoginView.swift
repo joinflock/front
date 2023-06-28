@@ -10,14 +10,17 @@ import SwiftUI
 struct LoginView: View {
     var body: some View {
    
-        VStack(alignment: .leading, spacing: 15) {
+        VStack(alignment: .center, spacing: 15) {
                 
-                Text("welcome back")
+            Text("welcome back")
                     .font(.poppins(.semibold))
                     .foregroundColor(Color.theme.text)
                     .padding(.top, 100)
+                    .padding(.bottom, 10)
+            
                 
                 CustomInputField(imageName: "circle", placeholderText: "phone number", text: .constant(""))
+                .padding(.bottom, 10)
                     
                 
                 Text("log back in using your phone number")
