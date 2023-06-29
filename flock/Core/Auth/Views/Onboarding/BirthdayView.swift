@@ -42,7 +42,7 @@ struct BirthdayView: View {
             // Move onto next onboarding step.
             NavigationLink {
                 PhoneInputView()
-                    .environmentObject(ModelData())
+                    .environmentObject(modelData)
             } label: {
                 Text("next")
                     .frame(width: 280, height: 16)

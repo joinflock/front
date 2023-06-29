@@ -25,9 +25,8 @@ struct StarterView: View {
                 Spacer()
                 
                 NavigationLink {
-                    // not sure why we initialize another ModelData
                     NameView()
-                        .environmentObject(ModelData())
+                        .environmentObject(ModelData())  // First modelData... initialize for all other onboarding screens.
                 } label: {
                     Text("get started")
                         .frame(width: 280, height: 16)
