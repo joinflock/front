@@ -48,6 +48,8 @@
 		5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F612A45D4CA00D30795 /* VerificationView.swift */; };
 		5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F632A45D64C00D30795 /* OTPViewModel.swift */; };
 		5BE4B0162A49D2AA007392C6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4B0152A49D2AA007392C6 /* OnboardingView.swift */; };
+		5BFECC262A4DCEE4006FA758 /* PictureUploadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFECC252A4DCEE4006FA758 /* PictureUploadView.swift */; };
+		5BFECC282A4DCFF7006FA758 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFECC272A4DCFF7006FA758 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +97,8 @@
 		5BA73F612A45D4CA00D30795 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		5BA73F632A45D64C00D30795 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		5BE4B0152A49D2AA007392C6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		5BFECC252A4DCEE4006FA758 /* PictureUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureUploadView.swift; sourceTree = "<group>"; };
+		5BFECC272A4DCFF7006FA758 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				5BA73F1A2A4235D800D30795 /* CustomInputField.swift */,
+				5BFECC272A4DCFF7006FA758 /* ImagePicker.swift */,
 				5BA73F4B2A44A86800D30795 /* FilledButton.swift */,
 				5BA73F512A44BC9200D30795 /* OutlinedButton.swift */,
 			);
@@ -233,6 +238,7 @@
 				5BA73F592A44CFC600D30795 /* LogisticsView.swift */,
 				5BA73F5F2A44D47A00D30795 /* IdentityView.swift */,
 				5BA73F572A44C8C100D30795 /* WelcomeView.swift */,
+				5BFECC252A4DCEE4006FA758 /* PictureUploadView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -362,6 +368,8 @@
 				5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */,
 				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
 				5BE4B0162A49D2AA007392C6 /* OnboardingView.swift in Sources */,
+				5BFECC262A4DCEE4006FA758 /* PictureUploadView.swift in Sources */,
+				5BFECC282A4DCFF7006FA758 /* ImagePicker.swift in Sources */,
 				2401794B2A4CA4200081A1AB /* ModelData.swift in Sources */,
 				5B409F262A422B0900F07255 /* flockApp.swift in Sources */,
 				2401794D2A4CA9D00081A1AB /* NameView.swift in Sources */,
