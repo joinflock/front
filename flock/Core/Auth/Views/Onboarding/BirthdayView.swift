@@ -41,7 +41,7 @@ struct BirthdayView: View {
             
             // Move onto next onboarding step.
             NavigationLink {
-                PhoneNumberView()
+                PhoneNumberView(profile: $profile)
             } label: {
                 Text("next")
                     .frame(width: 280, height: 16)

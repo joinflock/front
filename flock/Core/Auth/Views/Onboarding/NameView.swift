@@ -17,7 +17,7 @@ struct NameView: View {
                 Text("what's your name?")
                     .font(.poppins(.semibold))
                     .foregroundColor(Color.theme.text)
-                    .padding(.bottom, 5)
+                    .padding(.bottom, 15)
                 
                 // Get and store inputs. 
                 CustomInputField(imageName: "circle", placeholderText: "first name", text: $profile.firstName)
