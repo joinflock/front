@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct BirthdayView: View {
-    @Binding var profile: Profile
+    @EnvironmentObject var modelData : ModelData
    
     // User can only be between 18-100 years old.
     var currentDate = Date()
@@ -28,7 +28,7 @@ struct BirthdayView: View {
                 .foregroundColor(Color.theme.text)
                 .padding(.bottom, 5)
                 
-            DatePicker(selection: $profile.birthday, in: dateRange, displayedComponents: .date) {
+            DatePicker(selection: $modelData.profile.birthday, in: dateRange, displayedComponents: .date) {
             }
                 .labelsHidden()
                 .datePickerStyle(.wheel)
@@ -41,7 +41,7 @@ struct BirthdayView: View {
             
             // Move onto next onboarding step.
             NavigationLink {
-                PhoneNumberView(profile: $profile)
+                PhoneInputView()
             } label: {
                 Text("next")
                     .frame(width: 280, height: 16)
@@ -55,6 +55,7 @@ struct BirthdayView: View {
 
 struct BirthdayView_Previews: PreviewProvider {
     static var previews: some View {
-        BirthdayView(profile: .constant(.default))
+        BirthdayView()
+            .environmentObject(ModelData())
     }
 }

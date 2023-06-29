@@ -9,14 +9,14 @@ import SwiftUI
 import Combine
 
 struct PhoneNumberView: View {
-    @Binding var profile: Profile
+    @EnvironmentObject var modelData : ModelData
     
     @State var presentSheet = false
     @State var countryCode : String = "+1"
     @State var countryFlag : String = "🇺🇸"
     @State var countryPattern : String = "### ### ####"
     @State var countryLimit : Int = 17
-    @State private var searchCountry: String = ""
+    @State var searchCountry: String = ""
     @FocusState private var keyIsFocused: Bool
     
     // Help with filtering country searches.
@@ -53,13 +53,13 @@ struct PhoneNumberView: View {
                     )
                     .padding(.leading, 35)
                     
-                    CustomInputField(imageName: "circle", placeholderText: "phone number", text: $profile.phoneNum)
+                    CustomInputField(imageName: "circle", placeholderText: "phone number", text: $modelData.profile.phoneNum)
                         .padding(.trailing, 35)
                         .padding(.leading, 5)
                         .focused($keyIsFocused)
                         .keyboardType(.numbersAndPunctuation)
-                        .onReceive(Just($profile.phoneNum)) { _ in
-                            applyPatternOnNumbers(&profile.phoneNum, pattern: countryPattern, replacementCharacter: "#")
+                        .onReceive(Just($modelData.profile.phoneNum)) { _ in
+                            applyPatternOnNumbers(&modelData.profile.phoneNum, pattern: countryPattern, replacementCharacter: "#")
                         }
                       
                 }
@@ -112,6 +112,7 @@ struct PhoneNumberView: View {
 
 struct PhoneNumberView_Previews: PreviewProvider {
     static var previews: some View {
-        PhoneNumberView(profile: .constant(.default))
+        PhoneNumberView()
+            .environmentObject(ModelData())
     }
 }

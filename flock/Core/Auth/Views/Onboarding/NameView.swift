@@ -34,7 +34,7 @@ struct NameView: View {
                 
                 // Move onto next onboarding step.
                 NavigationLink {
-                    BirthdayView(profile: $modelData.profile)
+                    BirthdayView()
                     
                 } label: {
                     Text("next")
