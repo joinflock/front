@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct PhoneNumberView: View {
     @Binding var profile: Profile
@@ -18,6 +19,14 @@ struct PhoneNumberView: View {
     @State private var searchCountry: String = ""
     @FocusState private var keyIsFocused: Bool
     
+    // Help with filtering country searches.
+    var filteredResults: [CountryPhoneData] {
+        if searchCountry.isEmpty {
+            return countries
+        } else {
+            return countries.filter { $0.name.contains(searchCountry) }
+        }
+    }
     
     let countries: [CountryPhoneData] = Bundle.main.decode("CountryNumbers.json")
     
@@ -47,11 +56,57 @@ struct PhoneNumberView: View {
                     CustomInputField(imageName: "circle", placeholderText: "phone number", text: $profile.phoneNum)
                         .padding(.trailing, 35)
                         .padding(.leading, 5)
+                        .focused($keyIsFocused)
+                        .keyboardType(.numbersAndPunctuation)
+                        .onReceive(Just($profile.phoneNum)) { _ in
+                            applyPatternOnNumbers(&profile.phoneNum, pattern: countryPattern, replacementCharacter: "#")
+                        }
                       
                 }
             }
             .padding(.bottom, 150)
+            .sheet(isPresented: $presentSheet) {
+                NavigationView {
+                    List(filteredResults) { country in
+                        HStack {
+                            Text(country.flag)
+                            Text(country.name)
+                                .font(.headline)
+                            Spacer()
+                            Text(country.dial_code)
+                                .foregroundColor(.secondary)
+                        }
+                        .onTapGesture {
+                            self.countryFlag = country.flag
+                            self.countryCode = country.dial_code
+                            self.countryPattern = country.pattern
+                            self.countryLimit = country.limit
+                            presentSheet = false
+                            searchCountry = ""
+                        }
+                    }
+                    .listStyle(.plain)
+                    .searchable(text: $searchCountry, prompt: "Your country")
+            
+                }
+                .presentationDetents([.medium, .large])
+            }
         }
+    
+    func applyPatternOnNumbers(_ stringvar: inout String, pattern: String, replacementCharacter: Character) {
+        var pureNumber = stringvar.replacingOccurrences( of: "[^0-9]", with: "", options: .regularExpression)
+        for index in 0 ..< pattern.count {
+            guard index < pureNumber.count else {
+                stringvar = pureNumber
+                return
+            }
+            let stringIndex = String.Index(utf16Offset: index, in: pattern)
+            let patternCharacter = pattern[stringIndex]
+            guard patternCharacter != replacementCharacter else { continue }
+            pureNumber.insert(patternCharacter, at: stringIndex)
+        }
+        stringvar = pureNumber
+    }
 }
 
 

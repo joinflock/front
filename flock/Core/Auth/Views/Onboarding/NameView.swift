@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct NameView: View {
-    @Binding var profile: Profile
+    @EnvironmentObject var modelData: ModelData 
 
     var body: some View {
         ZStack {
@@ -20,9 +20,9 @@ struct NameView: View {
                     .padding(.bottom, 15)
                 
                 // Get and store inputs. 
-                CustomInputField(imageName: "circle", placeholderText: "first name", text: $profile.firstName)
+                CustomInputField(imageName: "circle", placeholderText: "first name", text: $modelData.profile.firstName)
                     .padding(.bottom, 15)
-                CustomInputField(imageName: "circle", placeholderText: "last name", text: $profile.lastName)
+                CustomInputField(imageName: "circle", placeholderText: "last name", text: $modelData.profile.lastName)
                     .padding(.bottom, 5)
                 
                 Text("use your real name so people know \n who you are!")
@@ -34,7 +34,8 @@ struct NameView: View {
                 
                 // Move onto next onboarding step.
                 NavigationLink {
-                    BirthdayView(profile: $profile)
+                    BirthdayView(profile: $modelData.profile)
+                    
                 } label: {
                     Text("next")
                         .frame(width: 280, height: 16)
@@ -50,6 +51,7 @@ struct NameView: View {
 
 struct NameView_Previews: PreviewProvider {
     static var previews: some View {
-        NameView(profile: .constant(.default))
+        NameView()
+            .environmentObject(ModelData())
     }
 }

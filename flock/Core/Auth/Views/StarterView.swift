@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StarterView: View {
+    
     var body: some View {
         ZStack {
             VStack{
@@ -23,7 +24,7 @@ struct StarterView: View {
                 Spacer()
                 
                 NavigationLink {
-                    NameView(profile: .constant(.default))
+                    NameView()
                 } label: {
                     Text("get started")
                         .frame(width: 280, height: 16)
