@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct StarterView: View {
+    @EnvironmentObject var modelData : ModelData
     
     var body: some View {
         ZStack {
@@ -24,7 +25,9 @@ struct StarterView: View {
                 Spacer()
                 
                 NavigationLink {
+                    // not sure why we initialize another ModelData
                     NameView()
+                        .environmentObject(ModelData())
                 } label: {
                     Text("get started")
                         .frame(width: 280, height: 16)

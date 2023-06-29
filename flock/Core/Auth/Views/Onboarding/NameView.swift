@@ -35,6 +35,7 @@ struct NameView: View {
                 // Move onto next onboarding step.
                 NavigationLink {
                     BirthdayView()
+                        .environmentObject(ModelData())
                     
                 } label: {
                     Text("next")
