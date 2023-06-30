@@ -37,6 +37,7 @@ struct LoginView: View {
                 }
                 .buttonStyle(FilledButton())
                 .padding(.top, 200)
+                .padding(.bottom, 60)
            
             }
             .padding(.horizontal, 60)

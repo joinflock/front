@@ -34,6 +34,7 @@ struct OnboardingVerificationView: View {
                 )
                 .padding(.horizontal, 60)
                 .padding(.bottom, 10)
+                .keyboardType(.decimalPad)
             
             Text("didn't receive a code? resend in 1:00")
                 .font(.poppins(.regular, size: 12))
@@ -46,7 +47,7 @@ struct OnboardingVerificationView: View {
                 StarterView()
                     .environmentObject(modelData)
             } label: {
-                Text("next")
+                Text("verify")
                     .frame(width: 280, height: 16)
                     .font(.poppins(.semibold, size: 18))
             }
