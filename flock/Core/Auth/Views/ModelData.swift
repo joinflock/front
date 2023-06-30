@@ -9,6 +9,6 @@ import Foundation
 import Combine
 
 final class ModelData: ObservableObject {
-    @Published var profile = Profile.default
+    @Published var profile = Profile(firstName: "", lastName: "", phoneNum: "", countryCode: "", birthday: Date())
     
 }

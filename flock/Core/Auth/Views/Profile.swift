@@ -11,8 +11,10 @@ struct Profile {
     var firstName: String
     var lastName: String
     var phoneNum: String
+   // var phoneVerified : Bool
+    var countryCode: String
     var birthday: Date
     
-    static let `default` = Profile(firstName: "", lastName: "", phoneNum: "", birthday: Date())
+    static let `default` = Profile(firstName: "", lastName: "", phoneNum: "", countryCode: "", birthday: Date())
     
 }

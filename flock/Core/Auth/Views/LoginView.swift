@@ -18,9 +18,10 @@ struct LoginView: View {
                     .padding(.top, 100)
                     .padding(.bottom, 10)
             
-                
+                // .constant for now.... need something to take in and check with database
                 CustomInputField(imageName: "circle", placeholderText: "phone number", text: .constant(""))
-                .padding(.bottom, 10)
+                    .padding(.bottom, 10)
+                    .keyboardType(.phonePad)
                     
                 
                 Text("log back in using your phone number")
