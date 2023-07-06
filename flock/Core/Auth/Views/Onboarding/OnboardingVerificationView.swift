@@ -44,7 +44,7 @@ struct OnboardingVerificationView: View {
             
             // Finish.
             NavigationLink {
-                StarterView()
+                BeginBuildView()
                     .environmentObject(modelData)
             } label: {
                 Text("verify")
