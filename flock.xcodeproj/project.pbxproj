@@ -19,6 +19,8 @@
 		249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */; };
 		249BA60D2A5714F80039B781 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA60C2A5714F80039B781 /* testView.swift */; };
 		249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA60E2A5717A50039B781 /* BeginBuildView.swift */; };
+		5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C72A57547A00C84872 /* NetworkingManager.swift */; };
+		5B1270CA2A5754A400C84872 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C92A5754A400C84872 /* CreateViewModel.swift */; };
 		5B409F262A422B0900F07255 /* flockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B409F252A422B0900F07255 /* flockApp.swift */; };
 		5B409F282A422B0900F07255 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B409F272A422B0900F07255 /* ContentView.swift */; };
 		5B409F2A2A422B0A00F07255 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B409F292A422B0A00F07255 /* Assets.xcassets */; };
@@ -71,6 +73,8 @@
 		249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVerificationView.swift; sourceTree = "<group>"; };
 		249BA60C2A5714F80039B781 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		249BA60E2A5717A50039B781 /* BeginBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginBuildView.swift; sourceTree = "<group>"; };
+		5B1270C72A57547A00C84872 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = SOURCE_ROOT; };
+		5B1270C92A5754A400C84872 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		5B409F222A422B0900F07255 /* flock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B409F252A422B0900F07255 /* flockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flockApp.swift; sourceTree = "<group>"; };
 		5B409F272A422B0900F07255 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -158,6 +162,7 @@
 		249BA6132A574A2B0039B781 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5B1270C72A57547A00C84872 /* NetworkingManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -257,6 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				5BA73F632A45D64C00D30795 /* OTPViewModel.swift */,
+				5B1270C92A5754A400C84872 /* CreateViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -397,6 +403,7 @@
 				5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */,
 				5B409F282A422B0900F07255 /* ContentView.swift in Sources */,
 				249BA60D2A5714F80039B781 /* testView.swift in Sources */,
+				5B1270CA2A5754A400C84872 /* CreateViewModel.swift in Sources */,
 				5BA73F462A44981000D30795 /* Font.swift in Sources */,
 				249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */,
 				249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */,
@@ -404,6 +411,7 @@
 				5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */,
 				5BA73F602A44D47A00D30795 /* IdentityView.swift in Sources */,
 				5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */,
+				5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */,
 				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
 				5BE4B0162A49D2AA007392C6 /* OnboardingView.swift in Sources */,
 				2401794B2A4CA4200081A1AB /* ModelData.swift in Sources */,
