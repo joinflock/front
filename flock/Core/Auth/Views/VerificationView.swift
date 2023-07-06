@@ -8,8 +8,6 @@
 import SwiftUI
 
 struct VerificationView: View {
-    @EnvironmentObject var modelData : ModelData
-    
     @StateObject var otpModel: OTPViewModel = .init()
     // TextField FocusState
     @FocusState var activeField: OTPField?
