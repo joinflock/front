@@ -22,7 +22,11 @@ struct Profile {
     var languages_known: String
     var hometown : String
     
+    var gender: String
+    var ethnicity: String
+    var affiniites: String
+    
     static let `default` = Profile(firstName: "", lastName: "", phoneNum: "", countryCode: "", birthday: Date(), university: "",
-    languages_known: "", hometown: "")
+                                   languages_known: "", hometown: "", gender: "", ethnicity: "", affiniites: "")
     
 }

@@ -10,6 +10,6 @@ import Combine
 
 final class ModelData: ObservableObject {
     @Published var profile = Profile(firstName: "", lastName: "", phoneNum: "", countryCode: "", birthday: Date(),
-                                     university: "", languages_known: "", hometown: "")
+                                     university: "", languages_known: "", hometown: "", gender: "", ethnicity: "", affiniites: "")
     
 }

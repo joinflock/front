@@ -19,6 +19,7 @@
 		249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */; };
 		249BA60D2A5714F80039B781 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA60C2A5714F80039B781 /* testView.swift */; };
 		249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA60E2A5717A50039B781 /* BeginBuildView.swift */; };
+		24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3502A575A77005C3157 /* IdentityView.swift */; };
 		5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C72A57547A00C84872 /* NetworkingManager.swift */; };
 		5B1270CA2A5754A400C84872 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C92A5754A400C84872 /* CreateViewModel.swift */; };
 		5B409F262A422B0900F07255 /* flockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B409F252A422B0900F07255 /* flockApp.swift */; };
@@ -54,7 +55,6 @@
 		5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F512A44BC9200D30795 /* OutlinedButton.swift */; };
 		5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F572A44C8C100D30795 /* WelcomeView.swift */; };
 		5BA73F5A2A44CFC600D30795 /* LogisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F592A44CFC600D30795 /* LogisticsView.swift */; };
-		5BA73F602A44D47A00D30795 /* IdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F5F2A44D47A00D30795 /* IdentityView.swift */; };
 		5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F612A45D4CA00D30795 /* VerificationView.swift */; };
 		5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F632A45D64C00D30795 /* OTPViewModel.swift */; };
 		5BE4B0162A49D2AA007392C6 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE4B0152A49D2AA007392C6 /* OnboardingView.swift */; };
@@ -73,6 +73,7 @@
 		249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVerificationView.swift; sourceTree = "<group>"; };
 		249BA60C2A5714F80039B781 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		249BA60E2A5717A50039B781 /* BeginBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginBuildView.swift; sourceTree = "<group>"; };
+		24B8A3502A575A77005C3157 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityView.swift; sourceTree = "<group>"; };
 		5B1270C72A57547A00C84872 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkingManager.swift; path = flock/Utils/NetworkingManager.swift; sourceTree = SOURCE_ROOT; };
 		5B1270C92A5754A400C84872 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		5B409F222A422B0900F07255 /* flock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +112,6 @@
 		5BA73F512A44BC9200D30795 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		5BA73F572A44C8C100D30795 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		5BA73F592A44CFC600D30795 /* LogisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticsView.swift; sourceTree = "<group>"; };
-		5BA73F5F2A44D47A00D30795 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IdentityView.swift; path = ../Build/IdentityView.swift; sourceTree = "<group>"; };
 		5BA73F612A45D4CA00D30795 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		5BA73F632A45D64C00D30795 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		5BE4B0152A49D2AA007392C6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -152,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				249BA60E2A5717A50039B781 /* BeginBuildView.swift */,
-				5BA73F5F2A44D47A00D30795 /* IdentityView.swift */,
+				24B8A3502A575A77005C3157 /* IdentityView.swift */,
 				5B5186C22A4E0FF500DC86C5 /* PictureUploadView.swift */,
 				249BA60C2A5714F80039B781 /* testView.swift */,
 			);
@@ -409,11 +409,11 @@
 				249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */,
 				240179842A4E22EB0081A1AB /* PhoneInputView.swift in Sources */,
 				5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */,
-				5BA73F602A44D47A00D30795 /* IdentityView.swift in Sources */,
 				5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */,
 				5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */,
 				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
 				5BE4B0162A49D2AA007392C6 /* OnboardingView.swift in Sources */,
+				24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */,
 				2401794B2A4CA4200081A1AB /* ModelData.swift in Sources */,
 				5B409F262A422B0900F07255 /* flockApp.swift in Sources */,
 				2401794D2A4CA9D00081A1AB /* NameView.swift in Sources */,
