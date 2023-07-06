@@ -143,7 +143,6 @@
 		240179562A4DC5490081A1AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5B1270CC2A57553000C84872 /* Utils */,
 				240179572A4DC55B0081A1AB /* CountryNumbers.json */,
 			);
 			path = Resources;
@@ -197,6 +196,7 @@
 		5B409F242A422B0900F07255 /* flock */ = {
 			isa = PBXGroup;
 			children = (
+				5B1270CC2A57553000C84872 /* Utils */,
 				240179562A4DC5490081A1AB /* Resources */,
 				5BA73F442A4496F700D30795 /* Info.plist */,
 				5BA73F1F2A448D2200D30795 /* Font */,
