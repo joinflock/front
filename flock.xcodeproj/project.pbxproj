@@ -73,7 +73,7 @@
 		249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVerificationView.swift; sourceTree = "<group>"; };
 		249BA60C2A5714F80039B781 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		249BA60E2A5717A50039B781 /* BeginBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginBuildView.swift; sourceTree = "<group>"; };
-		5B1270C72A57547A00C84872 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkingManager.swift; path = flock/Resources/Utils/NetworkingManager.swift; sourceTree = SOURCE_ROOT; };
+		5B1270C72A57547A00C84872 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkingManager.swift; path = flock/Utils/NetworkingManager.swift; sourceTree = SOURCE_ROOT; };
 		5B1270C92A5754A400C84872 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		5B409F222A422B0900F07255 /* flock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B409F252A422B0900F07255 /* flockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flockApp.swift; sourceTree = "<group>"; };
