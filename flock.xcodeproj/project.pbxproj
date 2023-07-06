@@ -73,7 +73,7 @@
 		5B409F292A422B0A00F07255 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B409F2B2A422B0A00F07255 /* flock.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = flock.entitlements; sourceTree = "<group>"; };
 		5B409F2D2A422B0A00F07255 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		5B5186C22A4E0FF500DC86C5 /* PictureUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureUploadView.swift; sourceTree = "<group>"; };
+		5B5186C22A4E0FF500DC86C5 /* PictureUploadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PictureUploadView.swift; path = ../Build/PictureUploadView.swift; sourceTree = "<group>"; };
 		5B5186C42A4E102300DC86C5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		5BA73F162A422C9C00D30795 /* TitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleView.swift; sourceTree = "<group>"; };
 		5BA73F182A4232A800D30795 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		5BA73F512A44BC9200D30795 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
 		5BA73F572A44C8C100D30795 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		5BA73F592A44CFC600D30795 /* LogisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticsView.swift; sourceTree = "<group>"; };
-		5BA73F5F2A44D47A00D30795 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityView.swift; sourceTree = "<group>"; };
+		5BA73F5F2A44D47A00D30795 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = IdentityView.swift; path = ../Build/IdentityView.swift; sourceTree = "<group>"; };
 		5BA73F612A45D4CA00D30795 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		5BA73F632A45D64C00D30795 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		5BE4B0152A49D2AA007392C6 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -138,6 +138,15 @@
 				240179572A4DC55B0081A1AB /* CountryNumbers.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		249BA60B2A57109E0039B781 /* BuildProfile */ = {
+			isa = PBXGroup;
+			children = (
+				5BA73F5F2A44D47A00D30795 /* IdentityView.swift */,
+				5B5186C22A4E0FF500DC86C5 /* PictureUploadView.swift */,
+			);
+			path = BuildProfile;
 			sourceTree = "<group>";
 		};
 		5B409F192A422B0800F07255 = {
@@ -181,15 +190,6 @@
 				5B409F2D2A422B0A00F07255 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		5B5186C62A4E111500DC86C5 /* Build */ = {
-			isa = PBXGroup;
-			children = (
-				5BA73F5F2A44D47A00D30795 /* IdentityView.swift */,
-				5B5186C22A4E0FF500DC86C5 /* PictureUploadView.swift */,
-			);
-			path = Build;
 			sourceTree = "<group>";
 		};
 		5BA73F0E2A422B8A00D30795 /* Core */ = {
@@ -258,8 +258,8 @@
 		5BA73F152A422C0300D30795 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				5B5186C62A4E111500DC86C5 /* Build */,
 				240179462A4C8B7A0081A1AB /* StarterView.swift */,
+				249BA60B2A57109E0039B781 /* BuildProfile */,
 				240179452A4C87DE0081A1AB /* Onboarding */,
 				5BA73F162A422C9C00D30795 /* TitleView.swift */,
 				5BE4B0152A49D2AA007392C6 /* OnboardingView.swift */,
