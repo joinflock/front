@@ -73,7 +73,7 @@
 		249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVerificationView.swift; sourceTree = "<group>"; };
 		249BA60C2A5714F80039B781 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		249BA60E2A5717A50039B781 /* BeginBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginBuildView.swift; sourceTree = "<group>"; };
-		5B1270C72A57547A00C84872 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = SOURCE_ROOT; };
+		5B1270C72A57547A00C84872 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkingManager.swift; path = flock/Resources/Utils/NetworkingManager.swift; sourceTree = SOURCE_ROOT; };
 		5B1270C92A5754A400C84872 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		5B409F222A422B0900F07255 /* flock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B409F252A422B0900F07255 /* flockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flockApp.swift; sourceTree = "<group>"; };
@@ -143,6 +143,7 @@
 		240179562A4DC5490081A1AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5B1270CC2A57553000C84872 /* Utils */,
 				240179572A4DC55B0081A1AB /* CountryNumbers.json */,
 			);
 			path = Resources;
@@ -159,14 +160,6 @@
 			path = BuildProfile;
 			sourceTree = "<group>";
 		};
-		249BA6132A574A2B0039B781 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				5B1270C72A57547A00C84872 /* NetworkingManager.swift */,
-			);
-			path = Utils;
-			sourceTree = "<group>";
-		};
 		249BA6142A574A4C0039B781 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +168,14 @@
 				2401794A2A4CA4200081A1AB /* ModelData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5B1270CC2A57553000C84872 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				5B1270C72A57547A00C84872 /* NetworkingManager.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		5B409F192A422B0800F07255 = {
@@ -201,7 +202,6 @@
 				5BA73F1F2A448D2200D30795 /* Font */,
 				5BA73F112A422B9600D30795 /* Extensions */,
 				249BA6142A574A4C0039B781 /* Model */,
-				249BA6132A574A2B0039B781 /* Utils */,
 				5BA73F0E2A422B8A00D30795 /* Core */,
 				5B409F252A422B0900F07255 /* flockApp.swift */,
 				5B409F272A422B0900F07255 /* ContentView.swift */,
