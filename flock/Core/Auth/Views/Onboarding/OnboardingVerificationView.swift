@@ -44,8 +44,12 @@ struct OnboardingVerificationView: View {
             
             // Finish.
             NavigationLink {
+<<<<<<< Updated upstream
                 BeginBuildView()
                     .environmentObject(modelData)
+=======
+                handleFormSubmit()
+>>>>>>> Stashed changes
             } label: {
                 Text("verify")
                     .frame(width: 280, height: 16)
@@ -54,6 +58,11 @@ struct OnboardingVerificationView: View {
             .buttonStyle(FilledButton())
             .padding(.top, 80)
         }
+        
+    }
+    
+    func handleFormSubmit() {
+        
         
     }
 }
