@@ -17,9 +17,11 @@
 		2401795E2A4DCAF10081A1AB /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401795D2A4DCAF10081A1AB /* PhoneNumberView.swift */; };
 		240179842A4E22EB0081A1AB /* PhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240179832A4E22EB0081A1AB /* PhoneInputView.swift */; };
 		249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */; };
-		249BA60D2A5714F80039B781 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA60C2A5714F80039B781 /* testView.swift */; };
 		249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA60E2A5717A50039B781 /* BeginBuildView.swift */; };
 		24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3502A575A77005C3157 /* IdentityView.swift */; };
+		24B8A3532A585017005C3157 /* InterestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3522A585017005C3157 /* InterestsView.swift */; };
+		24B8A3552A587043005C3157 /* HobbiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3542A587043005C3157 /* HobbiesView.swift */; };
+		24B8A3572A5875A3005C3157 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3562A5875A3005C3157 /* PreferencesView.swift */; };
 		5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C72A57547A00C84872 /* NetworkingManager.swift */; };
 		5B1270CA2A5754A400C84872 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C92A5754A400C84872 /* CreateViewModel.swift */; };
 		5B409F262A422B0900F07255 /* flockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B409F252A422B0900F07255 /* flockApp.swift */; };
@@ -71,9 +73,11 @@
 		2401795D2A4DCAF10081A1AB /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		240179832A4E22EB0081A1AB /* PhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputView.swift; sourceTree = "<group>"; };
 		249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVerificationView.swift; sourceTree = "<group>"; };
-		249BA60C2A5714F80039B781 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		249BA60E2A5717A50039B781 /* BeginBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginBuildView.swift; sourceTree = "<group>"; };
 		24B8A3502A575A77005C3157 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityView.swift; sourceTree = "<group>"; };
+		24B8A3522A585017005C3157 /* InterestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsView.swift; sourceTree = "<group>"; };
+		24B8A3542A587043005C3157 /* HobbiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbiesView.swift; sourceTree = "<group>"; };
+		24B8A3562A5875A3005C3157 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		5B1270C72A57547A00C84872 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkingManager.swift; path = flock/Utils/NetworkingManager.swift; sourceTree = SOURCE_ROOT; };
 		5B1270C92A5754A400C84872 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		5B409F222A422B0900F07255 /* flock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flock.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,8 +157,10 @@
 			children = (
 				249BA60E2A5717A50039B781 /* BeginBuildView.swift */,
 				24B8A3502A575A77005C3157 /* IdentityView.swift */,
+				24B8A3522A585017005C3157 /* InterestsView.swift */,
+				24B8A3542A587043005C3157 /* HobbiesView.swift */,
+				24B8A3562A5875A3005C3157 /* PreferencesView.swift */,
 				5B5186C22A4E0FF500DC86C5 /* PictureUploadView.swift */,
-				249BA60C2A5714F80039B781 /* testView.swift */,
 			);
 			path = BuildProfile;
 			sourceTree = "<group>";
@@ -400,9 +406,9 @@
 				240179492A4C8C030081A1AB /* Profile.swift in Sources */,
 				5BA73F5A2A44CFC600D30795 /* LogisticsView.swift in Sources */,
 				5BA73F1B2A4235D800D30795 /* CustomInputField.swift in Sources */,
+				24B8A3552A587043005C3157 /* HobbiesView.swift in Sources */,
 				5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */,
 				5B409F282A422B0900F07255 /* ContentView.swift in Sources */,
-				249BA60D2A5714F80039B781 /* testView.swift in Sources */,
 				5B1270CA2A5754A400C84872 /* CreateViewModel.swift in Sources */,
 				5BA73F462A44981000D30795 /* Font.swift in Sources */,
 				249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */,
@@ -420,11 +426,13 @@
 				2401795E2A4DCAF10081A1AB /* PhoneNumberView.swift in Sources */,
 				5BA73F192A4232A800D30795 /* LoginView.swift in Sources */,
 				2401794F2A4CBF200081A1AB /* BirthdayView.swift in Sources */,
+				24B8A3532A585017005C3157 /* InterestsView.swift in Sources */,
 				5B5186C32A4E0FF500DC86C5 /* PictureUploadView.swift in Sources */,
 				2401795A2A4DC6E00081A1AB /* CountryPhoneData.swift in Sources */,
 				240179472A4C8B7A0081A1AB /* StarterView.swift in Sources */,
 				5BA73F172A422C9C00D30795 /* TitleView.swift in Sources */,
 				5B5186C52A4E102300DC86C5 /* ImagePicker.swift in Sources */,
+				24B8A3572A5875A3005C3157 /* PreferencesView.swift in Sources */,
 				5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */,
 				5BA73F1E2A433B1F00D30795 /* Color.swift in Sources */,
 			);

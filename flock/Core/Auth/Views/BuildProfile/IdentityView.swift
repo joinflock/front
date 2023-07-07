@@ -57,7 +57,7 @@ struct IdentityView: View {
                     
                     // To next build profile prompts!
                     NavigationLink {
-                        IdentityView()
+                        InterestsView()
                             .environmentObject(modelData)
                     } label: {
                         Text("next")
