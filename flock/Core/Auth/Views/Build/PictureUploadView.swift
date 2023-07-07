@@ -14,8 +14,8 @@ struct PictureUploadView: View {
     var body: some View {
         VStack (alignment: .center) {
             Text("and one more thing...")
-                .font(.poppins(.semibold, size: 20))
-                .padding(.top, 100)
+                .font(.poppins(.semibold, size: 23))
+                .padding(.top, 130)
             
             ZStack {
                 if selectedImage != nil {
@@ -24,7 +24,7 @@ struct PictureUploadView: View {
                         .resizable()
                     )
                     .frame(width: 250, height: 250)
-                    .padding(.top, 50)
+                    .padding(.top, 40)
                     
                 }
                 else {
@@ -36,7 +36,7 @@ struct PictureUploadView: View {
                     .overlay {
                         Circle().stroke(Color.theme.accent, lineWidth: 3)
                     }
-                    .padding(.top, 50)
+                    .padding(.top, 40)
                 }
                 
                 Button {

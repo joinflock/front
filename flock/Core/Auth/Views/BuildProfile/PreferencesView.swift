@@ -10,11 +10,15 @@ import SwiftUI
 struct PreferencesView: View {
     @EnvironmentObject var modelData: ModelData
     
+    // Categories to be ranked.
+    @State private var ranking : [String] = [" 1", "2", "3", "4", "5"]
+    @State private var categories: [String] = ["age", "hobbies", "interests", "identity", "university"]
+    
     var body: some View {
         VStack (alignment: .center) {
             
             Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -125)
+                .padding(.bottom, -160)
                 .padding(.top, -20)
             
             ZStack {
@@ -33,10 +37,23 @@ struct PreferencesView: View {
                         Text(" to us.")
                     }
                     .font(.poppins(.semibold, size: 25))
-                    .padding(.top, 50)
+                    .padding(.top, 30)
+                    .padding(.bottom, 40)
                     .padding(.horizontal, 40)
                     .multilineTextAlignment(.center)
                     
+                    // Tabs to be ranked.
+                    ForEach(0..<5) { index in
+                        HStack {
+                            Text(ranking[index])
+                                .offset(x : 45)
+                                .font(.poppins(.light, size: 30))
+
+                            CategoryTab(text: categories[index])
+                        }
+                        .padding(.vertical, -3)
+                    }
+                    .padding(.top, 5)
                     
                     Spacer()
                     
@@ -60,11 +77,10 @@ struct PreferencesView: View {
                     
                     ProgressView(value: 0.90)
                         .padding(.horizontal, 40)
-                        .padding(.bottom, 70)
+                        .padding(.bottom, 60)
                     
                 }
             }
-            
         }
         .ignoresSafeArea()
     }
