@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-final class ModelData: ObservableObject {
+final class ModelData: ObservableObject, Encodable {
     @Published var profile = Profile(firstName: "", lastName: "", phoneNum: "", countryCode: "", birthday: Date(),
                                      university: "", languages_known: "", hometown: "", gender: "", ethnicity: "", affiniites: "")
     
