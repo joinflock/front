@@ -48,7 +48,7 @@ struct PreferencesView: View {
                     
                     // To next build profile prompts!
                     NavigationLink {
-                        PreferencesView()
+                        PictureUploadView()
                             .environmentObject(modelData)
                     } label: {
                         Text("next")

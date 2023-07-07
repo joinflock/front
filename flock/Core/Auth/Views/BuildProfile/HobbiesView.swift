@@ -40,7 +40,7 @@ struct HobbiesView: View {
                     
                     // To next build profile prompts!
                     NavigationLink {
-                        PictureUploadView()
+                        PreferencesView()
                             .environmentObject(modelData)
                     } label: {
                         Text("next")

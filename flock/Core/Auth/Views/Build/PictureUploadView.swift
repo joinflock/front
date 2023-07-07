@@ -13,6 +13,10 @@ struct PictureUploadView: View {
 
     var body: some View {
         VStack (alignment: .center) {
+            Text("and one more thing...")
+                .font(.poppins(.semibold, size: 20))
+                .padding(.top, 100)
+            
             ZStack {
                 if selectedImage != nil {
                     CircleImage(image:
@@ -20,8 +24,7 @@ struct PictureUploadView: View {
                         .resizable()
                     )
                     .frame(width: 250, height: 250)
-                    .padding(.top, 200)
-                    
+                    .padding(.top, 50)
                     
                 }
                 else {
@@ -33,7 +36,7 @@ struct PictureUploadView: View {
                     .overlay {
                         Circle().stroke(Color.theme.accent, lineWidth: 3)
                     }
-                    .padding(.top, 200)
+                    .padding(.top, 50)
                 }
                 
                 Button {
@@ -48,12 +51,12 @@ struct PictureUploadView: View {
                     .fill(Color.theme.accent)
                     .frame(width: 45, height: 45)
                 )
-                .offset(x: 90, y: 190)
+                .offset(x: 90, y: 110)
             }
             
             Group {
-                Text("Upload a ") +
-                Text("Profile Photo").foregroundColor(Color.theme.accent)
+                Text("upload a ") +
+                Text("profile photo").foregroundColor(Color.theme.accent)
             }
             .font(.poppins(.semibold, size: 23))
             .padding(.top, 20)
