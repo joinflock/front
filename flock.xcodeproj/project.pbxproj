@@ -16,6 +16,7 @@
 		2401795A2A4DC6E00081A1AB /* CountryPhoneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240179592A4DC6E00081A1AB /* CountryPhoneData.swift */; };
 		2401795E2A4DCAF10081A1AB /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401795D2A4DCAF10081A1AB /* PhoneNumberView.swift */; };
 		240179842A4E22EB0081A1AB /* PhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240179832A4E22EB0081A1AB /* PhoneInputView.swift */; };
+		2453E9282A5888290099C530 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9272A5888290099C530 /* CircleImage.swift */; };
 		249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */; };
 		249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA60E2A5717A50039B781 /* BeginBuildView.swift */; };
 		24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3502A575A77005C3157 /* IdentityView.swift */; };
@@ -72,6 +73,7 @@
 		240179592A4DC6E00081A1AB /* CountryPhoneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountryPhoneData.swift; path = flock/Model/CountryPhoneData.swift; sourceTree = SOURCE_ROOT; };
 		2401795D2A4DCAF10081A1AB /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		240179832A4E22EB0081A1AB /* PhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputView.swift; sourceTree = "<group>"; };
+		2453E9272A5888290099C530 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVerificationView.swift; sourceTree = "<group>"; };
 		249BA60E2A5717A50039B781 /* BeginBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginBuildView.swift; sourceTree = "<group>"; };
 		24B8A3502A575A77005C3157 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityView.swift; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				5B5186C42A4E102300DC86C5 /* ImagePicker.swift */,
 				5BA73F4B2A44A86800D30795 /* FilledButton.swift */,
 				5BA73F512A44BC9200D30795 /* OutlinedButton.swift */,
+				2453E9272A5888290099C530 /* CircleImage.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -411,6 +414,7 @@
 				5B409F282A422B0900F07255 /* ContentView.swift in Sources */,
 				5B1270CA2A5754A400C84872 /* CreateViewModel.swift in Sources */,
 				5BA73F462A44981000D30795 /* Font.swift in Sources */,
+				2453E9282A5888290099C530 /* CircleImage.swift in Sources */,
 				249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */,
 				249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */,
 				240179842A4E22EB0081A1AB /* PhoneInputView.swift in Sources */,

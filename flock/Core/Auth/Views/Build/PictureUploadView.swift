@@ -12,36 +12,56 @@ struct PictureUploadView: View {
     @State var selectedImage: UIImage?
 
     var body: some View {
-        VStack (alignment: .center){
-            
-            if selectedImage != nil {
-                Image(uiImage: selectedImage!)
-                    .resizable()
-                    .frame(width: 200, height: 200)
-                    .padding(.top, 280)
-            }
-            Button {
+        VStack (alignment: .center) {
+            ZStack {
+                if selectedImage != nil {
+                    CircleImage(image:
+                                    Image(uiImage: selectedImage!)
+                        .resizable()
+                    )
+                    .frame(width: 250, height: 250)
+                    .padding(.top, 200)
+                    
+                    
+                }
+                else {
+                    CircleImage(image:
+                                    Image("defaultUser")
+                        .resizable()
+                    )
+                    .frame(width: 250, height: 250)
+                    .overlay {
+                        Circle().stroke(Color.theme.accent, lineWidth: 3)
+                    }
+                    .padding(.top, 200)
+                }
                 
-                isPickerShowing = true
-                
-            } label: {
-                Text("Select a photo")
-                    .font(.poppins(.semibold))
+                Button {
+                    isPickerShowing = true
+                    
+                } label: {
+                    Text("+")
+                        .font(.poppins(.semibold, size: 40))
+                        .foregroundColor(.white)
+                }
+                .background(Circle()
+                    .fill(Color.theme.accent)
+                    .frame(width: 45, height: 45)
+                )
+                .offset(x: 90, y: 190)
             }
-            .buttonStyle(FilledButton())
-            .padding(.top, 280)
             
             Group {
                 Text("Upload a ") +
                 Text("Profile Photo").foregroundColor(Color.theme.accent)
             }
-            .font(.poppins(.semibold, size: 20))
-            .padding(.top, 60)
-            
+            .font(.poppins(.semibold, size: 23))
+            .padding(.top, 20)
+                        
             Divider()
                 .frame(height: 1.5)
                 .overlay(Color.theme.grey)
-                .padding(.horizontal, 80)
+                .padding(.horizontal, 70)
                 .padding(.top, 10)
             
             Spacer()
@@ -67,6 +87,7 @@ struct PictureUploadView: View {
             // Image picker
             ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
         }
+        .ignoresSafeArea()
     }
 }
 
