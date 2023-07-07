@@ -28,19 +28,19 @@ struct IdentityView: View {
                 VStack {
                     Text("identity")
                         .font(.poppins(.semibold, size: 25))
-                        .padding(.top, 75)
+                        .padding(.top, 50)
                     
                     CustomInputField(imageName: "circle", placeholderText: "gender", text: $modelData.profile.gender)
                         .padding(.horizontal, 40)
-                        .padding(.top, 40)
+                        .padding(.top, 50)
                     
                     CustomInputField(imageName: "circle", placeholderText: "ethnicity", text: $modelData.profile.ethnicity)
                         .padding(.horizontal, 40)
-                        .padding(.top, 30)
+                        .padding(.top, 35)
                     
                     CustomInputField(imageName: "circle", placeholderText: "affinities", text: $modelData.profile.affiniites)
                         .padding(.horizontal, 40)
-                        .padding(.top, 30)
+                        .padding(.top, 35)
                     
                     Spacer()
                     
@@ -52,6 +52,7 @@ struct IdentityView: View {
                     .multilineTextAlignment(.center)
                     .font(.poppins(.regular, size: 12))
                     .padding(.bottom, 15)
+                    .padding(.horizontal, 40)
                     
                     
                     // To next build profile prompts!
