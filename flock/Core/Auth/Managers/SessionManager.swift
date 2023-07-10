@@ -29,9 +29,14 @@ final class SessionManager: ObservableObject {
         currentState = .loggedOut
     }
     
+    func completeOnboarding() {
+        currentState = .loggedIn
+        UserDefaults.standard.set(true, forKey: UserDefaultKeys.hasSeenOnboarding)
+    }
+    
     func configureCurrentState() {
         let hasCompletedOnboarding = UserDefaults.standard.bool(forKey: UserDefaultKeys.hasSeenOnboarding)
-        currentState = hasCompletedOnboarding ? .loggedOut: .onboarding
+        currentState = hasCompletedOnboarding ? .loggedOut : .loggedOut
     }
 }
 

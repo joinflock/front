@@ -28,6 +28,9 @@ final class OnboardingManager: ObservableObject {
                                      hometown: "", gender: "", ethnicity: "",
                                      affinities: "")
     
+    @Published var hasError = false
+    @Published var error: RegistrationError?
+    
     // go to next screen
     func next() {
         
@@ -45,6 +48,47 @@ final class OnboardingManager: ObservableObject {
         let prevScreenIndex = max(active.rawValue - 1, Screen.allCases.first!.rawValue)
         if let screen = Screen(rawValue: prevScreenIndex) {
             active = screen
+        }
+    }
+    
+    func validateName() {
+        hasError = profile.firstName.isEmpty || profile.lastName.isEmpty
+        error = hasError ? .emptyName : nil
+    }
+    
+    func validatePhoneNumber() {
+        hasError = profile.phoneNumber.count != 10
+        error = hasError ? .invalidPhoneNumber : nil
+    }
+    
+    func validateBeginField() {
+        hasError = profile.university.isEmpty || profile.hometown.isEmpty || profile.languages_known.isEmpty
+        error = hasError ? .emptyField : nil
+    }
+    
+    func validateIdentityField() {
+        hasError = profile.gender.isEmpty || profile.affinities.isEmpty || profile.ethnicity.isEmpty
+        error = hasError ? .emptyField : nil
+    }
+}
+
+extension OnboardingManager {
+    enum RegistrationError: LocalizedError {
+        case emptyName
+        case invalidPhoneNumber
+        case emptyField
+
+        var errorDescription: String? {
+            switch self {
+            case .emptyName:
+                return "Please use your full name!"
+            case .invalidPhoneNumber:
+                return "Please enter a valid phone number"
+            case .emptyField:
+                return "Please complete all the information"
+            }
+
+
         }
     }
 }

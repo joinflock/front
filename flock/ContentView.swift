@@ -22,10 +22,8 @@ struct ContentView: View {
                 ProfileView()
                     .environmentObject(session)
             case .loggedOut:
-                NavigationStack {
-                    StarterView()
-                        .environmentObject(session)
-                }
+                StarterView()
+                    .environmentObject(session)
             default:
                 Color.white.ignoresSafeArea()
             }

@@ -16,17 +16,37 @@ struct OnboardingView: View {
         ZStack {
             TabView(selection: $manager.active){
                 
-                NameView(firstName: $manager.profile.firstName, lastName: $manager.profile.lastName, action: manager.next)
+                NameView(firstName: $manager.profile.firstName, lastName: $manager.profile.lastName) {
+                    manager.validateName()
+                    if !manager.hasError {
+                        manager.next()
+                    }
+                }
                     .tag(OnboardingManager.Screen.name)
                 BirthdayView(birthday: $manager.profile.birthday, action: manager.next)
                     .tag(OnboardingManager.Screen.birthday)
-                PhoneInputView(phoneNumber: $manager.profile.phoneNumber, ctryCode: $manager.profile.countryCode, action: manager.next)
+                PhoneInputView(phoneNumber: $manager.profile.phoneNumber, ctryCode: $manager.profile.countryCode) {
+                    manager.validatePhoneNumber()
+                    if !manager.hasError {
+                        manager.next()
+                    }
+                }
                     .tag(OnboardingManager.Screen.phoneNumber)
                 OnboardingVerificationView (action: manager.next)
                     .tag(OnboardingManager.Screen.phoneVerification)
-                BeginBuildView(university: $manager.profile.university, languagesKnown: $manager.profile.languages_known, hometown: $manager.profile.hometown, action: manager.next)
+                BeginBuildView(university: $manager.profile.university, languagesKnown: $manager.profile.languages_known, hometown: $manager.profile.hometown) {
+                    manager.validateBeginField()
+                    if !manager.hasError {
+                        manager.next()
+                    }
+                }
                     .tag(OnboardingManager.Screen.build)
-                IdentityView(gender: $manager.profile.gender, ethnicity: $manager.profile.ethnicity, affinities: $manager.profile.affinities, action: manager.next)
+                IdentityView(gender: $manager.profile.gender, ethnicity: $manager.profile.ethnicity, affinities: $manager.profile.affinities) {
+                    manager.validateIdentityField()
+                    if !manager.hasError {
+                        manager.next()
+                    }
+                }
                     .tag(OnboardingManager.Screen.identity)
                 InterestsView(action: manager.next)
                     .tag(OnboardingManager.Screen.interests)
@@ -47,12 +67,12 @@ struct OnboardingView: View {
             if showPrevBtn {
                 Button(action: manager.prev) {
                     Image(systemName: "chevron.backward")
-                        .symbolVariant(.circle.fill)
+                        .symbolVariant(.fill)
                         .foregroundColor(.accentColor)
-                        .font(.system(size: 35,
+                        .font(.system(size: 25,
                                       weight: .bold,
                                       design: .rounded))
-                        .padding()
+                        .padding(.leading, 20)
                 }
             }
         }
@@ -67,6 +87,9 @@ struct OnboardingView: View {
             showPrevBtn = newValue != OnboardingManager.Screen.allCases.first
         }
         .ignoresSafeArea()
+        .alert(isPresented: $manager.hasError, error: manager.error) {}
+        .navigationBarBackButtonHidden(true)
+        
     }
 }
 
