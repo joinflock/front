@@ -9,7 +9,8 @@ import SwiftUI
 import Combine
 
 struct PhoneInputView: View {
-    @EnvironmentObject var modelData : ModelData
+    @Binding var phoneNumber: String
+    @Binding var ctryCode: String
     
     @State private var presentSheet = false
     @State private var countryCode : String = "+1"
@@ -37,6 +38,8 @@ struct PhoneInputView: View {
     
     let countries: [CountryPhoneData] = Bundle.main.decode("CountryNumbers.json")
     
+    let action: () -> Void
+    
     var body: some View {
         VStack (alignment: .center, spacing: 15) {
             Text("and we need your digits...")
@@ -61,12 +64,12 @@ struct PhoneInputView: View {
                 )
                 .padding(.leading, 45)
                 
-                CustomInputField(imageName: "circle", placeholderText: "phone number", text: $modelData.profile.phoneNum)
+                CustomInputField(imageName: "circle", placeholderText: "phone number", text: $phoneNumber)
                     .padding(.trailing, 45)
                     .padding(.leading, 5)
                     .foregroundColor(Color.theme.text)
                     .keyboardType(.phonePad)
-                    .onChange(of: modelData.profile.phoneNum) { newValue in
+                    .onChange(of: phoneNumber) { newValue in
 
 //                        if (newValue.count == 3 || newValue.count == 7) &&
 //                            (oldValue.count == 2 || oldValue.count == 6){
@@ -77,7 +80,7 @@ struct PhoneInputView: View {
 //                            modelData.profile.phoneNum = String(newValue.dropLast())
 //                        }
                         if newValue.count > characterLimit {
-                            modelData.profile.phoneNum = String(newValue.prefix(characterLimit))
+                            phoneNumber = String(newValue.prefix(characterLimit))
                         }
                         
 //                        oldValue = newValue
@@ -92,9 +95,8 @@ struct PhoneInputView: View {
                 .padding(.bottom, 100)
             
             // Move onto next onboarding step.
-            NavigationLink {
-                OnboardingVerificationView()
-                    .environmentObject(modelData)
+            Button {
+                action()
             } label: {
                 Text("next")
                     .frame(width: 280, height: 16)
@@ -121,7 +123,7 @@ struct PhoneInputView: View {
                         self.countryCode = country.dial_code
                         
                         // Needs to have a $ prefix?
-                        modelData.profile.countryCode = self.countryCode
+                        ctryCode = self.countryCode
                         //self.countryPattern = country.pattern
                        // self.countryLimit = country.limit
                         presentSheet = false
@@ -139,7 +141,6 @@ struct PhoneInputView: View {
 
 struct PhoneInputView_Previews: PreviewProvider {
     static var previews: some View {
-        PhoneInputView()
-            .environmentObject(ModelData())
+        PhoneInputView(phoneNumber: .constant(""), ctryCode: .constant("")) {}
     }
 }

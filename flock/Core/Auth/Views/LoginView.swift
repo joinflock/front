@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
+    
+    @EnvironmentObject var session: SessionManager
+    
     var body: some View {
    
         VStack(alignment: .center, spacing: 15) {
@@ -29,7 +32,7 @@ struct LoginView: View {
                     .foregroundColor(Color.theme.text)
                 
                 Button{
-                    
+                    session.signIn()
                 } label: {
                     Text("login")
                         .font(.poppins(.semibold, size: 18))
@@ -47,5 +50,6 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
+            .environmentObject(SessionManager())
     }
 }

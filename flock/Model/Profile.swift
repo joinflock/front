@@ -12,7 +12,7 @@ struct Profile {
     // Basic details, from onboarding.
     var firstName: String
     var lastName: String
-    var phoneNum: String
+    var phoneNumber: String
    // var phoneVerified : Bool
     var countryCode: String
     var birthday: Date
@@ -24,9 +24,9 @@ struct Profile {
     
     var gender: String
     var ethnicity: String
-    var affiniites: String
+    var affinities: String
     
-    static let `default` = Profile(firstName: "", lastName: "", phoneNum: "", countryCode: "", birthday: Date(), university: "",
-                                   languages_known: "", hometown: "", gender: "", ethnicity: "", affiniites: "")
+    static let `default` = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(), university: "",
+                                   languages_known: "", hometown: "", gender: "", ethnicity: "", affinities: "")
     
 }

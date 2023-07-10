@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct BeginBuildView: View {
-    @EnvironmentObject var modelData: ModelData
-      
+    @Binding var university: String
+    @Binding var languagesKnown: String
+    @Binding var hometown: String
+    
+    let action: () -> Void
+    
     var body: some View {
         VStack (alignment: .center){
             
@@ -38,15 +42,15 @@ struct BeginBuildView: View {
                     .padding(.horizontal, 20)
                     .padding(.top, 80)
                     
-                    CustomInputField(imageName: "circle", placeholderText: "university", text: $modelData.profile.university)
+                    CustomInputField(imageName: "circle", placeholderText: "university", text: $university)
                         .padding(.horizontal, 40)
                         .padding(.top, 20)
                     
-                    CustomInputField(imageName: "circle", placeholderText: "languages known", text: $modelData.profile.languages_known)
+                    CustomInputField(imageName: "circle", placeholderText: "languages known", text: $languagesKnown)
                         .padding(.horizontal, 40)
                         .padding(.top, 30)
                     
-                    CustomInputField(imageName: "circle", placeholderText: "hometown", text: $modelData.profile.hometown)
+                    CustomInputField(imageName: "circle", placeholderText: "hometown", text: $hometown)
                         .padding(.horizontal, 40)
                         .padding(.top, 30)
                     
@@ -54,9 +58,8 @@ struct BeginBuildView: View {
                     Spacer()
                     
                     // To next build profile prompts!
-                    NavigationLink {
-                        IdentityView()
-                            .environmentObject(modelData)
+                    Button {
+                        action()
                     } label: {
                         Text("next")
                             .frame(width: 280, height: 16)
@@ -78,7 +81,6 @@ struct BeginBuildView: View {
 
 struct BeginBuildView_Previews: PreviewProvider {
     static var previews: some View {
-        BeginBuildView()
-            .environmentObject(ModelData())
+        BeginBuildView(university: .constant(""), languagesKnown: .constant(""), hometown: .constant("")) {}
     }
 }

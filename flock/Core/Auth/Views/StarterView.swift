@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct StarterView: View {
-    @EnvironmentObject var modelData : ModelData
+    
+    @EnvironmentObject var session: SessionManager
+
     
     var body: some View {
         ZStack {
@@ -25,8 +27,7 @@ struct StarterView: View {
                 Spacer()
                 
                 NavigationLink {
-                    NameView()
-                        .environmentObject(ModelData())  // First modelData... initialize for all other onboarding screens.
+                    OnboardingView()
                 } label: {
                     Text("get started")
                         .frame(width: 280, height: 16)
@@ -37,6 +38,7 @@ struct StarterView: View {
                 
                 NavigationLink {
                     LoginView()
+                        .environmentObject(session)
                 } label: {
                     Text("login")
                         .font(.poppins(.semibold, size: 18))
@@ -58,6 +60,6 @@ struct StarterView: View {
 struct StarterView_Previews: PreviewProvider {
     static var previews: some View {
         StarterView()
-            .environmentObject(ModelData())
+            .environmentObject(SessionManager())
     }
 }

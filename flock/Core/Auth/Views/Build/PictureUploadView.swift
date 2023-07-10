@@ -6,11 +6,12 @@
 import SwiftUI
 
 struct PictureUploadView: View {
-    @EnvironmentObject var modelData : ModelData
-
+    
     @State var isPickerShowing = false
     @State var selectedImage: UIImage?
 
+    let action: () -> Void
+    
     var body: some View {
         VStack (alignment: .center) {
             Text("and one more thing...")
@@ -70,9 +71,8 @@ struct PictureUploadView: View {
             Spacer()
             
             // Need to be hooked up to backend for saving all data.
-            NavigationLink {
-                PreferencesView()
-                    .environmentObject(modelData)
+            Button {
+                action()
             } label: {
                 Text("finish")
                     .frame(width: 280, height: 16)
@@ -97,7 +97,6 @@ struct PictureUploadView: View {
 
 struct PictureUploadView_Previews: PreviewProvider {
     static var previews: some View {
-        PictureUploadView()
-            .environmentObject(ModelData())
+        PictureUploadView() {}
     }
 }

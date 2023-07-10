@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct IdentityView: View {
-    @EnvironmentObject var modelData: ModelData
+    @Binding var gender: String
+    @Binding var ethnicity: String
+    @Binding var affinities: String
+    
+    let action: () -> Void
     
     var body: some View {
         VStack (alignment: .center){
@@ -30,15 +34,15 @@ struct IdentityView: View {
                         .font(.poppins(.semibold, size: 25))
                         .padding(.top, 50)
                     
-                    CustomInputField(imageName: "circle", placeholderText: "gender", text: $modelData.profile.gender)
+                    CustomInputField(imageName: "circle", placeholderText: "gender", text: $gender)
                         .padding(.horizontal, 40)
                         .padding(.top, 50)
                     
-                    CustomInputField(imageName: "circle", placeholderText: "ethnicity", text: $modelData.profile.ethnicity)
+                    CustomInputField(imageName: "circle", placeholderText: "ethnicity", text: $ethnicity)
                         .padding(.horizontal, 40)
                         .padding(.top, 35)
                     
-                    CustomInputField(imageName: "circle", placeholderText: "affinities", text: $modelData.profile.affiniites)
+                    CustomInputField(imageName: "circle", placeholderText: "affinities", text: $affinities)
                         .padding(.horizontal, 40)
                         .padding(.top, 35)
                     
@@ -56,9 +60,8 @@ struct IdentityView: View {
                     
                     
                     // To next build profile prompts!
-                    NavigationLink {
-                        InterestsView()
-                            .environmentObject(modelData)
+                    Button {
+                        action()
                     } label: {
                         Text("next")
                             .frame(width: 280, height: 16)
@@ -80,7 +83,6 @@ struct IdentityView: View {
 
 struct IdentityView_Previews: PreviewProvider {
     static var previews: some View {
-        IdentityView()
-            .environmentObject(ModelData())
+        IdentityView(gender: .constant(""), ethnicity: .constant(""), affinities: .constant("")) {}
     }
 }

@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct InterestsView: View {
-    @EnvironmentObject var modelData : ModelData
+    
+    let action: () -> Void
     
     var body: some View {
         VStack (alignment: .center) {
@@ -39,9 +40,8 @@ struct InterestsView: View {
                         .padding(.horizontal, 40)
                     
                     // To next build profile prompts!
-                    NavigationLink {
-                        HobbiesView()
-                            .environmentObject(modelData)
+                    Button {
+                        action()
                     } label: {
                         Text("next")
                             .frame(width: 280, height: 16)
@@ -63,7 +63,6 @@ struct InterestsView: View {
 
 struct InterestsView_Previews: PreviewProvider {
     static var previews: some View {
-        InterestsView()
-            .environmentObject(ModelData())
+        InterestsView() {}
     }
 }

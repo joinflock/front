@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct PreferencesView: View {
-    @EnvironmentObject var modelData: ModelData
     
     // Categories to be ranked.
     @State private var ranking : [String] = [" 1", "2", "3", "4", "5"]
     @State private var categories: [String] = ["age", "hobbies", "interests", "identity", "university"]
+    
+    let action: () -> Void
     
     var body: some View {
         VStack (alignment: .center) {
@@ -64,9 +65,8 @@ struct PreferencesView: View {
                         .padding(.horizontal, 40)
                     
                     // To next build profile prompts!
-                    NavigationLink {
-                        PictureUploadView()
-                            .environmentObject(modelData)
+                    Button {
+                        action()
                     } label: {
                         Text("next")
                             .frame(width: 280, height: 16)
@@ -88,7 +88,6 @@ struct PreferencesView: View {
 
 struct PreferencesView_Previews: PreviewProvider {
     static var previews: some View {
-        PreferencesView()
-            .environmentObject(ModelData())
+        PreferencesView() {}
     }
 }

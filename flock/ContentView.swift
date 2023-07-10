@@ -9,16 +9,33 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @StateObject private var session = SessionManager()
+    
     var body: some View {
-        NavigationStack {
-            StarterView()
+        ZStack {
+            switch session.currentState {
+            case .onboarding:
+                OnboardingView()
+                    .environmentObject(session)
+            case .loggedIn:
+                ProfileView()
+                    .environmentObject(session)
+            case .loggedOut:
+                NavigationStack {
+                    StarterView()
+                        .environmentObject(session)
+                }
+            default:
+                Color.white.ignoresSafeArea()
+            }
         }
+        .onAppear(perform: session.configureCurrentState)
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(ModelData())
     }
 }

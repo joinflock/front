@@ -9,10 +9,10 @@ import SwiftUI
 
 struct OnboardingVerificationView: View {
     
-    @EnvironmentObject var modelData : ModelData
-    
     // Modify here to get some random each time for a specific phone number.
     @State private var code : String = ""
+    
+    let action: () -> Void
     
     var body: some View {
         VStack (alignment: .center, spacing: 15) {
@@ -43,9 +43,8 @@ struct OnboardingVerificationView: View {
                 .padding(.bottom, 50)
             
             // Finish.
-            NavigationLink {
-                BeginBuildView()
-                    .environmentObject(modelData)
+            Button {
+                action()
             } label: {
                 Text("verify")
                     .frame(width: 280, height: 16)
@@ -60,7 +59,6 @@ struct OnboardingVerificationView: View {
 
 struct OnboardingVerificationView_Previews: PreviewProvider {
     static var previews: some View {
-        OnboardingVerificationView()
-            .environmentObject(ModelData())
+        OnboardingVerificationView() {}
     }
 }
