@@ -80,6 +80,21 @@
                   endingLineNumber = "124"
                   offsetFromSymbolStart = "308">
                </Location>
+               <Location
+                  uuid = "0AAE4DAA-16C5-4D9B-B6AB-B9EDDCD784A8 - 8c96f28a472357d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in closure #1 (flock.CountryPhoneData) -&gt; &lt;&lt;opaque return type of SwiftUI.View.onTapGesture(count: Swift.Int, perform: () -&gt; ()) -&gt; some&gt;&gt;.0 in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.searchable(text: SwiftUI.Binding&lt;Swift.String&gt;, placement: SwiftUI.SearchFieldPlacement, prompt: SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in closure #2 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.presentationDetents(Swift.Set&lt;SwiftUI.PresentationDetent&gt;) -&gt; some&gt;&gt;.0 in flock.PhoneInputView.body.getter : some"
+                  moduleName = "flock"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameszhang/Desktop/Flock/front/flock/Core/Auth/Views/Onboarding/PhoneInputView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "126"
+                  endingLineNumber = "126"
+                  offsetFromSymbolStart = "308">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

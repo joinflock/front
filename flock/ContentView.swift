@@ -15,6 +15,7 @@ struct ContentView: View {
         ZStack {
             switch session.currentState {
             case .onboarding:
+//                testView()
                 OnboardingView()
                     .environmentObject(session)
             case .loggedIn:

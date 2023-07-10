@@ -18,19 +18,19 @@ struct CategoryTab: View {
                     .resizable()
                     .frame(width: 30, height: 30)
                     .padding(.trailing, 40)
-                
+
                 Text(text)
                     .font(.poppins(.regular, size: 17))
-                
+
                 Spacer()
             }
-            .offset(x: 90)
+            .offset(x: 15)
             .padding(.vertical, 10)
+            Spacer()
         }
         .overlay(
             RoundedRectangle(cornerRadius: 20)
                 .stroke(Color.theme.grey, lineWidth: 1.5)
-                .frame(width: 270)
         )
     }
 }
