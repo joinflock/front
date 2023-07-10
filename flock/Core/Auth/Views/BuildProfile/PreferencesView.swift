@@ -81,7 +81,7 @@ struct PreferencesView: View {
                         VStack (spacing: 14) {
                             ForEach(1..<6) { num in
                                 Text(String(num))
-                                    .offset(x : -140)
+                                    .offset(x : 100)
                                     .font(.poppins(.light, size: 28))
                             }
                         }

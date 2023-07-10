@@ -86,7 +86,7 @@ struct OnboardingView: View {
         .onChange(of: manager.active) { newValue in
             showPrevBtn = newValue != OnboardingManager.Screen.allCases.first
         }
-        .ignoresSafeArea()
+//        .ignoresSafeArea()
         .alert(isPresented: $manager.hasError, error: manager.error) {}
         .navigationBarBackButtonHidden(true)
         

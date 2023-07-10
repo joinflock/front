@@ -26,6 +26,8 @@ struct Profile {
     var ethnicity: String
     var affinities: String
     
+//    var interests : String
+    
     static let `default` = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(), university: "",
                                    languages_known: "", hometown: "", gender: "", ethnicity: "", affinities: "")
     

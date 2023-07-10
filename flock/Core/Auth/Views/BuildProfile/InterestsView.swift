@@ -9,6 +9,41 @@ import SwiftUI
 
 struct InterestsView: View {
     
+    @State private var interestsList = [
+        "Agriculture",
+        "Art",
+        "Architecture",
+        "Biologist",
+        "Business",
+        "Chemistry",
+        "Computer Science",
+        "Consulting",
+        "Education",
+        "Engineering",
+        "Entrepreneurship",
+        "Finance",
+        "Healthcare",
+        "History",
+        "Human Resources",
+        "Information Technology",
+        "Law",
+        "Management",
+        "Marketing",
+        "Mathematics",
+        "Media",
+        "Music",
+        "Nursing",
+        "Physics",
+        "Physicians",
+        "Psychiatrist",
+        "Safety and Security",
+        "Public Service",
+        "Research",
+        "Sales",
+        "Student",
+        "Software Development"
+      ]
+    
     let action: () -> Void
     
     var body: some View {
@@ -30,10 +65,26 @@ struct InterestsView: View {
                     Text("interests")
                         .font(.poppins(.semibold, size: 25))
                         .padding(.top, 50)
+                        .padding(.bottom, 20)
+                    
+                    ScrollView {
+                        ForEach(interestsList, id: \.self) { interest in
+                            ZStack {
+                                Button(interest, action: action)
+                                    .padding(.vertical, 3)
+                                
+                                RoundedRectangle(cornerRadius: 20)
+                                    .stroke(Color.theme.grey, lineWidth: 0.5)
+                                
+                            }
+                            .padding(.horizontal, 40)
+                        }
+                    }
+                    .padding(.bottom, 20)
                     
                     Spacer()
                     
-                    Text("We will only use this information to help you find your flock!")
+                    Text("choose at least 2 and at max 5!")
                         .multilineTextAlignment(.center)
                         .font(.poppins(.regular, size: 12))
                         .padding(.bottom, 15)
