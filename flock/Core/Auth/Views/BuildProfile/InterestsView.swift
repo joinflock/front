@@ -13,7 +13,7 @@ struct InterestsView: View {
         "Agriculture",
         "Art",
         "Architecture",
-        "Biologist",
+        "Biology",
         "Business",
         "Chemistry",
         "Computer Science",
@@ -70,12 +70,8 @@ struct InterestsView: View {
                     ScrollView {
                         ForEach(interestsList, id: \.self) { interest in
                             ZStack {
-                                Button(interest, action: action)
-                                    .padding(.vertical, 3)
-                                
-                                RoundedRectangle(cornerRadius: 20)
-                                    .stroke(Color.theme.grey, lineWidth: 0.5)
-                                
+                                CustomInterestsButton(text: interest, action: action)
+            
                             }
                             .padding(.horizontal, 40)
                         }
@@ -84,7 +80,7 @@ struct InterestsView: View {
                     
                     Spacer()
                     
-                    Text("choose at least 2 and at max 5!")
+                    Text("pick at least 2 and at max 5")
                         .multilineTextAlignment(.center)
                         .font(.poppins(.regular, size: 12))
                         .padding(.bottom, 15)

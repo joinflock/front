@@ -9,6 +9,115 @@ import SwiftUI
 
 struct HobbiesView: View {
     
+    @State private var hobbies = [
+        "Music": [
+          "Classical",
+          "Country",
+          "EDM",
+          "Hip hop",
+          "House",
+          "Indie",
+          "J-pop",
+          "K-pop",
+          "Pop",
+          "R&B",
+          "Rock"
+        ],
+        "Sports": [
+          "Badminton",
+          "Baseball",
+          "Basketball",
+          "Bowling",
+          "Boxing",
+          "Cricket",
+          "Cycling",
+          "Football",
+          "Golf",
+          "Hockey",
+          "Rock climbing",
+          "Running",
+          "Sailing",
+          "Skateboarding",
+          "Skiing",
+          "Snowboarding",
+          "Surfing",
+          "Swimming",
+          "Table Tennis",
+          "Tennis",
+          "Volleyball",
+          "Yoga"
+        ],
+        "Creativity": [
+          "Art",
+          "Cinematography",
+          "Dancing",
+          "Film making",
+          "Make-up",
+          "Photography",
+          "Singing",
+          "Writing"
+        ],
+        "Going out": [
+          "Bars",
+          "Cafe-hopping",
+          "Clubs",
+          "Concerts",
+          "Festivals",
+          "Karaoke",
+          "Museums",
+          "Stand up",
+          "Theater"
+        ],
+        "Staying in": [
+          "Baking",
+          "Board games",
+          "Cooking",
+          "Video games"
+        ],
+        "Films/TV": [
+          "Action",
+          "Anime",
+          "Bollywood",
+          "Comedy",
+          "Crime",
+          "Documentaries",
+          "Fantasy",
+          "Horror",
+          "K-drama",
+          "Reality shows",
+          "Rom-com",
+          "Romance",
+          "Superhero"
+        ],
+        "Food & Drink": [
+          "Beer",
+          "Boba tea",
+          "Coffee",
+          "Pizza",
+          "Sushi",
+          "Tacos",
+          "Vegan",
+          "Wine"
+        ],
+        "Traveling": [
+          "Backpacking",
+          "Beaches",
+          "Camping",
+          "Fishing",
+          "Hiking",
+          "Road trips"
+        ],
+        "Values": [
+          "Black Lives Matter",
+          "Environmentalism",
+          "Feminism",
+          "Human rights",
+          "LGBTQ+ rights",
+          "Reproductive rights",
+          "Stop Asian Hate",
+          "Voter rights"]
+      ]
+
     let action: () -> Void
     
     var body: some View {
@@ -30,6 +139,16 @@ struct HobbiesView: View {
                     Text("hobbies")
                         .font(.poppins(.semibold, size: 25))
                         .padding(.top, 50)
+                        .padding(.bottom, 20)
+                    
+//                    ScrollView {
+//
+//                        ForEach(hobbies, id: \.self) { hobby in
+//                            Section (header: Text(hobby[0])) {
+//
+//                            }
+//                        }
+//                    }
                     
                     Spacer()
                     
