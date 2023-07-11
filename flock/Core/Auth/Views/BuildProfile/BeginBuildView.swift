@@ -18,7 +18,6 @@ struct BeginBuildView: View {
         VStack (alignment: .center){
             
             Image("BuildProfile_blurPhoto")
-                .ignoresSafeArea()
                 .scaledToFill()
                 .padding(.bottom, -125)
             
@@ -77,7 +76,7 @@ struct BeginBuildView: View {
             }
 
         }
-
+        .ignoresSafeArea()
     }
 }
 
