@@ -73,6 +73,7 @@ struct OnboardingView: View {
                                       weight: .bold,
                                       design: .rounded))
                         .padding(.leading, 20)
+                        .padding(.top, 40)
                 }
             }
         }
@@ -88,7 +89,7 @@ struct OnboardingView: View {
         }
 //        .ignoresSafeArea()
         .alert(isPresented: $manager.hasError, error: manager.error) {}
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden()
         
     }
 }

@@ -12,23 +12,27 @@ struct ContentView: View {
     @StateObject private var session = SessionManager()
     
     var body: some View {
-        ZStack {
-            switch session.currentState {
-            case .onboarding:
-//                testView()
-                OnboardingView()
-                    .environmentObject(session)
-            case .loggedIn:
-                ProfileView()
-                    .environmentObject(session)
-            case .loggedOut:
-                StarterView()
-                    .environmentObject(session)
-            default:
-                Color.white.ignoresSafeArea()
+        NavigationStack {
+            ZStack {
+                switch session.currentState {
+                case .onboarding:
+                    //                testView()
+                    OnboardingView()
+                        .environmentObject(session)
+                        .ignoresSafeArea()
+                case .loggedIn:
+                    ProfileView()
+                        .environmentObject(session)
+                case .loggedOut:
+                    StarterView()
+                        .environmentObject(session)
+                default:
+                    Color.white.ignoresSafeArea()
+                }
             }
+            .onAppear(perform: session.configureCurrentState)
         }
-        .onAppear(perform: session.configureCurrentState)
+        .toolbar(.hidden)
         
     }
 }
