@@ -14,6 +14,7 @@ struct HobbiesSectionView: View {
     var body: some View {
         VStack {
             Text(header)
+                .font(.poppins(.medium, size: 20))
             ForEach(0..<list.count) { index in
                 CustomInterestsButton(text: list[index], action: {})
             }

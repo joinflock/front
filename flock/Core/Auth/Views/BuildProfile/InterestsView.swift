@@ -70,7 +70,6 @@ struct InterestsView: View {
                     ScrollView {
                         ForEach(interestsList, id: \.self) { interest in
                             CustomInterestsButton(text: interest, action: {})
-                                .font(.poppins(.regular, size: 16))
                                 // JACK REPLACE ACTION HERE (CHECK >=2, <= 5)
                         }
                         .padding(.horizontal, 40)

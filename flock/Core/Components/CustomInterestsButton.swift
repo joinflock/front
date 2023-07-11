@@ -21,6 +21,7 @@ struct CustomInterestsButton: View {
                 Text(text)
                     .padding(10)
                     .foregroundColor(.black)
+                    .font(.poppins(.regular, size: 16))
             }
             .background (
                 ZStack {
