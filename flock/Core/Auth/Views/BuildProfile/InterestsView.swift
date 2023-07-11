@@ -69,12 +69,10 @@ struct InterestsView: View {
                     
                     ScrollView {
                         ForEach(interestsList, id: \.self) { interest in
-                            ZStack {
-                                CustomInterestsButton(text: interest, action: action)
-            
-                            }
-                            .padding(.horizontal, 40)
+                            CustomInterestsButton(text: interest, action: {})
+                                // JACK REPLACE ACTION HERE (CHECK >=2, <= 5)
                         }
+                        .padding(.horizontal, 40)
                     }
                     .padding(.bottom, 20)
                     
