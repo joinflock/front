@@ -69,6 +69,7 @@
 		5BF7AE462A58C10200AAE123 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE452A58C10200AAE123 /* OnboardingManager.swift */; };
 		5BF7AE482A5A0FD200AAE123 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */; };
 		5BF7AE4A2A5C54EA00AAE123 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE492A5C54EA00AAE123 /* TermsView.swift */; };
+		9A937DE02A5DE396006A3621 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A937DDF2A5DE396006A3621 /* MessagesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -137,6 +138,7 @@
 		5BF7AE452A58C10200AAE123 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		5BF7AE492A5C54EA00AAE123 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
+		9A937DDF2A5DE396006A3621 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -300,6 +302,7 @@
 		5BA73F152A422C0300D30795 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9A937DDE2A5DE376006A3621 /* Messages */,
 				240179462A4C8B7A0081A1AB /* StarterView.swift */,
 				5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */,
 				249BA60B2A57109E0039B781 /* BuildProfile */,
@@ -347,6 +350,14 @@
 				5BF7AE452A58C10200AAE123 /* OnboardingManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		9A937DDE2A5DE376006A3621 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				9A937DDF2A5DE396006A3621 /* MessagesView.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +481,7 @@
 				5BF7AE482A5A0FD200AAE123 /* OnboardingView.swift in Sources */,
 				2453E9342A5DCAAA0099C530 /* HobbiesSectionView.swift in Sources */,
 				5B5186C32A4E0FF500DC86C5 /* PictureUploadView.swift in Sources */,
+				9A937DE02A5DE396006A3621 /* MessagesView.swift in Sources */,
 				2401795A2A4DC6E00081A1AB /* CountryPhoneData.swift in Sources */,
 				5BF7AE422A58BA5A00AAE123 /* ProfileView.swift in Sources */,
 				240179472A4C8B7A0081A1AB /* StarterView.swift in Sources */,
