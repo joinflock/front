@@ -18,8 +18,9 @@ struct BeginBuildView: View {
         VStack (alignment: .center){
             
             Image("BuildProfile_blurPhoto")
+                .ignoresSafeArea()
+                .scaledToFill()
                 .padding(.bottom, -125)
-                .padding(.top, -20)
             
             ZStack {
                 // "Card"-like canvas for input. Overlay 2 RRs together since for some reason, two modifiers can't be used together on RR. **
@@ -29,6 +30,7 @@ struct BeginBuildView: View {
                         RoundedRectangle(cornerRadius: 40)
                             .stroke(.black, lineWidth: 0.3)
                     )
+                    .ignoresSafeArea()
                 
                 VStack {
                     // Grouped to color a specific section of text.
@@ -75,7 +77,7 @@ struct BeginBuildView: View {
             }
 
         }
-        .ignoresSafeArea()
+
     }
 }
 

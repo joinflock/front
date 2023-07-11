@@ -19,6 +19,7 @@ struct ContentView: View {
                     //                testView()
                     OnboardingView()
                         .environmentObject(session)
+                        .ignoresSafeArea()
                 case .loggedIn:
                     ProfileView()
                         .environmentObject(session)

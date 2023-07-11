@@ -49,6 +49,8 @@ struct NameView: View {
             }
             .padding(.horizontal, 60)
         }
+        .ignoresSafeArea()
+        
     }
 }
 

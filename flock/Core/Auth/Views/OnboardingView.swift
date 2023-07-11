@@ -73,6 +73,7 @@ struct OnboardingView: View {
                                       weight: .bold,
                                       design: .rounded))
                         .padding(.leading, 20)
+                        .padding(.top, 40)
                 }
             }
         }
