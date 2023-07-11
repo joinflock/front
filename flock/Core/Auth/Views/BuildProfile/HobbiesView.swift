@@ -136,27 +136,39 @@ struct HobbiesView: View {
                     )
                 
                 VStack {
-                    Text("hobbies")
-                        .font(.poppins(.semibold, size: 25))
-                        .padding(.top, 50)
-                        .padding(.bottom, 20)
+                    Spacer()
+                        .frame(height: 50)
                     
-//                    ScrollView {
-//
-//                        ForEach(hobbies, id: \.self) { hobby in
-//                            Section (header: Text(hobby[0])) {
-//
-//                            }
-//                        }
-//                    }
+                    ScrollView {
+                        Text("hobbies")
+                            .font(.poppins(.semibold, size: 25))
+                            .padding(.bottom, 20)
+                        
+                        var sortedHobbies : [String] = Array(hobbies.keys).sorted()
+                        
+                        ForEach(0..<sortedHobbies.count) { index in
+                            if let items = hobbies[sortedHobbies[index]] {
+                                HobbiesSectionView(header: sortedHobbies[index], list: items)
+                                    .padding(.vertical, 20)
+                                
+                                if (index != sortedHobbies.count - 1) {
+                                    Divider()
+                                        .frame(height: 0.5)
+                                        .overlay(Color.theme.grey)
+                                        .padding(.horizontal, 20)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 40)
+                    }
                     
                     Spacer()
                     
-                    Text("what do you like to do in your free time?")
-                        .multilineTextAlignment(.center)
-                        .font(.poppins(.regular, size: 12))
-                        .padding(.bottom, 15)
-                        .padding(.horizontal, 40)
+//                    Text("what do you like to do in your free time?")
+//                        .multilineTextAlignment(.center)
+//                        .font(.poppins(.regular, size: 12))
+//                        .padding(.bottom, 15)
+//                        .padding(.horizontal, 40)
                     
                     // To next build profile prompts!
                     Button {
@@ -167,7 +179,7 @@ struct HobbiesView: View {
                             .font(.poppins(.semibold, size: 18))
                     }
                     .buttonStyle(FilledButton())
-                    .padding(.bottom, 30)
+                    .padding(.vertical, 30)
                     
                     ProgressView(value: 0.70)
                         .padding(.horizontal, 40)

@@ -12,11 +12,22 @@ struct HobbiesSectionView: View {
     var list : [String]
     
     var body: some View {
-        VStack {
+        VStack (alignment: .center){
             Text(header)
-                .font(.poppins(.medium, size: 20))
+                .font(.poppins(.medium, size: 18))
+                .padding(.bottom, 15)
+            
+            // Indexing here hardcoded for 2 choices per row.
             ForEach(0..<list.count) { index in
-                CustomInterestsButton(text: list[index], action: {})
+                if (index % 2 == 0) {
+                    HStack {
+                        CustomInterestsButton(text: list[index], action: {})
+                        
+                        if (index + 1 != list.count) {
+                            CustomInterestsButton(text: list[index + 1], action: {})
+                        }
+                    }
+                }
             }
         }
     }
