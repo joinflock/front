@@ -68,7 +68,7 @@ struct PhoneInputView: View {
                     .padding(.trailing, 45)
                     .padding(.leading, 5)
                     .foregroundColor(Color.theme.text)
-                    .keyboardType(.phonePad)
+                    .keyboardType(.numberPad)
                     .onChange(of: phoneNumber) { newValue in
 
 //                        if (newValue.count == 3 || newValue.count == 7) &&
