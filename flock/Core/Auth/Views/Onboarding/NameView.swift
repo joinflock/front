@@ -24,8 +24,10 @@ struct NameView: View {
                 
                 // Get and store inputs. 
                 CustomInputField(imageName: "circle", placeholderText: "first name", text: $firstName)
+                    .disableAutocorrection(true)
                     .padding(.bottom, 15)
                 CustomInputField(imageName: "circle", placeholderText: "last name", text: $lastName)
+                    .disableAutocorrection(true)
                     .padding(.bottom, 5)
                 
                 Text("use your real name so people know \n who you are!")
