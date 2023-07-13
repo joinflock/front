@@ -38,7 +38,7 @@ struct StarterView: View {
                 .padding(.bottom, 5)
                 
                 NavigationLink {
-                    LoginView()
+                    LoginView(phoneNumber: "")
                         .environmentObject(session)
                 } label: {
                     Text("login")

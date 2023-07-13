@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     
     @EnvironmentObject var session: SessionManager
+    @State var phoneNumber: String
     
     var body: some View {
    
@@ -22,7 +23,7 @@ struct LoginView: View {
                     .padding(.bottom, 10)
             
                 // .constant for now.... need something to take in and check with database
-                CustomInputField(imageName: "circle", placeholderText: "phone number", text: .constant(""))
+                CustomInputField(imageName: "circle", placeholderText: "phone number", text: $phoneNumber)
                     .padding(.bottom, 10)
                     .keyboardType(.phonePad)
                     
@@ -49,7 +50,7 @@ struct LoginView: View {
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView(phoneNumber: "")
             .environmentObject(SessionManager())
     }
 }

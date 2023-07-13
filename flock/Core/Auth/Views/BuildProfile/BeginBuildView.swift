@@ -34,20 +34,25 @@ struct BeginBuildView: View {
                 VStack {
                     // Grouped to color a specific section of text.
                     Group {
+                        Text("we'd hate to waste your time")
+                            .font(.system(size: 16, weight: .semibold))
+                            .padding(.top, 45)
+                            .foregroundColor(.secondary)
                         Text("let's ") +
                         Text("build your profile ").foregroundColor(Color.theme.accent) +
                         Text("in less than a minute")
                     }
-                    .font(.poppins(.semibold, size: 25))
+                    .font(.system(size: 25, weight: .semibold))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
-                    .padding(.top, 80)
+                    .padding(.top, 5)
+                    
                     
                     CustomInputField(imageName: "circle", placeholderText: "university", text: $university)
                         .padding(.horizontal, 40)
                         .padding(.top, 20)
                     
-                    CustomInputField(imageName: "circle", placeholderText: "languages known", text: $languagesKnown)
+                    CustomInputField(imageName: "circle", placeholderText: "spoken languages", text: $languagesKnown)
                         .padding(.horizontal, 40)
                         .padding(.top, 30)
                     
