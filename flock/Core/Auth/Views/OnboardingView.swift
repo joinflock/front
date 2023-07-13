@@ -50,8 +50,6 @@ struct OnboardingView: View {
                     .tag(OnboardingManager.Screen.identity)
                 InterestsView(action: manager.next)
                     .tag(OnboardingManager.Screen.interests)
-                HobbiesView(action: manager.next)
-                    .tag(OnboardingManager.Screen.hobbies)
                 PreferencesView(action: manager.next)
                     .tag(OnboardingManager.Screen.preferences)
                 PictureUploadView {}

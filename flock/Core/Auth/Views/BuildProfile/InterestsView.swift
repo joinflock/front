@@ -10,6 +10,113 @@ import SwiftUI
 struct InterestsView: View {
     
     @State private var interestsList = [
+        "Music": [
+          "Classical",
+          "Country",
+          "EDM",
+          "Hip hop",
+          "House",
+          "Indie",
+          "J-pop",
+          "K-pop",
+          "Pop",
+          "R&B",
+          "Rock"
+        ],
+        "Sports": [
+          "Badminton",
+          "Baseball",
+          "Basketball",
+          "Bowling",
+          "Boxing",
+          "Cricket",
+          "Cycling",
+          "Football",
+          "Golf",
+          "Hockey",
+          "Rock climbing",
+          "Running",
+          "Sailing",
+          "Skateboarding",
+          "Skiing",
+          "Snowboarding",
+          "Surfing",
+          "Swimming",
+          "Table Tennis",
+          "Tennis",
+          "Volleyball",
+          "Yoga"
+        ],
+        "Creativity": [
+          "Art",
+          "Cinematography",
+          "Dancing",
+          "Film making",
+          "Make-up",
+          "Photography",
+          "Singing",
+          "Writing"
+        ],
+        "Going out": [
+          "Bars",
+          "Cafe-hopping",
+          "Clubs",
+          "Concerts",
+          "Festivals",
+          "Karaoke",
+          "Museums",
+          "Stand up",
+          "Theater"
+        ],
+        "Staying in": [
+          "Baking",
+          "Board games",
+          "Cooking",
+          "Video games"
+        ],
+        "Films/TV": [
+          "Action",
+          "Anime",
+          "Bollywood",
+          "Comedy",
+          "Crime",
+          "Documentaries",
+          "Fantasy",
+          "Horror",
+          "K-drama",
+          "Reality shows",
+          "Rom-com",
+          "Romance",
+          "Superhero"
+        ],
+        "Food & Drink": [
+          "Beer",
+          "Boba tea",
+          "Coffee",
+          "Pizza",
+          "Sushi",
+          "Tacos",
+          "Vegan",
+          "Wine"
+        ],
+        "Traveling": [
+          "Backpacking",
+          "Beaches",
+          "Camping",
+          "Fishing",
+          "Hiking",
+          "Road trips"
+        ],
+        "Values": [
+          "Black Lives Matter",
+          "Environmentalism",
+          "Feminism",
+          "Human rights",
+          "LGBTQ+ rights",
+          "Reproductive rights",
+          "Stop Asian Hate",
+          "Voter rights"],
+        "Academic & Professional" :[
         "Agriculture",
         "Art",
         "Architecture",
@@ -41,7 +148,7 @@ struct InterestsView: View {
         "Research",
         "Sales",
         "Student",
-        "Software Development"
+        "Software Development"]
       ]
     
     let action: () -> Void
@@ -56,33 +163,47 @@ struct InterestsView: View {
             ZStack {
                 RoundedRectangle(cornerRadius: 40)
                     .fill(.white)
-                    .overlay(
+                    .overlay (
                         RoundedRectangle(cornerRadius: 40)
                             .stroke(.black, lineWidth: 0.3)
                     )
                 
                 VStack {
-                    Text("interests")
-                        .font(.poppins(.semibold, size: 25))
-                        .padding(.top, 50)
-                        .padding(.bottom, 20)
+                    Spacer()
+                        .frame(height: 40)
                     
                     ScrollView {
-                        ForEach(interestsList, id: \.self) { interest in
-                            CustomInterestsButton(text: interest, action: {})
-                                // JACK REPLACE ACTION HERE (CHECK >=2, <= 5)
+                        Text("hobbies")
+                            .font(.poppins(.semibold, size: 25))
+                            .padding(.bottom, 10)
+                        
+                        var sortedHeaders : [String] = Array(interestsList.keys).sorted()
+                        
+                        ForEach(0..<sortedHeaders.count) { index in
+                            if let items = interestsList[sortedHeaders[index]] {
+                                InterestsSectionView(header: sortedHeaders[index], list: items)
+                                    .padding(.bottom, 50)
+                                    .padding(.top, 20)
+                                
+                                if (index != sortedHeaders.count - 1) {
+                                    Divider()
+                                        .frame(height: 0.4)
+                                        .overlay(Color.theme.grey)
+                                        .padding(.horizontal, 20)
+                                }
+                            }
                         }
                         .padding(.horizontal, 40)
                     }
-                    .padding(.bottom, 20)
                     
                     Spacer()
                     
-                    Text("pick at least 2 and at max 5")
-                        .multilineTextAlignment(.center)
-                        .font(.poppins(.regular, size: 12))
-                        .padding(.bottom, 15)
-                        .padding(.horizontal, 40)
+                    Text("pick at least 5 and at max 10!")
+                                            .multilineTextAlignment(.center)
+                                            .font(.poppins(.regular, size: 12))
+                                            .padding(.horizontal, 40)
+                                            .padding(.bottom, 5)
+                                            .padding(.top, 10)
                     
                     // To next build profile prompts!
                     Button {
@@ -95,12 +216,12 @@ struct InterestsView: View {
                     .buttonStyle(FilledButton())
                     .padding(.bottom, 30)
                     
-                    ProgressView(value: 0.55)
+                    ProgressView(value: 0.70)
                         .padding(.horizontal, 40)
                         .padding(.bottom, 70)
+                
                 }
             }
-            
         }
         .ignoresSafeArea()
     }

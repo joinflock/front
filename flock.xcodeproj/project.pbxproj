@@ -20,13 +20,12 @@
 		2453E92E2A58A7CB0099C530 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E92D2A58A7CB0099C530 /* CategoryTab.swift */; };
 		2453E9302A5C524B0099C530 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E92F2A5C524B0099C530 /* testView.swift */; };
 		2453E9322A5D94E30099C530 /* CustomInterestsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9312A5D94E30099C530 /* CustomInterestsButton.swift */; };
-		2453E9342A5DCAAA0099C530 /* HobbiesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9332A5DCAAA0099C530 /* HobbiesSectionView.swift */; };
 		2453E9362A5F12920099C530 /* us_institutions.json in Resources */ = {isa = PBXBuildFile; fileRef = 2453E9352A5F12920099C530 /* us_institutions.json */; };
+		2453E9382A6036F00099C530 /* InterestsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9372A6036F00099C530 /* InterestsSectionView.swift */; };
 		249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */; };
 		249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA60E2A5717A50039B781 /* BeginBuildView.swift */; };
 		24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3502A575A77005C3157 /* IdentityView.swift */; };
 		24B8A3532A585017005C3157 /* InterestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3522A585017005C3157 /* InterestsView.swift */; };
-		24B8A3552A587043005C3157 /* HobbiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3542A587043005C3157 /* HobbiesView.swift */; };
 		24B8A3572A5875A3005C3157 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3562A5875A3005C3157 /* PreferencesView.swift */; };
 		5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C72A57547A00C84872 /* NetworkingManager.swift */; };
 		5B1270CA2A5754A400C84872 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C92A5754A400C84872 /* CreateViewModel.swift */; };
@@ -87,13 +86,12 @@
 		2453E92D2A58A7CB0099C530 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
 		2453E92F2A5C524B0099C530 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		2453E9312A5D94E30099C530 /* CustomInterestsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInterestsButton.swift; sourceTree = "<group>"; };
-		2453E9332A5DCAAA0099C530 /* HobbiesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbiesSectionView.swift; sourceTree = "<group>"; };
 		2453E9352A5F12920099C530 /* us_institutions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = us_institutions.json; sourceTree = "<group>"; };
+		2453E9372A6036F00099C530 /* InterestsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsSectionView.swift; sourceTree = "<group>"; };
 		249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVerificationView.swift; sourceTree = "<group>"; };
 		249BA60E2A5717A50039B781 /* BeginBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginBuildView.swift; sourceTree = "<group>"; };
 		24B8A3502A575A77005C3157 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityView.swift; sourceTree = "<group>"; };
 		24B8A3522A585017005C3157 /* InterestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsView.swift; sourceTree = "<group>"; };
-		24B8A3542A587043005C3157 /* HobbiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HobbiesView.swift; sourceTree = "<group>"; };
 		24B8A3562A5875A3005C3157 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		5B1270C72A57547A00C84872 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkingManager.swift; path = flock/Utils/NetworkingManager.swift; sourceTree = SOURCE_ROOT; };
 		5B1270C92A5754A400C84872 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
@@ -181,7 +179,6 @@
 				249BA60E2A5717A50039B781 /* BeginBuildView.swift */,
 				24B8A3502A575A77005C3157 /* IdentityView.swift */,
 				24B8A3522A585017005C3157 /* InterestsView.swift */,
-				24B8A3542A587043005C3157 /* HobbiesView.swift */,
 				24B8A3562A5875A3005C3157 /* PreferencesView.swift */,
 				5B5186C22A4E0FF500DC86C5 /* PictureUploadView.swift */,
 				2453E92F2A5C524B0099C530 /* testView.swift */,
@@ -278,7 +275,7 @@
 				2453E9272A5888290099C530 /* CircleImage.swift */,
 				2453E92D2A58A7CB0099C530 /* CategoryTab.swift */,
 				2453E9312A5D94E30099C530 /* CustomInterestsButton.swift */,
-				2453E9332A5DCAAA0099C530 /* HobbiesSectionView.swift */,
+				2453E9372A6036F00099C530 /* InterestsSectionView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -456,7 +453,6 @@
 				240179492A4C8C030081A1AB /* Profile.swift in Sources */,
 				5BA73F5A2A44CFC600D30795 /* LogisticsView.swift in Sources */,
 				5BA73F1B2A4235D800D30795 /* CustomInputField.swift in Sources */,
-				24B8A3552A587043005C3157 /* HobbiesView.swift in Sources */,
 				5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */,
 				5B409F282A422B0900F07255 /* ContentView.swift in Sources */,
 				2453E9322A5D94E30099C530 /* CustomInterestsButton.swift in Sources */,
@@ -483,7 +479,6 @@
 				2401794F2A4CBF200081A1AB /* BirthdayView.swift in Sources */,
 				24B8A3532A585017005C3157 /* InterestsView.swift in Sources */,
 				5BF7AE482A5A0FD200AAE123 /* OnboardingView.swift in Sources */,
-				2453E9342A5DCAAA0099C530 /* HobbiesSectionView.swift in Sources */,
 				5B5186C32A4E0FF500DC86C5 /* PictureUploadView.swift in Sources */,
 				9A937DE02A5DE396006A3621 /* MessagesView.swift in Sources */,
 				2401795A2A4DC6E00081A1AB /* CountryPhoneData.swift in Sources */,
@@ -493,6 +488,7 @@
 				5B5186C52A4E102300DC86C5 /* ImagePicker.swift in Sources */,
 				24B8A3572A5875A3005C3157 /* PreferencesView.swift in Sources */,
 				5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */,
+				2453E9382A6036F00099C530 /* InterestsSectionView.swift in Sources */,
 				5BA73F1E2A433B1F00D30795 /* Color.swift in Sources */,
 				2453E92E2A58A7CB0099C530 /* CategoryTab.swift in Sources */,
 			);
