@@ -17,7 +17,7 @@ struct IdentityView: View {
         VStack (alignment: .center){
             
             Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -125)
+                .padding(.bottom, -180)
                 .padding(.top, -20)
             
             ZStack {

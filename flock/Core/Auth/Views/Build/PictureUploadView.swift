@@ -14,7 +14,7 @@ struct PictureUploadView: View {
     
     var body: some View {
         VStack (alignment: .center) {
-            Text("and one more thing...")
+            Text("and one last thing...")
                 .font(.poppins(.semibold, size: 23))
                 .padding(.top, 130)
             

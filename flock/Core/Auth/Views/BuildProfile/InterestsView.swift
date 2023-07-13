@@ -15,7 +15,7 @@ struct InterestsView: View {
         VStack (alignment: .center) {
             
             Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -125)
+                .padding(.bottom, -180)
                 .padding(.top, -20)
             
             ZStack {
@@ -31,9 +31,8 @@ struct InterestsView: View {
                         .frame(height: 40)
                     
                     ScrollView {
-                        Text("interests")
+                        Text("what interests you?")
                             .font(.poppins(.semibold, size: 25))
-                            .padding(.bottom, -5)
                         
                         var sortedHeaders : [String] = Array(interestsList.keys).sorted()
                         

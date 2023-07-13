@@ -19,7 +19,7 @@ struct BeginBuildView: View {
             
             Image("BuildProfile_blurPhoto")
                 .scaledToFill()
-                .padding(.bottom, -125)
+                .padding(.bottom, -180)
             
             ZStack {
                 // "Card"-like canvas for input. Overlay 2 RRs together since for some reason, two modifiers can't be used together on RR. **

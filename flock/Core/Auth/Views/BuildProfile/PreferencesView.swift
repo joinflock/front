@@ -51,7 +51,7 @@ struct PreferencesView: View {
         VStack (alignment: .center) {
             
             Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -150)
+                .padding(.bottom, -180)
                 .padding(.top, -20)
             
             ZStack {
@@ -78,7 +78,7 @@ struct PreferencesView: View {
                     
                     // Tabs to be ranked.
                     ZStack {
-                        VStack (spacing: 14) {
+                        VStack (spacing: 19) {
                             ForEach(1..<6) { num in
                                 Text(String(num))
                                     .offset(x : 100)
@@ -99,7 +99,6 @@ struct PreferencesView: View {
                                     )
                                     .padding(.trailing, 60)
                                     .padding(.leading, 80)
-                                    .padding(.vertical, -3)
                             }
                         }
                     }
