@@ -34,7 +34,7 @@ struct BeginBuildView: View {
                 VStack {
                     Text("we'd hate to waste your time")
                         .font(.system(size: 16, weight: .semibold))
-                        .padding(.top, 50)
+                        .padding(.top, 40)
                         .foregroundColor(.secondary)
                     
                     // Grouped to color a specific section of text.
@@ -52,12 +52,13 @@ struct BeginBuildView: View {
                     CustomInputField(imageName: "circle", placeholderText: "university", text: $university)
                         .padding(.horizontal, 40)
                         .padding(.top, 20)
+                       
                     
                     CustomInputField(imageName: "circle", placeholderText: "college email", text: $collegeEmail)
                         .padding(.horizontal, 40)
                         .padding(.top, 30)
                     
-                    CustomInputField(imageName: "circle", placeholderText: "hometown", text: $hometown)
+                    AutoCustomInputField(imageName: "circle", placeholderText: "hometown", text: $hometown)
                         .padding(.horizontal, 40)
                         .padding(.top, 30)
                     

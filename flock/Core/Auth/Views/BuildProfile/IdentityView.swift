@@ -31,7 +31,7 @@ struct IdentityView: View {
                 VStack {
                     Text("identity")
                         .font(.poppins(.semibold, size: 25))
-                        .padding(.top, 30)
+                        .padding(.top, 40)
                     
                     CustomInputField(imageName: "circle", placeholderText: "gender", text: $gender)
                         .padding(.horizontal, 40)

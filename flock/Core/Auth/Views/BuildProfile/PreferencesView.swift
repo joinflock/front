@@ -70,7 +70,7 @@ struct PreferencesView: View {
                         Text(" to us.")
                     }
                     .font(.poppins(.semibold, size: 25))
-                    .padding(.top, 50)
+                    .padding(.top, 40)
                     .padding(.bottom, 30)
                     .padding(.horizontal, 40)
                     .multilineTextAlignment(.center)
