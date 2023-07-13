@@ -173,9 +173,9 @@ struct InterestsView: View {
                         .frame(height: 40)
                     
                     ScrollView {
-                        Text("hobbies")
+                        Text("interests")
                             .font(.poppins(.semibold, size: 25))
-                            .padding(.bottom, 10)
+                            .padding(.bottom, -5)
                         
                         var sortedHeaders : [String] = Array(interestsList.keys).sorted()
                         
