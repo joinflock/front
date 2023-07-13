@@ -15,6 +15,7 @@ final class OnboardingManager: ObservableObject {
         case phoneNumber
         case phoneVerification
         case build
+        case language
         case identity
         case interests
         case hobbies
@@ -23,10 +24,9 @@ final class OnboardingManager: ObservableObject {
     }
     
     @Published var active: Screen = Screen.allCases.first!
-    @Published var profile = Profile(firstName: "", lastName: "", phoneNumber: "",                              countryCode: "", birthday: Date(),
-                                     university: "", languages_known: "",
-                                     hometown: "", gender: "", ethnicity: "",
-                                     affinities: "")
+    @Published var profile = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(),
+                                     university: "", collegeEmail: "", languages_known: "",
+                                     hometown: "", gender: "", ethnicity: "")
     
     @Published var hasError = false
     @Published var error: RegistrationError?
@@ -67,7 +67,7 @@ final class OnboardingManager: ObservableObject {
     }
     
     func validateIdentityField() {
-        hasError = profile.gender.isEmpty || profile.affinities.isEmpty || profile.ethnicity.isEmpty
+        hasError = profile.gender.isEmpty ||  profile.ethnicity.isEmpty
         error = hasError ? .emptyField : nil
     }
 }
@@ -81,11 +81,11 @@ extension OnboardingManager {
         var errorDescription: String? {
             switch self {
             case .emptyName:
-                return "Please use your full name!"
+                return "please use your full name!"
             case .invalidPhoneNumber:
-                return "Please enter a valid phone number"
+                return "please enter a valid phone number"
             case .emptyField:
-                return "Please complete all the information"
+                return "please complete all the information"
             }
 
 

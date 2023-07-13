@@ -10,7 +10,6 @@ import SwiftUI
 struct IdentityView: View {
     @Binding var gender: String
     @Binding var ethnicity: String
-    @Binding var affinities: String
     
     let action: () -> Void
     
@@ -32,7 +31,7 @@ struct IdentityView: View {
                 VStack {
                     Text("identity")
                         .font(.poppins(.semibold, size: 25))
-                        .padding(.top, 50)
+                        .padding(.top, 30)
                     
                     CustomInputField(imageName: "circle", placeholderText: "gender", text: $gender)
                         .padding(.horizontal, 40)
@@ -42,9 +41,6 @@ struct IdentityView: View {
                         .padding(.horizontal, 40)
                         .padding(.top, 35)
                     
-                    CustomInputField(imageName: "circle", placeholderText: "affinities", text: $affinities)
-                        .padding(.horizontal, 40)
-                        .padding(.top, 35)
                     
                     Spacer()
                     
@@ -83,6 +79,6 @@ struct IdentityView: View {
 
 struct IdentityView_Previews: PreviewProvider {
     static var previews: some View {
-        IdentityView(gender: .constant(""), ethnicity: .constant(""), affinities: .constant("")) {}
+        IdentityView(gender: .constant(""), ethnicity: .constant("")) {}
     }
 }

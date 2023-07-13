@@ -19,16 +19,16 @@ struct Profile {
     
     // Build Profile details.
     var university : String
+    var collegeEmail : String
     var languages_known: String
     var hometown : String
     
     var gender: String
     var ethnicity: String
-    var affinities: String
     
 //    var interests : String
     
-    static let `default` = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(), university: "",
-                                   languages_known: "", hometown: "", gender: "", ethnicity: "", affinities: "")
+    static let `default` = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(), university: "", collegeEmail: "",
+                                   languages_known: "", hometown: "", gender: "", ethnicity: "")
     
 }

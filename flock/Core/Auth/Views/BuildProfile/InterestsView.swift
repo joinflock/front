@@ -9,6 +9,82 @@ import SwiftUI
 
 struct InterestsView: View {
     
+    let action: () -> Void
+    
+    var body: some View {
+        VStack (alignment: .center) {
+            
+            Image("BuildProfile_blurPhoto")
+                .padding(.bottom, -125)
+                .padding(.top, -20)
+            
+            ZStack {
+                RoundedRectangle(cornerRadius: 40)
+                    .fill(.white)
+                    .overlay (
+                        RoundedRectangle(cornerRadius: 40)
+                            .stroke(.black, lineWidth: 0.3)
+                    )
+                
+                VStack {
+                    Spacer()
+                        .frame(height: 40)
+                    
+                    ScrollView {
+                        Text("interests")
+                            .font(.poppins(.semibold, size: 25))
+                            .padding(.bottom, -5)
+                        
+                        var sortedHeaders : [String] = Array(interestsList.keys).sorted()
+                        
+                        ForEach(0..<sortedHeaders.count) { index in
+                            if let items = interestsList[sortedHeaders[index]] {
+                                InterestsSectionView(header: sortedHeaders[index], list: items)
+                                    .padding(.bottom, 50)
+                                    .padding(.top, 20)
+                                
+                                if (index != sortedHeaders.count - 1) {
+                                    Divider()
+                                        .frame(height: 0.4)
+                                        .overlay(Color.theme.grey)
+                                        .padding(.horizontal, 20)
+                                }
+                            }
+                        }
+                        .padding(.horizontal, 40)
+                    }
+                    
+                    Spacer()
+                    
+                    Text("pick at least 5 and at max 10!")
+                                            .multilineTextAlignment(.center)
+                                            .font(.poppins(.regular, size: 14))
+                                            .padding(.horizontal, 40)
+                                            .padding(.bottom, 5)
+                                            .padding(.top, 10)
+                    
+                    // To next build profile prompts!
+                    Button {
+                        action()
+                    } label: {
+                        Text("next")
+                            .frame(width: 280, height: 16)
+                            .font(.poppins(.semibold, size: 18))
+                    }
+                    .buttonStyle(FilledButton())
+                    .padding(.bottom, 30)
+                    
+                    ProgressView(value: 0.70)
+                        .padding(.horizontal, 40)
+                        .padding(.bottom, 70)
+                
+                }
+            }
+        }
+        .ignoresSafeArea()
+    }
+    
+    // Placed lower here for code visibility above. 
     @State private var interestsList = [
         "Music": [
           "Classical",
@@ -150,82 +226,8 @@ struct InterestsView: View {
         "Student",
         "Software Development"]
       ]
-    
-    let action: () -> Void
-    
-    var body: some View {
-        VStack (alignment: .center) {
-            
-            Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -125)
-                .padding(.top, -20)
-            
-            ZStack {
-                RoundedRectangle(cornerRadius: 40)
-                    .fill(.white)
-                    .overlay (
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(.black, lineWidth: 0.3)
-                    )
-                
-                VStack {
-                    Spacer()
-                        .frame(height: 40)
-                    
-                    ScrollView {
-                        Text("interests")
-                            .font(.poppins(.semibold, size: 25))
-                            .padding(.bottom, -5)
-                        
-                        var sortedHeaders : [String] = Array(interestsList.keys).sorted()
-                        
-                        ForEach(0..<sortedHeaders.count) { index in
-                            if let items = interestsList[sortedHeaders[index]] {
-                                InterestsSectionView(header: sortedHeaders[index], list: items)
-                                    .padding(.bottom, 50)
-                                    .padding(.top, 20)
-                                
-                                if (index != sortedHeaders.count - 1) {
-                                    Divider()
-                                        .frame(height: 0.4)
-                                        .overlay(Color.theme.grey)
-                                        .padding(.horizontal, 20)
-                                }
-                            }
-                        }
-                        .padding(.horizontal, 40)
-                    }
-                    
-                    Spacer()
-                    
-                    Text("pick at least 5 and at max 10!")
-                                            .multilineTextAlignment(.center)
-                                            .font(.poppins(.regular, size: 12))
-                                            .padding(.horizontal, 40)
-                                            .padding(.bottom, 5)
-                                            .padding(.top, 10)
-                    
-                    // To next build profile prompts!
-                    Button {
-                        action()
-                    } label: {
-                        Text("next")
-                            .frame(width: 280, height: 16)
-                            .font(.poppins(.semibold, size: 18))
-                    }
-                    .buttonStyle(FilledButton())
-                    .padding(.bottom, 30)
-                    
-                    ProgressView(value: 0.70)
-                        .padding(.horizontal, 40)
-                        .padding(.bottom, 70)
-                
-                }
-            }
-        }
-        .ignoresSafeArea()
-    }
 }
+
 
 struct InterestsView_Previews: PreviewProvider {
     static var previews: some View {
