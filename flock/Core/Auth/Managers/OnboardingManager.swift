@@ -18,7 +18,6 @@ final class OnboardingManager: ObservableObject {
         case language
         case identity
         case interests
-        case hobbies
         case preferences
         case profilePicture
     }

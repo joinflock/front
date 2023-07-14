@@ -14,7 +14,7 @@ struct MessagesView: View {
                 HStack(spacing: 16) {
                     Image(systemName: "person.fill")
                         .font(.system(size: 24, weight: .heavy))
-                    Text("Saarthak's Flocks")
+                    Text("Messages")
                         .font(.system(size: 24, weight: .bold))
                     Spacer()
                     Image(systemName: "gear")
@@ -29,7 +29,7 @@ struct MessagesView: View {
                                     .font(.system(size: 32))
                                     .padding(8)
                                     .overlay(RoundedRectangle(cornerRadius: 44)
-                                        .stroke(Color(.label), lineWidth: 1))
+                                        .stroke(Color.theme.accent, lineWidth: 1))
                                     
                                 VStack(alignment: .leading) {
                                     Text("User Name")
@@ -55,7 +55,5 @@ struct MessagesView: View {
 struct MessagesView_Previews: PreviewProvider {
     static var previews: some View {
         MessagesView()
-        MessagesView()
-            .preferredColorScheme(.dark)
     }
 }

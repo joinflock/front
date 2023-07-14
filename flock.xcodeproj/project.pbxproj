@@ -73,6 +73,7 @@
 		5BF7AE482A5A0FD200AAE123 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */; };
 		5BF7AE4A2A5C54EA00AAE123 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE492A5C54EA00AAE123 /* TermsView.swift */; };
 		9A937DE02A5DE396006A3621 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A937DDF2A5DE396006A3621 /* MessagesView.swift */; };
+		9A937DE22A60F285006A3621 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A937DE12A60F285006A3621 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -145,6 +146,7 @@
 		5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		5BF7AE492A5C54EA00AAE123 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		9A937DDF2A5DE396006A3621 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		9A937DE12A60F285006A3621 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,6 +329,7 @@
 				5BA73F162A422C9C00D30795 /* TitleView.swift */,
 				5BA73F182A4232A800D30795 /* LoginView.swift */,
 				5BA73F612A45D4CA00D30795 /* VerificationView.swift */,
+				9A937DE12A60F285006A3621 /* HomeView.swift */,
 				5BA73F592A44CFC600D30795 /* LogisticsView.swift */,
 				5BA73F572A44C8C100D30795 /* WelcomeView.swift */,
 				5BF7AE412A58BA5A00AAE123 /* ProfileView.swift */,
@@ -485,6 +488,7 @@
 				2453E9302A5C524B0099C530 /* testView.swift in Sources */,
 				2453E93E2A606E6F0099C530 /* LanguagesSectionView.swift in Sources */,
 				5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */,
+				9A937DE22A60F285006A3621 /* HomeView.swift in Sources */,
 				5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */,
 				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
 				24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */,
@@ -640,6 +644,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = flock/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to connect you with people";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -679,6 +684,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = flock/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need your location to connect you with people";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;

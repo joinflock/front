@@ -17,8 +17,10 @@ struct StarterView: View {
         ZStack {
             VStack{
                 // Logo & tagline
-                Text("flock")
-                    .font(.poppins(.bold, size: 40))
+                
+                    Text("flock")
+                        .font(.poppins(.bold, size: 40))
+                
                 Text("find your people.")
                     .font(.poppins(.medium, size: 20))
                     .padding(.bottom, 150)

@@ -71,8 +71,8 @@ struct PictureUploadView: View {
             Spacer()
             
             // Need to be hooked up to backend for saving all data.
-            Button {
-                action()
+            NavigationLink {
+                HomeView()
             } label: {
                 Text("finish")
                     .frame(width: 280, height: 16)

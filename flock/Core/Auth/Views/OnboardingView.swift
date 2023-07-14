@@ -54,7 +54,7 @@ struct OnboardingView: View {
                     .tag(OnboardingManager.Screen.interests)
                 PreferencesView(action: manager.next)
                     .tag(OnboardingManager.Screen.preferences)
-                PictureUploadView {}
+                PictureUploadView() {}
                     .tag(OnboardingManager.Screen.profilePicture)
                 
                 
