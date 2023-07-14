@@ -71,6 +71,8 @@
 		5BF7AE482A5A0FD200AAE123 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */; };
 		5BF7AE4A2A5C54EA00AAE123 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE492A5C54EA00AAE123 /* TermsView.swift */; };
 		9A937DE02A5DE396006A3621 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A937DDF2A5DE396006A3621 /* MessagesView.swift */; };
+		B8C791CB2A5F56D5000D8837 /* PreferencesViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C791CA2A5F56D5000D8837 /* PreferencesViewTest.swift */; };
+		B8C791CD2A5F56E9000D8837 /* CategoryTabTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8C791CC2A5F56E9000D8837 /* CategoryTabTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +82,7 @@
 		2401794C2A4CA9D00081A1AB /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		2401794E2A4CBF200081A1AB /* BirthdayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayView.swift; sourceTree = "<group>"; };
 		240179572A4DC55B0081A1AB /* CountryNumbers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CountryNumbers.json; sourceTree = "<group>"; };
-		240179592A4DC6E00081A1AB /* CountryPhoneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountryPhoneData.swift; path = flock/Model/CountryPhoneData.swift; sourceTree = SOURCE_ROOT; };
+		240179592A4DC6E00081A1AB /* CountryPhoneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountryPhoneData.swift; path = flock/Core/Auth/Views/CountryPhoneData.swift; sourceTree = SOURCE_ROOT; };
 		2401795D2A4DCAF10081A1AB /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		240179832A4E22EB0081A1AB /* PhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputView.swift; sourceTree = "<group>"; };
 		2453E9272A5888290099C530 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
@@ -141,6 +143,8 @@
 		5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		5BF7AE492A5C54EA00AAE123 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		9A937DDF2A5DE396006A3621 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		B8C791CA2A5F56D5000D8837 /* PreferencesViewTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesViewTest.swift; sourceTree = "<group>"; };
+		B8C791CC2A5F56E9000D8837 /* CategoryTabTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryTabTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,7 @@
 				24B8A3522A585017005C3157 /* InterestsView.swift */,
 				24B8A3542A587043005C3157 /* HobbiesView.swift */,
 				24B8A3562A5875A3005C3157 /* PreferencesView.swift */,
+				B8C791CA2A5F56D5000D8837 /* PreferencesViewTest.swift */,
 				5B5186C22A4E0FF500DC86C5 /* PictureUploadView.swift */,
 				2453E92F2A5C524B0099C530 /* testView.swift */,
 			);
@@ -192,7 +197,6 @@
 		249BA6142A574A4C0039B781 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				240179592A4DC6E00081A1AB /* CountryPhoneData.swift */,
 				240179482A4C8C030081A1AB /* Profile.swift */,
 				2401794A2A4CA4200081A1AB /* ModelData.swift */,
 			);
@@ -277,6 +281,7 @@
 				5BA73F512A44BC9200D30795 /* OutlinedButton.swift */,
 				2453E9272A5888290099C530 /* CircleImage.swift */,
 				2453E92D2A58A7CB0099C530 /* CategoryTab.swift */,
+				B8C791CC2A5F56E9000D8837 /* CategoryTabTest.swift */,
 				2453E9312A5D94E30099C530 /* CustomInterestsButton.swift */,
 				2453E9332A5DCAAA0099C530 /* HobbiesSectionView.swift */,
 			);
@@ -307,6 +312,7 @@
 			children = (
 				9A937DDE2A5DE376006A3621 /* Messages */,
 				240179462A4C8B7A0081A1AB /* StarterView.swift */,
+				240179592A4DC6E00081A1AB /* CountryPhoneData.swift */,
 				5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */,
 				249BA60B2A57109E0039B781 /* BuildProfile */,
 				240179452A4C87DE0081A1AB /* Onboarding */,
@@ -486,11 +492,13 @@
 				2453E9342A5DCAAA0099C530 /* HobbiesSectionView.swift in Sources */,
 				5B5186C32A4E0FF500DC86C5 /* PictureUploadView.swift in Sources */,
 				9A937DE02A5DE396006A3621 /* MessagesView.swift in Sources */,
+				B8C791CD2A5F56E9000D8837 /* CategoryTabTest.swift in Sources */,
 				2401795A2A4DC6E00081A1AB /* CountryPhoneData.swift in Sources */,
 				5BF7AE422A58BA5A00AAE123 /* ProfileView.swift in Sources */,
 				240179472A4C8B7A0081A1AB /* StarterView.swift in Sources */,
 				5BA73F172A422C9C00D30795 /* TitleView.swift in Sources */,
 				5B5186C52A4E102300DC86C5 /* ImagePicker.swift in Sources */,
+				B8C791CB2A5F56D5000D8837 /* PreferencesViewTest.swift in Sources */,
 				24B8A3572A5875A3005C3157 /* PreferencesView.swift in Sources */,
 				5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */,
 				5BA73F1E2A433B1F00D30795 /* Color.swift in Sources */,

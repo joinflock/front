@@ -22,10 +22,10 @@ struct IdentityView: View {
                 .padding(.top, -20)
             
             ZStack {
-                RoundedRectangle(cornerRadius: 40)
+                RoundedRectangle(cornerRadius: 10)
                     .fill(.white)
                     .overlay (
-                        RoundedRectangle(cornerRadius: 40)
+                        RoundedRectangle(cornerRadius: 10)
                             .stroke(.black, lineWidth: 0.3)
                     )
                 

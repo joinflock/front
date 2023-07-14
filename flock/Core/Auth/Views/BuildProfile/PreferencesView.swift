@@ -42,51 +42,42 @@ struct PreferencesView: View {
     
     // Categories to be ranked.
     @State private var draggedItem: String?
-//    @State private var ranking : [String] = [" 1", "2", "3", "4", "5"]
+   // @State private var ranking : [String] = [" 1", "2", "3", "4", "5"]
     @State private var categories: [String] = ["age", "hobbies", "interests", "identity", "university"]
     
-    let action: () -> Void
+    var action: () -> Void
+    // OnboardingManager().finish()
+    
     
     var body: some View {
         VStack (alignment: .center) {
             
             Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -150)
+                .padding(.bottom, -125)
                 .padding(.top, -20)
-            
+
+
             ZStack {
-                
-                RoundedRectangle(cornerRadius: 40)
+                RoundedRectangle(cornerRadius: 10)
                     .fill(.white)
-                    .overlay (
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(.black, lineWidth: 0.3)
-                    )
-                
+                   
                 VStack {
-                    Group {
-                        Text("what matters to you ") +
+                    Group () {
+                        (Text("what matters to you ") +
                         Text("matters").underline() +
-                        Text(" to us.")
+                        Text(" to us."))
                     }
+                   // .frame(height:100)
                     .font(.poppins(.semibold, size: 25))
-                    .padding(.top, 50)
-                    .padding(.bottom, 30)
-                    .padding(.horizontal, 40)
                     .multilineTextAlignment(.center)
-                
+                    .padding(.horizontal, 40)
+                    .frame(height:100)
+                    .padding(.vertical, 8)
                     
-                    // Tabs to be ranked.
-                    ZStack {
-                        VStack (spacing: 14) {
-                            ForEach(1..<6) { num in
-                                Text(String(num))
-                                    .offset(x : 100)
-                                    .font(.poppins(.light, size: 28))
-                            }
-                        }
-                        
-                        VStack {
+                    Spacer()
+
+            HStack{
+                VStack (spacing: 4){
                             ForEach(categories, id: \.self) { cat in
 
                                 CategoryTab(text: cat)
@@ -97,22 +88,55 @@ struct PreferencesView: View {
                                     .onDrop(of: [.text],
                                         delegate: DropViewDelegate(destinationItem: cat, categories: $categories, draggedItem: $draggedItem)
                                     )
-                                    .padding(.trailing, 60)
-                                    .padding(.leading, 80)
                                     .padding(.vertical, -3)
                             }
                         }
+                .padding(.leading, 40)
+                .padding(.trailing, 20)
+              
+                ZStack {
+                    VStack (spacing: 33) {
+                        ForEach(1..<6) { num in
+                            Text(String(num))
+                                .overlay(
+                                    Circle()
+                                        .stroke()
+                                        .frame(width: 40, height: 40)
+                                        .shadow(color: (Color.theme.grey), radius: 1.5, x: 0, y: 0)
+                                )
+                                .font(.poppins(.semibold, size: 20))
+                        }
                     }
-       
-                    
+                }
+                .padding(.trailing, 40)
+                
+                
+               // .padding(.trailing, 20)
+               /* Group{
+                    VStack(spacing:0){
+                        RoundedRectangle(cornerRadius: 0)
+                            .frame(width: 25, height: 1)
+                        RoundedRectangle(cornerRadius: 0)
+                            .frame(width: 1, height: 290)
+                        RoundedRectangle(cornerRadius: 0)
+                            .frame(width: 25, height: 1)
+                        
+                    }
+                   
+                }*/
+                   
+                    // Tabs to be ranked.
+               
+            
+                    }
                     Spacer()
-                    
+
                     Text("this will help us find better intersections for you!")
                         .multilineTextAlignment(.center)
                         .font(.poppins(.regular, size: 12))
-                        .padding(.bottom, 15)
+                        .padding(.vertical, 15)
                         .padding(.horizontal, 40)
-                    
+                   
                     // To next build profile prompts!
                     Button {
                         action()
@@ -126,10 +150,10 @@ struct PreferencesView: View {
                     
                     ProgressView(value: 0.90)
                         .padding(.horizontal, 40)
-                        .padding(.bottom, 60)
-                    
+                        .padding(.bottom, 70)
                 }
             }
+
         }
         .ignoresSafeArea()
     }
@@ -140,3 +164,6 @@ struct PreferencesView_Previews: PreviewProvider {
         PreferencesView() {}
     }
 }
+
+
+

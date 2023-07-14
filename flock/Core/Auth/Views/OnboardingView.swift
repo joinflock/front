@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+import CoreLocation
+
 
 struct OnboardingView: View {
     
     @StateObject private var manager = OnboardingManager()
     @State private var showPrevBtn = false
     
+  
+    
     var body: some View {
+        
+      
         ZStack {
             TabView(selection: $manager.active){
                 
@@ -54,7 +60,7 @@ struct OnboardingView: View {
                     .tag(OnboardingManager.Screen.hobbies)
                 PreferencesView(action: manager.next)
                     .tag(OnboardingManager.Screen.preferences)
-                PictureUploadView {}
+                PictureUploadView (action: manager.finish)
                     .tag(OnboardingManager.Screen.profilePicture)
                 
                 

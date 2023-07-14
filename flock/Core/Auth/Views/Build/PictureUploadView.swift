@@ -11,6 +11,8 @@ struct PictureUploadView: View {
     @State var selectedImage: UIImage?
 
     let action: () -> Void
+       
+    
     
     var body: some View {
         VStack (alignment: .center) {

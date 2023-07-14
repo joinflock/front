@@ -1,10 +1,13 @@
+
+
+
 //
 //  CategoryTab.swift
 //  flock
 //
 //  Created by James Zhang on 7/7/23.
 //
-
+/*
 import SwiftUI
 
 // Used in draggable preference screen in build profile.
@@ -17,47 +20,34 @@ struct CategoryTab: View {
             Group{
                 VStack(spacing: 4){
                     RoundedRectangle(cornerRadius: 10)
-                        .frame(width:20, height: 2)
+                        .frame(width:15, height: 2)
                         .foregroundColor(Color.theme.grey)
-                        .shadow(color: (Color.theme.grey), radius: 1.5, x: 0, y: 0)
-
                     
                     RoundedRectangle(cornerRadius: 10)
-                        .frame(width:20, height: 2)
+                        .frame(width:15, height: 2)
                         .foregroundColor(Color.theme.grey)
-                        .shadow(color: (Color.theme.grey), radius: 1.5, x: 0, y: 0)
-
-                    
-                    RoundedRectangle(cornerRadius: 10)
-                        .frame(width:20, height: 2)
-                        .foregroundColor(Color.theme.grey)
-                        .shadow(color: (Color.theme.grey), radius: 1.5, x: 0, y: 0)
-
                     
                 }
-                
-                
+        
                     .padding(.vertical, 15)
                     .padding(.leading, 0)
 
                 Text(text)
+                
                     .font(.poppins(.regular, size: 16))
-                    .padding(.vertical,20)
-                    .padding(.leading, 5)
+                    .padding(.vertical,10)
 
                 Spacer()
             }
             .offset(x: 20)
+           
             Spacer()
         }
         .overlay(
-            RoundedRectangle(cornerRadius: 5)
-                .stroke(Color.theme.grey, lineWidth: 2)
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(Color.theme.grey, lineWidth: 0)
                 .padding(.vertical, 4)
-                .shadow(color: (Color.theme.grey), radius: 1.5, x: 0, y: 0)
-                //.shadow(color: (Color.theme.grey), radius: 1, x: 0, y: 0)
-
-            
+                .shadow(color: .gray, radius: 2, x: 2, y: 1)
                 
         )
     }
@@ -69,4 +59,4 @@ struct CategoryTab_Previews: PreviewProvider {
     }
 }
 
-
+*/

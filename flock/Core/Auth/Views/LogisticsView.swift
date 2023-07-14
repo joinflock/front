@@ -19,7 +19,7 @@ struct LogisticsView: View {
             VStack(spacing: 15) {
                 
                 Text("we'd hate to waste your time")
-                    .font(.poppins(.semibold))
+                    .font(.system(size: 24))
                     .foregroundColor(Color.theme.text)
                     .padding(.top, 100)
                     .multilineTextAlignment(.center)

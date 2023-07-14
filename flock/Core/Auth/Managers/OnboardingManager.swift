@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 final class OnboardingManager: ObservableObject {
     
@@ -21,7 +22,9 @@ final class OnboardingManager: ObservableObject {
         case preferences
         case profilePicture
     }
-    
+   
+   @Published var locationManager = CLLocationManager()
+
     @Published var active: Screen = Screen.allCases.first!
     @Published var profile = Profile(firstName: "", lastName: "", phoneNumber: "",                              countryCode: "", birthday: Date(),
                                      university: "", languages_known: "",
@@ -30,9 +33,11 @@ final class OnboardingManager: ObservableObject {
     
     @Published var hasError = false
     @Published var error: RegistrationError?
+
     
     // go to next screen
     func next() {
+     
         
         // check if last screen
         let nextScreenIndex = min(active.rawValue + 1, Screen.allCases.last!.rawValue)
@@ -51,6 +56,10 @@ final class OnboardingManager: ObservableObject {
         }
     }
     
+    func finish()
+    {
+        locationManager.requestWhenInUseAuthorization()
+    }
     func validateName() {
         hasError = profile.firstName.isEmpty || profile.lastName.isEmpty
         error = hasError ? .emptyName : nil
