@@ -25,6 +25,8 @@
 		2453E93C2A6068220099C530 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E93B2A6068220099C530 /* LanguageView.swift */; };
 		2453E93E2A606E6F0099C530 /* LanguagesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E93D2A606E6F0099C530 /* LanguagesSectionView.swift */; };
 		2453E9412A608EDF0099C530 /* AutoCustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9402A608EDF0099C530 /* AutoCustomInputField.swift */; };
+		2453E9462A61D2F50099C530 /* DYPopoverView in Frameworks */ = {isa = PBXBuildFile; productRef = 2453E9452A61D2F50099C530 /* DYPopoverView */; };
+		2453E94B2A61FC400099C530 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E94A2A61FC400099C530 /* BlurView.swift */; };
 		249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */; };
 		249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA60E2A5717A50039B781 /* BeginBuildView.swift */; };
 		24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3502A575A77005C3157 /* IdentityView.swift */; };
@@ -94,6 +96,7 @@
 		2453E93B2A6068220099C530 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
 		2453E93D2A606E6F0099C530 /* LanguagesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesSectionView.swift; sourceTree = "<group>"; };
 		2453E9402A608EDF0099C530 /* AutoCustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCustomInputField.swift; sourceTree = "<group>"; };
+		2453E94A2A61FC400099C530 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVerificationView.swift; sourceTree = "<group>"; };
 		249BA60E2A5717A50039B781 /* BeginBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginBuildView.swift; sourceTree = "<group>"; };
 		24B8A3502A575A77005C3157 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityView.swift; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2453E9462A61D2F50099C530 /* DYPopoverView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +297,7 @@
 				5BA73F4B2A44A86800D30795 /* FilledButton.swift */,
 				5BA73F512A44BC9200D30795 /* OutlinedButton.swift */,
 				2453E9272A5888290099C530 /* CircleImage.swift */,
+				2453E94A2A61FC400099C530 /* BlurView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -393,6 +398,9 @@
 			dependencies = (
 			);
 			name = flock;
+			packageProductDependencies = (
+				2453E9452A61D2F50099C530 /* DYPopoverView */,
+			);
 			productName = flock;
 			productReference = 5B409F222A422B0900F07255 /* flock.app */;
 			productType = "com.apple.product-type.application";
@@ -421,6 +429,9 @@
 				Base,
 			);
 			mainGroup = 5B409F192A422B0800F07255;
+			packageReferences = (
+				2453E9442A61D2F50099C530 /* XCRemoteSwiftPackageReference "DYPopoverView" */,
+			);
 			productRefGroup = 5B409F232A422B0900F07255 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -499,6 +510,7 @@
 				24B8A3532A585017005C3157 /* InterestsView.swift in Sources */,
 				5BF7AE482A5A0FD200AAE123 /* OnboardingView.swift in Sources */,
 				5B5186C32A4E0FF500DC86C5 /* PictureUploadView.swift in Sources */,
+				2453E94B2A61FC400099C530 /* BlurView.swift in Sources */,
 				9A937DE02A5DE396006A3621 /* MessagesView.swift in Sources */,
 				2401795A2A4DC6E00081A1AB /* CountryPhoneData.swift in Sources */,
 				5BF7AE422A58BA5A00AAE123 /* ProfileView.swift in Sources */,
@@ -726,6 +738,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2453E9442A61D2F50099C530 /* XCRemoteSwiftPackageReference "DYPopoverView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/DominikButz/DYPopoverView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2453E9452A61D2F50099C530 /* DYPopoverView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2453E9442A61D2F50099C530 /* XCRemoteSwiftPackageReference "DYPopoverView" */;
+			productName = DYPopoverView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5B409F1A2A422B0800F07255 /* Project object */;
 }

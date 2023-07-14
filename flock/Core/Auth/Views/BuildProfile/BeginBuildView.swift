@@ -6,11 +6,15 @@
 //
 
 import SwiftUI
+import DYPopoverView
 
 struct BeginBuildView: View {
     @Binding var university: String
     @Binding var collegeEmail: String
     @Binding var hometown: String
+    
+    @State private var showFirstPopover  = false
+    @State private var popoverPosition: ViewPosition = .bottom
     
     let action: () -> Void
     
@@ -46,12 +50,17 @@ struct BeginBuildView: View {
                     .font(.system(size: 25, weight: .semibold))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 20)
-                    .padding(.vertical, 15)
+                    .padding(.top, 15)
+                    .padding(.bottom, 25)
                     
                     
                     CustomInputField(imageName: "circle", placeholderText: "university", text: $university)
                         .padding(.horizontal, 40)
                         .padding(.top, 20)
+                        .onChange(of: university) { toggle in
+                            self.showFirstPopover.toggle()
+                        }
+                        .anchorView(viewId: "firstPopover")
                        
                     
                     CustomInputField(imageName: "circle", placeholderText: "college email", text: $collegeEmail)
@@ -83,12 +92,22 @@ struct BeginBuildView: View {
             }
 
         }
+        .popoverView(content: {Text("Some content")}, background: {BlurView(style: .systemChromeMaterial)}, isPresented: self.$showFirstPopover, frame: .constant(CGRect(x: 0, y: 0, width: 150, height: 150)),  anchorFrame: nil, popoverType: .popout, position: self.popoverPosition, viewId: "firstPopover", settings: DYPopoverViewSettings(shadowRadius: 20))
         .ignoresSafeArea()
     }
 }
 
 struct BeginBuildView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        BeginBuildView(university: .constant(""), collegeEmail: .constant(""), hometown: .constant("")) {}
+        PreviewWrapper()
     }
+    
+    struct PreviewWrapper: View {
+            @State private var university = ""
+            
+            var body: some View {
+                BeginBuildView(university: $university, collegeEmail: .constant(""), hometown: .constant("")) {}
+            }
+        }
 }
