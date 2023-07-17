@@ -16,17 +16,18 @@
 		2401795A2A4DC6E00081A1AB /* CountryPhoneData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240179592A4DC6E00081A1AB /* CountryPhoneData.swift */; };
 		2401795E2A4DCAF10081A1AB /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401795D2A4DCAF10081A1AB /* PhoneNumberView.swift */; };
 		240179842A4E22EB0081A1AB /* PhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240179832A4E22EB0081A1AB /* PhoneInputView.swift */; };
+		241A1D2D2A65A04A0028325F /* usInstitutions.json in Resources */ = {isa = PBXBuildFile; fileRef = 241A1D2C2A65A04A0028325F /* usInstitutions.json */; };
 		2453E9282A5888290099C530 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9272A5888290099C530 /* CircleImage.swift */; };
 		2453E92E2A58A7CB0099C530 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E92D2A58A7CB0099C530 /* CategoryTab.swift */; };
 		2453E9302A5C524B0099C530 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E92F2A5C524B0099C530 /* testView.swift */; };
 		2453E9322A5D94E30099C530 /* CustomInterestsButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9312A5D94E30099C530 /* CustomInterestsButton.swift */; };
-		2453E9362A5F12920099C530 /* us_institutions.json in Resources */ = {isa = PBXBuildFile; fileRef = 2453E9352A5F12920099C530 /* us_institutions.json */; };
 		2453E9382A6036F00099C530 /* InterestsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9372A6036F00099C530 /* InterestsSectionView.swift */; };
 		2453E93C2A6068220099C530 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E93B2A6068220099C530 /* LanguageView.swift */; };
 		2453E93E2A606E6F0099C530 /* LanguagesSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E93D2A606E6F0099C530 /* LanguagesSectionView.swift */; };
 		2453E9412A608EDF0099C530 /* AutoCustomInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9402A608EDF0099C530 /* AutoCustomInputField.swift */; };
 		2453E9462A61D2F50099C530 /* DYPopoverView in Frameworks */ = {isa = PBXBuildFile; productRef = 2453E9452A61D2F50099C530 /* DYPopoverView */; };
 		2453E94B2A61FC400099C530 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E94A2A61FC400099C530 /* BlurView.swift */; };
+		2453E94D2A6582980099C530 /* UniversitiesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E94C2A6582980099C530 /* UniversitiesData.swift */; };
 		249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */; };
 		249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249BA60E2A5717A50039B781 /* BeginBuildView.swift */; };
 		24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3502A575A77005C3157 /* IdentityView.swift */; };
@@ -87,16 +88,17 @@
 		240179592A4DC6E00081A1AB /* CountryPhoneData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CountryPhoneData.swift; path = flock/Model/CountryPhoneData.swift; sourceTree = SOURCE_ROOT; };
 		2401795D2A4DCAF10081A1AB /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		240179832A4E22EB0081A1AB /* PhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputView.swift; sourceTree = "<group>"; };
+		241A1D2C2A65A04A0028325F /* usInstitutions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = usInstitutions.json; sourceTree = "<group>"; };
 		2453E9272A5888290099C530 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		2453E92D2A58A7CB0099C530 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
 		2453E92F2A5C524B0099C530 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 		2453E9312A5D94E30099C530 /* CustomInterestsButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInterestsButton.swift; sourceTree = "<group>"; };
-		2453E9352A5F12920099C530 /* us_institutions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = us_institutions.json; sourceTree = "<group>"; };
 		2453E9372A6036F00099C530 /* InterestsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsSectionView.swift; sourceTree = "<group>"; };
 		2453E93B2A6068220099C530 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
 		2453E93D2A606E6F0099C530 /* LanguagesSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesSectionView.swift; sourceTree = "<group>"; };
 		2453E9402A608EDF0099C530 /* AutoCustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoCustomInputField.swift; sourceTree = "<group>"; };
 		2453E94A2A61FC400099C530 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		2453E94C2A6582980099C530 /* UniversitiesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversitiesData.swift; sourceTree = "<group>"; };
 		249BA6002A4F2A5B0039B781 /* OnboardingVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingVerificationView.swift; sourceTree = "<group>"; };
 		249BA60E2A5717A50039B781 /* BeginBuildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeginBuildView.swift; sourceTree = "<group>"; };
 		24B8A3502A575A77005C3157 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityView.swift; sourceTree = "<group>"; };
@@ -177,7 +179,7 @@
 		240179562A4DC5490081A1AB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2453E9352A5F12920099C530 /* us_institutions.json */,
+				241A1D2C2A65A04A0028325F /* usInstitutions.json */,
 				240179572A4DC55B0081A1AB /* CountryNumbers.json */,
 			);
 			path = Resources;
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				240179592A4DC6E00081A1AB /* CountryPhoneData.swift */,
+				2453E94C2A6582980099C530 /* UniversitiesData.swift */,
 				240179482A4C8C030081A1AB /* Profile.swift */,
 				2401794A2A4CA4200081A1AB /* ModelData.swift */,
 			);
@@ -446,13 +449,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				241A1D2D2A65A04A0028325F /* usInstitutions.json in Resources */,
 				5BA73F3B2A448D5800D30795 /* Poppins-ExtraLightItalic.ttf in Resources */,
 				5BA73F322A448D5800D30795 /* Poppins-BoldItalic.ttf in Resources */,
 				5BA73F372A448D5800D30795 /* Poppins-SemiBoldItalic.ttf in Resources */,
 				5BA73F362A448D5800D30795 /* Poppins-SemiBold.ttf in Resources */,
 				5BA73F432A448D5800D30795 /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				5BA73F402A448D5800D30795 /* Poppins-Medium.ttf in Resources */,
-				2453E9362A5F12920099C530 /* us_institutions.json in Resources */,
 				5BA73F352A448D5800D30795 /* Poppins-LightItalic.ttf in Resources */,
 				5BA73F412A448D5800D30795 /* Poppins-Black.ttf in Resources */,
 				5BA73F3F2A448D5800D30795 /* Poppins-Thin.ttf in Resources */,
@@ -499,6 +502,7 @@
 				5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */,
 				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
 				24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */,
+				2453E94D2A6582980099C530 /* UniversitiesData.swift in Sources */,
 				2401794B2A4CA4200081A1AB /* ModelData.swift in Sources */,
 				5BF7AE4A2A5C54EA00AAE123 /* TermsView.swift in Sources */,
 				5B409F262A422B0900F07255 /* flockApp.swift in Sources */,

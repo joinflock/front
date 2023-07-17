@@ -13,8 +13,28 @@ struct BeginBuildView: View {
     @Binding var collegeEmail: String
     @Binding var hometown: String
     
-    @State private var showFirstPopover  = false
+    @State private var showUniPopover  = false
+    @State private var clicked = false
     @State private var popoverPosition: ViewPosition = .bottom
+    
+    let universities : [UniversitiesData] = Bundle.main.decode("usInstitutions.json")
+    
+    var filteredUniResults: [UniversitiesData] {
+        if university.isEmpty {
+            return universities
+        } else {
+            // Filtering can be changed later... (1) hasPrefix() or (2) simply contains()
+            var filteredUni = universities.filter {
+                // Lower cases everything so input cases don't matter.
+                $0.institution.lowercased().hasPrefix(university.lowercased()) }
+            
+            // Don't show bar if no suggestions exist.
+            if filteredUni.count == 0 {
+                showUniPopover = false
+            }
+            return filteredUni
+        }
+    }
     
     let action: () -> Void
     
@@ -58,9 +78,21 @@ struct BeginBuildView: View {
                         .padding(.horizontal, 40)
                         .padding(.top, 20)
                         .onChange(of: university) { toggle in
-                            self.showFirstPopover.toggle()
+                            // Always showing during mid-typing.
+                            if clicked == false {
+                                showUniPopover = true
+                            }
+                            else {
+                                showUniPopover = false
+                                clicked = false
+                            }
+                            
+                            if university == "" {
+                                // Disappear when completely deleted or have no suggestions.
+                                showUniPopover = false
+                            }
                         }
-                        .anchorView(viewId: "firstPopover")
+                        .anchorView(viewId: "UniPopover")
                        
                     
                     CustomInputField(imageName: "circle", placeholderText: "college email", text: $collegeEmail)
@@ -92,7 +124,30 @@ struct BeginBuildView: View {
             }
 
         }
-        .popoverView(content: {Text("Some content")}, background: {BlurView(style: .systemChromeMaterial)}, isPresented: self.$showFirstPopover, frame: .constant(CGRect(x: 0, y: 0, width: 150, height: 150)),  anchorFrame: nil, popoverType: .popout, position: self.popoverPosition, viewId: "firstPopover", settings: DYPopoverViewSettings(shadowRadius: 20))
+        .popoverView(content: {
+            ScrollView {
+                LazyVStack (alignment : .center){
+                    Spacer(minLength: 15)
+               
+                    ForEach(filteredUniResults) { uni in
+                        Text(uni.institution)
+                            .onTapGesture {
+                                university = uni.institution
+                                clicked = true
+                            }
+                            .padding(.vertical, 5)
+                            .multilineTextAlignment(.center)
+                            
+                        Divider()
+                    }
+                    
+                }}
+                .frame(width: 260)      // make sure to coordinate with frame attribute on bottom
+        },
+                     background: {BlurView(style: .systemChromeMaterial)},
+                     isPresented: $showUniPopover,
+                     frame: .constant(CGRect(x: 0, y: 0, width: 300, height: 200)),
+                     anchorFrame: nil, popoverType: .popout, position: popoverPosition, viewId: "UniPopover", settings: DYPopoverViewSettings(shadowRadius: 20, animation: .default))
         .ignoresSafeArea()
     }
 }

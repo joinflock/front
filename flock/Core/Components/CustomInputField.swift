@@ -25,6 +25,7 @@ struct CustomInputField: View {
                 
                 TextField(placeholderText, text: $text)
                     .padding(.leading, 10)
+                Spacer()
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
