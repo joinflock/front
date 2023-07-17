@@ -17,6 +17,8 @@
 		2401795E2A4DCAF10081A1AB /* PhoneNumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2401795D2A4DCAF10081A1AB /* PhoneNumberView.swift */; };
 		240179842A4E22EB0081A1AB /* PhoneInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 240179832A4E22EB0081A1AB /* PhoneInputView.swift */; };
 		241A1D2D2A65A04A0028325F /* usInstitutions.json in Resources */ = {isa = PBXBuildFile; fileRef = 241A1D2C2A65A04A0028325F /* usInstitutions.json */; };
+		241A1D352A65CA830028325F /* MultiselectTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D342A65CA830028325F /* MultiselectTabView.swift */; };
+		241A1D372A65D1320028325F /* SingleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D362A65D1320028325F /* SingleSelectionView.swift */; };
 		2453E9282A5888290099C530 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9272A5888290099C530 /* CircleImage.swift */; };
 		2453E92E2A58A7CB0099C530 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E92D2A58A7CB0099C530 /* CategoryTab.swift */; };
 		2453E9302A5C524B0099C530 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E92F2A5C524B0099C530 /* testView.swift */; };
@@ -89,6 +91,8 @@
 		2401795D2A4DCAF10081A1AB /* PhoneNumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberView.swift; sourceTree = "<group>"; };
 		240179832A4E22EB0081A1AB /* PhoneInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneInputView.swift; sourceTree = "<group>"; };
 		241A1D2C2A65A04A0028325F /* usInstitutions.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = usInstitutions.json; sourceTree = "<group>"; };
+		241A1D342A65CA830028325F /* MultiselectTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiselectTabView.swift; sourceTree = "<group>"; };
+		241A1D362A65D1320028325F /* SingleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleSelectionView.swift; sourceTree = "<group>"; };
 		2453E9272A5888290099C530 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		2453E92D2A58A7CB0099C530 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
 		2453E92F2A5C524B0099C530 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
@@ -192,6 +196,8 @@
 				2453E9312A5D94E30099C530 /* CustomInterestsButton.swift */,
 				2453E9372A6036F00099C530 /* InterestsSectionView.swift */,
 				2453E93D2A606E6F0099C530 /* LanguagesSectionView.swift */,
+				241A1D342A65CA830028325F /* MultiselectTabView.swift */,
+				241A1D362A65D1320028325F /* SingleSelectionView.swift */,
 			);
 			path = "Build Profile Components";
 			sourceTree = "<group>";
@@ -514,11 +520,13 @@
 				24B8A3532A585017005C3157 /* InterestsView.swift in Sources */,
 				5BF7AE482A5A0FD200AAE123 /* OnboardingView.swift in Sources */,
 				5B5186C32A4E0FF500DC86C5 /* PictureUploadView.swift in Sources */,
+				241A1D352A65CA830028325F /* MultiselectTabView.swift in Sources */,
 				2453E94B2A61FC400099C530 /* BlurView.swift in Sources */,
 				9A937DE02A5DE396006A3621 /* MessagesView.swift in Sources */,
 				2401795A2A4DC6E00081A1AB /* CountryPhoneData.swift in Sources */,
 				5BF7AE422A58BA5A00AAE123 /* ProfileView.swift in Sources */,
 				240179472A4C8B7A0081A1AB /* StarterView.swift in Sources */,
+				241A1D372A65D1320028325F /* SingleSelectionView.swift in Sources */,
 				5BA73F172A422C9C00D30795 /* TitleView.swift in Sources */,
 				5B5186C52A4E102300DC86C5 /* ImagePicker.swift in Sources */,
 				24B8A3572A5875A3005C3157 /* PreferencesView.swift in Sources */,

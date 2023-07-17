@@ -8,10 +8,42 @@
 import SwiftUI
 
 struct IdentityView: View {
+    @State private var selectedGender: String? = nil
+    
+    // Used to retrieve "other" input.
     @Binding var gender: String
     @Binding var ethnicity: String
     
     let action: () -> Void
+    
+    // Retrieved from ChatGPT ask.
+    let genders = [
+        "male",
+        "female",
+        "non-binary",
+        "genderqueer",
+        "agender",
+        "bigender",
+        "genderfluid",
+        "two-Spirit",
+        "androgynous",
+        "transgender",
+        "cisgender",
+        "gender nonconforming",
+        "other"
+    ]
+    
+    let ethnicities = [
+        "african",
+        "asian",
+        "caucasian",
+        "hispanic/latino",
+        "indigenous/native american",
+        "middle eastern",
+        "multiracial/mixed",
+        "pacific islander",
+        "other"
+    ]
     
     var body: some View {
         VStack (alignment: .center){
@@ -29,19 +61,46 @@ struct IdentityView: View {
                     )
                 
                 VStack {
-                    Text("identity")
-                        .font(.poppins(.semibold, size: 25))
-                        .padding(.top, 40)
-                    
-                    CustomInputField(imageName: "circle", placeholderText: "gender", text: $gender)
-                        .padding(.horizontal, 40)
-                        .padding(.top, 50)
-                    
-                    CustomInputField(imageName: "circle", placeholderText: "ethnicity", text: $ethnicity)
-                        .padding(.horizontal, 40)
-                        .padding(.top, 35)
-                    
-                    
+                    ScrollView {
+                        Text("identity")
+                            .font(.poppins(.semibold, size: 25))
+                            .padding(.top, 40)
+                        
+                        //                    CustomInputField(imageName: "circle", placeholderText: "gender", text: $gender)
+                        //                        .padding(.horizontal, 40)
+                        //                        .padding(.top, 50)
+                        //
+                        //                    CustomInputField(imageName: "circle", placeholderText: "ethnicity", text: $ethnicity)
+                        //                        .padding(.horizontal, 40)
+                        //                        .padding(.top, 35)
+                        //
+                        
+                        Text("gender")
+                            .font(.poppins(.medium, size: 18))
+                        //                            .foregroundColor(Color.theme.grey)
+                            .padding(.vertical, 15)
+                        
+                        ForEach(genders, id: \.self) { gender in
+                            SingleSelectionView(selection: gender, selected: $selectedGender, otherInput: $gender)
+                        }
+                        .padding(.horizontal, 50)
+                        .padding(.vertical, 5)
+                        
+                        Divider()
+                            .padding(.horizontal, 40)
+                            .padding(.vertical, 25)
+                        
+                        Text("ethnicity")
+                            .font(.poppins(.medium, size: 18))
+                            .padding(.bottom, 15)
+                        
+                        ForEach(ethnicities, id: \.self) { ethn in
+                            MultiselectTabView(text: ethn, otherInput: $ethnicity)
+                                .font(.poppins(.regular, size: 16))
+                        }
+                        .padding(.horizontal, 50)
+                        .padding(.vertical, 5)
+                    }
                     Spacer()
                     
                     Group {
@@ -51,7 +110,7 @@ struct IdentityView: View {
                     }
                     .multilineTextAlignment(.center)
                     .font(.poppins(.regular, size: 12))
-                    .padding(.bottom, 15)
+                    .padding(.vertical, 15)
                     .padding(.horizontal, 40)
                     
                     
@@ -79,6 +138,15 @@ struct IdentityView: View {
 
 struct IdentityView_Previews: PreviewProvider {
     static var previews: some View {
-        IdentityView(gender: .constant(""), ethnicity: .constant("")) {}
+        PreviewWrapper()
     }
+    
+    struct PreviewWrapper: View {
+            @State private var ethnicity = ""
+            @State private var selectedGender = ""
+            
+            var body: some View {
+                IdentityView(gender: .constant(""), ethnicity: $ethnicity) {}
+            }
+        }
 }
