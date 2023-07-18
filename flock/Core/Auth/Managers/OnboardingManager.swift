@@ -26,7 +26,7 @@ final class OnboardingManager: ObservableObject {
     @Published var active: Screen = Screen.allCases.first!
     @Published var profile = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(),
                                      university: "", collegeEmail: "", languages_known: "",
-                                     hometown: "", gender: "", ethnicity: "")
+                                     homeCountryState: "", gender: "", ethnicity: "")
     
     @Published var hasError = false
     @Published var error: RegistrationError?
@@ -62,7 +62,7 @@ final class OnboardingManager: ObservableObject {
     }
     
     func validateBeginField() {
-        hasError = profile.university.isEmpty || profile.hometown.isEmpty || profile.languages_known.isEmpty
+        hasError = profile.university.isEmpty || profile.homeCountryState.isEmpty || profile.languages_known.isEmpty
         error = hasError ? .emptyField : nil
     }
     

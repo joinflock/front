@@ -7,7 +7,6 @@
 
 import Foundation
 
-// Not identifiable because json file doesn't enable this!!
 struct UniversitiesData: Codable, Identifiable, Hashable {
     let institution: String
     var id: String {institution}

@@ -11,20 +11,22 @@ import DYPopoverView
 struct BeginBuildView: View {
     @Binding var university: String
     @Binding var collegeEmail: String
-    @Binding var hometown: String
+    @Binding var homeCountryState: String
     
-    @State private var showUniPopover  = false
-    @State private var clicked = false
     @State private var popoverPosition: ViewPosition = .bottom
     
-    let universities : [UniversitiesData] = Bundle.main.decode("usInstitutions.json")
+    // For university popover.
+    @State private var showUniPopover  = false
+    @State private var clickedUni = false
+    
+    let universities : [UniversitiesData] = UniversitiesData.allUni
     
     var filteredUniResults: [UniversitiesData] {
         if university.isEmpty {
             return universities
         } else {
             // Filtering can be changed later... (1) hasPrefix() or (2) simply contains()
-            var filteredUni = universities.filter {
+            let filteredUni = universities.filter {
                 // Lower cases everything so input cases don't matter.
                 $0.institution.lowercased().hasPrefix(university.lowercased()) }
             
@@ -33,6 +35,27 @@ struct BeginBuildView: View {
                 showUniPopover = false
             }
             return filteredUni
+        }
+    }
+    
+    // For hometown popover.
+    @State private var showHomePopover = false
+    @State private var clickedHome = false
+    
+    let countriesStates : [CountryStateData] = CountryStateData.allCountryState
+    
+    var filteredCountryStateResults: [CountryStateData] {
+        if homeCountryState.isEmpty {
+            return countriesStates
+        } else {
+            let filteredCS = countriesStates.filter {
+                $0.name.lowercased().hasPrefix(homeCountryState.lowercased())
+            }
+            
+            if filteredCS.count == 0 {
+                showHomePopover = false
+            }
+            return filteredCS
         }
     }
     
@@ -77,14 +100,14 @@ struct BeginBuildView: View {
                     CustomInputField(imageName: "circle", placeholderText: "university", text: $university)
                         .padding(.horizontal, 40)
                         .padding(.top, 20)
-                        .onChange(of: university) { toggle in
+                        .onChange(of: university) { change in
                             // Always showing during mid-typing.
-                            if clicked == false {
+                            if clickedUni == false {
                                 showUniPopover = true
                             }
                             else {
                                 showUniPopover = false
-                                clicked = false
+                                clickedUni = false
                             }
                             
                             if university == "" {
@@ -99,9 +122,25 @@ struct BeginBuildView: View {
                         .padding(.horizontal, 40)
                         .padding(.top, 30)
                     
-                    AutoCustomInputField(imageName: "circle", placeholderText: "hometown", text: $hometown)
+                    CustomInputField(imageName: "circle", placeholderText: "home country or state", text: $homeCountryState)
                         .padding(.horizontal, 40)
                         .padding(.top, 30)
+                        .onChange(of: homeCountryState) { change in
+                            // Always showing during mid-typing.
+                            if clickedHome == false {
+                                showHomePopover = true
+                            }
+                            else {
+                                showHomePopover = false
+                                clickedHome = false
+                            }
+                            
+                            if homeCountryState == "" {
+                                // Disappear when completely deleted or have no suggestions.
+                                showHomePopover = false
+                            }
+                        }
+                        .anchorView(viewId: "HomeCSPopover")
                     
                     
                     Spacer()
@@ -133,7 +172,7 @@ struct BeginBuildView: View {
                         Text(uni.institution)
                             .onTapGesture {
                                 university = uni.institution
-                                clicked = true
+                                clickedUni = true
                             }
                             .padding(.vertical, 5)
                             .multilineTextAlignment(.center)
@@ -148,6 +187,30 @@ struct BeginBuildView: View {
                      isPresented: $showUniPopover,
                      frame: .constant(CGRect(x: 0, y: 0, width: 300, height: 200)),
                      anchorFrame: nil, popoverType: .popout, position: popoverPosition, viewId: "UniPopover", settings: DYPopoverViewSettings(shadowRadius: 20, animation: .default))
+        .popoverView(content: {
+            ScrollView {
+                LazyVStack (alignment : .center){
+                    Spacer(minLength: 15)
+               
+                    ForEach(filteredCountryStateResults) { loc in
+                        Text(loc.name)
+                            .onTapGesture {
+                                homeCountryState = loc.name
+                                clickedHome = true
+                            }
+                            .padding(.vertical, 5)
+                            .multilineTextAlignment(.center)
+                            
+                        Divider()
+                    }
+                    
+                }}
+                .frame(width: 260)      // make sure to coordinate with frame attribute on bottom
+        },
+                     background: {BlurView(style: .systemChromeMaterial)},
+                     isPresented: $showHomePopover,
+                     frame: .constant(CGRect(x: 0, y: 0, width: 300, height: 200)),
+                     anchorFrame: nil, popoverType: .popout, position: popoverPosition, viewId: "HomeCSPopover", settings: DYPopoverViewSettings(shadowRadius: 20, animation: .default))
         .ignoresSafeArea()
     }
 }
@@ -160,9 +223,10 @@ struct BeginBuildView_Previews: PreviewProvider {
     
     struct PreviewWrapper: View {
             @State private var university = ""
+            @State private var hometown = ""
             
             var body: some View {
-                BeginBuildView(university: $university, collegeEmail: .constant(""), hometown: .constant("")) {}
+                BeginBuildView(university: $university, collegeEmail: .constant(""), homeCountryState: $hometown) {}
             }
         }
 }

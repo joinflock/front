@@ -20,16 +20,6 @@ struct IdentityView: View {
     let genders = [
         "male",
         "female",
-        "non-binary",
-        "genderqueer",
-        "agender",
-        "bigender",
-        "genderfluid",
-        "two-Spirit",
-        "androgynous",
-        "transgender",
-        "cisgender",
-        "gender nonconforming",
         "other"
     ]
     

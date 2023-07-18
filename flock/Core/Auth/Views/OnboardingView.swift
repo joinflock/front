@@ -34,7 +34,7 @@ struct OnboardingView: View {
                     .tag(OnboardingManager.Screen.phoneNumber)
                 OnboardingVerificationView (action: manager.next)
                     .tag(OnboardingManager.Screen.phoneVerification)
-                BeginBuildView(university: $manager.profile.university, collegeEmail: $manager.profile.languages_known, hometown: $manager.profile.hometown) {
+                BeginBuildView(university: $manager.profile.university, collegeEmail: $manager.profile.languages_known, homeCountryState: $manager.profile.homeCountryState) {
                     manager.validateBeginField()
                     if !manager.hasError {
                         manager.next()

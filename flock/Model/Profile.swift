@@ -21,7 +21,7 @@ struct Profile {
     var university : String
     var collegeEmail : String
     var languages_known: String
-    var hometown : String
+    var homeCountryState : String
     
     var gender: String
     var ethnicity: String
@@ -29,6 +29,6 @@ struct Profile {
 //    var interests : String
     
     static let `default` = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(), university: "", collegeEmail: "",
-                                   languages_known: "", hometown: "", gender: "", ethnicity: "")
+                                   languages_known: "", homeCountryState: "", gender: "", ethnicity: "")
     
 }
