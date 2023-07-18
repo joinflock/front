@@ -49,7 +49,7 @@ struct BeginBuildView: View {
             return countriesStates
         } else {
             let filteredCS = countriesStates.filter {
-                $0.name.lowercased().hasPrefix(homeCountryState.lowercased())
+                $0.name.lowercased().contains(homeCountryState.lowercased())
             }
             
             if filteredCS.count == 0 {
