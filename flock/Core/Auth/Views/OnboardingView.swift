@@ -12,13 +12,16 @@ struct OnboardingView: View {
     @StateObject private var manager = OnboardingManager()
     @State private var showPrevBtn = false
     
+    // FOR TESTING
+    let checksOff = true
+    
     var body: some View {
         ZStack {
             TabView(selection: $manager.active){
                 
                 NameView(firstName: $manager.profile.firstName, lastName: $manager.profile.lastName) {
                     manager.validateName()
-                    if !manager.hasError {
+                    if !manager.hasError || checksOff {
                         manager.next()
                     }
                 }
@@ -27,7 +30,8 @@ struct OnboardingView: View {
                     .tag(OnboardingManager.Screen.birthday)
                 PhoneInputView(phoneNumber: $manager.profile.phoneNumber, ctryCode: $manager.profile.countryCode) {
                     manager.validatePhoneNumber()
-                    if !manager.hasError {
+                    manager.postProfile()
+                    if !manager.hasError || checksOff {
                         manager.next()
                     }
                 }
@@ -36,7 +40,7 @@ struct OnboardingView: View {
                     .tag(OnboardingManager.Screen.phoneVerification)
                 BeginBuildView(university: $manager.profile.university, collegeEmail: $manager.profile.languages_known, homeCountryState: $manager.profile.homeCountryState) {
                     manager.validateBeginField()
-                    if !manager.hasError {
+                    if !manager.hasError || checksOff {
                         manager.next()
                     }
                 }
@@ -45,16 +49,16 @@ struct OnboardingView: View {
                     .tag(OnboardingManager.Screen.language)
                 IdentityView(gender: $manager.profile.gender, ethnicity: $manager.profile.ethnicity) {
                     manager.validateIdentityField()
-                    if !manager.hasError {
+                    if !manager.hasError || checksOff {
                         manager.next()
                     }
                 }
                     .tag(OnboardingManager.Screen.identity)
-                InterestsView(action: manager.next)
+                InterestsView(interests: $manager.profile.interests, action: manager.next)
                     .tag(OnboardingManager.Screen.interests)
                 PreferencesView(action: manager.next)
                     .tag(OnboardingManager.Screen.preferences)
-                PictureUploadView {}
+                PictureUploadView (action: manager.postOnboarding)
                     .tag(OnboardingManager.Screen.profilePicture)
                 
                 

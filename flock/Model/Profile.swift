@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Profile {
+struct Profile: Decodable, Encodable {
     
     // Basic details, from onboarding.
     var firstName: String
@@ -24,11 +24,14 @@ struct Profile {
     var homeCountryState : String
     
     var gender: String
-    var ethnicity: String
+    var ethnicity: [Bool]
+    
+    var interests: [String]
+    var preferences: String
     
 //    var interests : String
     
     static let `default` = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(), university: "", collegeEmail: "",
-                                   languages_known: "", homeCountryState: "", gender: "", ethnicity: "")
+                                   languages_known: "", homeCountryState: "", gender: "", ethnicity: [], interests: [], preferences: "")
     
 }

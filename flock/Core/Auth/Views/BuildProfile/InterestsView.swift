@@ -9,6 +9,8 @@ import SwiftUI
 
 struct InterestsView: View {
     
+    @Binding var interests: [String]
+    
     let action: () -> Void
     
     var body: some View {
@@ -230,6 +232,6 @@ struct InterestsView: View {
 
 struct InterestsView_Previews: PreviewProvider {
     static var previews: some View {
-        InterestsView() {}
+        InterestsView(interests: .constant([])) {}
     }
 }

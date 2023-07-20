@@ -9,10 +9,12 @@ import SwiftUI
 
 struct IdentityView: View {
     @State private var selectedGender: String? = nil
+   
+    @State private var otherEthnicity: String? = nil
     
     // Used to retrieve "other" input.
     @Binding var gender: String
-    @Binding var ethnicity: String
+    @State var ethnicity: [Bool]
     
     let action: () -> Void
     
@@ -23,14 +25,13 @@ struct IdentityView: View {
         "other"
     ]
     
-    let ethnicities = [
+    @State var ethnicities = [
         "african",
         "asian",
         "caucasian",
         "hispanic/latino",
         "indigenous/native american",
         "middle eastern",
-        "multiracial/mixed",
         "pacific islander",
         "other"
     ]
@@ -72,6 +73,11 @@ struct IdentityView: View {
                         
                         ForEach(genders, id: \.self) { gender in
                             SingleSelectionView(selection: gender, selected: $selectedGender, otherInput: $gender)
+                                .onChange(of: selectedGender) { change in
+                                    if selectedGender != "other" {
+                                        self.gender = selectedGender!
+                                    }
+                                }
                         }
                         .padding(.horizontal, 50)
                         .padding(.vertical, 5)
@@ -84,12 +90,19 @@ struct IdentityView: View {
                             .font(.poppins(.medium, size: 18))
                             .padding(.bottom, 15)
                         
-                        ForEach(ethnicities, id: \.self) { ethn in
-                            MultiselectTabView(text: ethn, otherInput: $ethnicity)
-                                .font(.poppins(.regular, size: 16))
+                       
+                    
+                        ForEach(self.ethnicities.indices, id: \.self) { i in
+                            MultiselectTabView(text: self.ethnicities[i]) {
+                                self.ethnicity[i].toggle()
+                            }
+                            .padding(.horizontal, 50)
+                            .padding(.vertical, 5)
                         }
-                        .padding(.horizontal, 50)
-                        .padding(.vertical, 5)
+
+
+                        
+
                     }
                     Spacer()
                     
@@ -132,11 +145,10 @@ struct IdentityView_Previews: PreviewProvider {
     }
     
     struct PreviewWrapper: View {
-            @State private var ethnicity = ""
             @State private var selectedGender = ""
             
             var body: some View {
-                IdentityView(gender: .constant(""), ethnicity: $ethnicity) {}
+                IdentityView(gender: .constant(""), ethnicity: []) {}
             }
         }
 }

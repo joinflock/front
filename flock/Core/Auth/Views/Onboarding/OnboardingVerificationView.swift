@@ -9,6 +9,9 @@ import SwiftUI
 
 struct OnboardingVerificationView: View {
     
+    @StateObject var otpModel: OTPViewModel = .init()
+    
+    
     // Modify here to get some random each time for a specific phone number.
     @State private var code : String = ""
     

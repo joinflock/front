@@ -6,22 +6,22 @@
 //
 import Foundation
 
-final class NetworkingManager {
+class Network: ObservableObject {
 
-    static let shared = NetworkingManager()
-
-
-    private init() {}
+    static let shared = Network()
+    private let baseURL = "http://127.0.0.1:8000/"
 
     func request<T: Codable>(methodType: MethodType = .GET,
-                            _ absoluteURL: String,
+                            _ urlExtension: String,
                             type: T.Type,
                             completion: @escaping (Result<T, Error>) -> Void) {
 
-        guard let url = URL(string: absoluteURL) else {
+        guard let url = URL(string: baseURL + urlExtension) else {
             completion(.failure(NetworkingError.invalidUrl))
             return
         }
+        
+        print(url)
 
         let request = buildRequest(from: url, methodType: methodType)
 
@@ -56,10 +56,10 @@ final class NetworkingManager {
     }
 
     func request(methodType: MethodType = .GET,
-                 _ absoluteURL: String,
+                 _ urlExtension: String,
                  completion: @escaping (Result<Void, Error>) -> Void) {
 
-        guard let url = URL(string: absoluteURL) else {
+        guard let url = URL(string: baseURL + urlExtension) else {
             completion(.failure(NetworkingError.invalidUrl))
             return
         }
@@ -87,7 +87,7 @@ final class NetworkingManager {
     }
 }
 
-extension NetworkingManager {
+extension Network {
     enum NetworkingError: Error {
         case invalidUrl
         case custom(error: Error)
@@ -97,14 +97,14 @@ extension NetworkingManager {
     }
 }
 
-extension NetworkingManager {
+extension Network {
     enum MethodType {
         case GET
         case POST(data: Data?)
     }
 }
 
-private extension NetworkingManager {
+private extension Network {
     func buildRequest(from url: URL,
                       methodType: MethodType) -> URLRequest {
 

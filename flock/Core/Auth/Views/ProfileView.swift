@@ -11,14 +11,30 @@ struct ProfileView: View {
     
     @EnvironmentObject var session: SessionManager
     
+    @StateObject private var vm: ProfileViewModel
+    
+    init () {
+        _vm = StateObject(wrappedValue: ProfileViewModel())
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading) {
+            Text("Hello World")
+//            Text(vm.profile!.firstName)
+//            Text(vm.profile!.lastName)
+//            Text(vm.profile!.university)
+        }
+        .onAppear {
+            vm.fetchProfile()
+        }
+        
+        
     }
 }
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
-            .environmentObject(SessionManager())
+        
     }
 }

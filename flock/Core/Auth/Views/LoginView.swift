@@ -32,8 +32,9 @@ struct LoginView: View {
                     .font(.poppins(.regular, size: 12))
                     .foregroundColor(Color.theme.text)
                 
-                Button{
-                    session.signIn()
+                NavigationLink{
+                    ProfileView()
+                        .environmentObject(session)
                 } label: {
                     Text("login")
                         .font(.poppins(.semibold, size: 18))
