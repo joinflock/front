@@ -14,9 +14,9 @@ struct ProfileMidNavBar: View {
     var width: CGFloat
     
     // Tracking which view to show.
-    @State private var onUserInfo = true    // default to this
-    @State private var onPaths = false
-    @State private var onSettings = false
+    @Binding var onUserInfo : Bool   // default to this
+    @Binding var onPaths : Bool
+    @Binding var onSettings : Bool
     
     let action: () -> Void
     
@@ -85,7 +85,7 @@ struct ProfileMidNavBar: View {
 struct ProfileMidNavBar_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geometry in
-            ProfileMidNavBar(height: geometry.size.height, width: geometry.size.width){}
+            ProfileMidNavBar(height: geometry.size.height, width: geometry.size.width, onUserInfo: .constant(true), onPaths: .constant(false), onSettings: .constant(false)){}
         }
     }
 }

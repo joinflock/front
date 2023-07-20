@@ -10,7 +10,22 @@ import SwiftUI
 struct MasterProfileView: View {
     @EnvironmentObject var session : SessionManager
     
+    @State private var onUserInfo : Bool = true  // default to this
+    @State private var onPaths : Bool = false
+    @State private var onSettings : Bool = false
+    
     var body: some View {
+        
+        // Hardcoded for now.
+        let start = DateComponents(year: 2023, month: 7, day: 19)
+        let end = DateComponents(year: 2023, month: 7, day: 29)
+        
+        let path1 = Path(locationText: "LOCATION NAME", startTime: Calendar.current.date(from: start) ?? Date(), endTime: Calendar.current.date(from: end) ?? Date(), isCurrent: false)
+        let path2 = Path(locationText: "LOCATION NAME", startTime: Calendar.current.date(from: start) ?? Date(), endTime: Calendar.current.date(from: end) ?? Date(), isCurrent: false)
+        let path3 = Path(locationText: "LOCATION NAME", startTime: Calendar.current.date(from: start) ?? Date(), endTime: Calendar.current.date(from: end) ?? Date(), isCurrent: true)
+        
+        let paths = [path1, path2, path3]
+        
         GeometryReader { geometry in
             // Dynamic sizes.
             let height = geometry.size.height
@@ -53,11 +68,17 @@ struct MasterProfileView: View {
                     }
                     .padding(.horizontal, width/10)
                     
-                    ProfileMidNavBar(height: height, width: width, action: {})
+                    ProfileMidNavBar(height: height, width: width, onUserInfo: $onUserInfo, onPaths: $onPaths, onSettings: $onSettings, action: {})
                     
-                    UserInfoView(personalIdentity: ["Germany", "Male", "Asian", "Princeton University"], languages:  ["English", "German", "French"], interests: ["Basketball", "Software Development", "Art", "Beaches", "Media", "Music"], height: height)
-                        .padding(.horizontal, width/10)
-            
+                    if onUserInfo {
+                        UserInfoView(personalIdentity: ["Germany", "Male", "Asian", "Princeton University"], languages:  ["English", "German", "French"], interests: ["Basketball", "Software Development", "Art", "Beaches", "Media", "Music"], height: height)
+                        .padding(.horizontal, width/10) }
+                    else if (onPaths) {
+                        ProfilePathView(height: height, width: width, pathsDisplay: paths)
+                    }
+                    else {
+                        SettingsView()
+                    }
                 }
             }
         }
