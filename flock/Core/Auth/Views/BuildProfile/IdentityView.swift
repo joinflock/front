@@ -36,93 +36,81 @@ struct IdentityView: View {
     ]
     
     var body: some View {
-        VStack (alignment: .center){
+        GeometryReader { geometry in
             
-            Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -180)
-                .padding(.top, -20)
-            
-            ZStack {
-                RoundedRectangle(cornerRadius: 40)
-                    .fill(.white)
-                    .overlay (
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(.black, lineWidth: 0.3)
-                    )
-                
-                VStack {
-                    ScrollView {
-                        Text("identity")
-                            .font(.poppins(.semibold, size: 25))
-                            .padding(.top, 40)
-                        
-                        //                    CustomInputField(imageName: "circle", placeholderText: "gender", text: $gender)
-                        //                        .padding(.horizontal, 40)
-                        //                        .padding(.top, 50)
-                        //
-                        //                    CustomInputField(imageName: "circle", placeholderText: "ethnicity", text: $ethnicity)
-                        //                        .padding(.horizontal, 40)
-                        //                        .padding(.top, 35)
-                        //
-                        
-                        Text("gender")
-                            .font(.poppins(.medium, size: 18))
-                        //                            .foregroundColor(Color.theme.grey)
-                            .padding(.vertical, 15)
-                        
-                        ForEach(genders, id: \.self) { gender in
-                            SingleSelectionView(selection: gender, selected: $selectedGender, otherInput: $gender)
-                        }
-                        .padding(.horizontal, 50)
-                        .padding(.vertical, 5)
-                        
-                        Divider()
-                            .padding(.horizontal, 40)
-                            .padding(.vertical, 25)
-                        
-                        Text("ethnicity")
-                            .font(.poppins(.medium, size: 18))
-                            .padding(.bottom, 15)
-                        
-                        ForEach(ethnicities, id: \.self) { ethn in
-                            MultiselectTabView(text: ethn, otherInput: $ethnicity)
-                                .font(.poppins(.regular, size: 16))
-                        }
-                        .padding(.horizontal, 50)
-                        .padding(.vertical, 5)
+            VStack (alignment: .center){
+                ScrollView {
+                    Text("identity")
+                        .font(.poppins(.semibold, size: 25))
+                        .padding(.top, geometry.size.height * 0.10)
+                    //                    CustomInputField(imageName: "circle", placeholderText: "gender", text: $gender)
+                    //                        .padding(.horizontal, 40)
+                    //                        .padding(.top, 50)
+                    //
+                    //                    CustomInputField(imageName: "circle", placeholderText: "ethnicity", text: $ethnicity)
+                    //                        .padding(.horizontal, 40)
+                    //                        .padding(.top, 35)
+                    //
+                    
+                    Text("gender")
+                        .font(.poppins(.medium, size: 18))
+                    //                            .foregroundColor(Color.theme.grey)
+                        .padding(.vertical, geometry.size.height * 0.02)
+
+                    ForEach(genders, id: \.self) { gender in
+                        SingleSelectionView(selection: gender, selected: $selectedGender, otherInput: $gender)
                     }
-                    Spacer()
+                    .padding(.horizontal, geometry.size.width * 0.125)                    .padding(.vertical, geometry.size.height * 0.005)
                     
-                    Group {
-                        Text("your information is safe with us. view our ") +
-                        Text("privacy policy").underline() +
-                        Text(" .")
+                    Divider()
+                        .padding(.horizontal, geometry.size.width * 0.125)
+                        .padding(.vertical, geometry.size.height * 0.01)
+
+                    
+                    Text("ethnicity")
+                        .font(.poppins(.medium, size: 18))
+                        .padding(.vertical, geometry.size.height * 0.005)
+                    
+                    ForEach(ethnicities, id: \.self) { ethn in
+                        MultiselectTabView(text: ethn, otherInput: $ethnicity)
+                            .font(.poppins(.regular, size: 16))
                     }
-                    .multilineTextAlignment(.center)
-                    .font(.poppins(.regular, size: 12))
-                    .padding(.vertical, 15)
-                    .padding(.horizontal, 40)
-                    
-                    
-                    // To next build profile prompts!
-                    Button {
-                        action()
-                    } label: {
-                        Text("next")
-                            .frame(width: 280, height: 16)
-                            .font(.poppins(.semibold, size: 18))
-                    }
-                    .buttonStyle(FilledButton())
-                    .padding(.bottom, 30)
-                    
-                    ProgressView(value: 0.23)   // arbitrarily valued
-                        .padding(.horizontal, 40)
-                        .padding(.bottom, 70)
-                    
+                    .padding(.horizontal, geometry.size.width * 0.125)
+                    .padding(.vertical, geometry.size.height * 0.005)
+
                 }
+                Spacer()
+                
+                Group {
+                    Text("your information is safe with us. view our ") +
+                    Text("privacy policy").underline() +
+                    Text(" .")
+                }
+                .padding(.top, geometry.size.height * 0.05)
+                .multilineTextAlignment(.center)
+                .font(.poppins(.regular, size: 12))
+                .offset(y: -(geometry.size.height * 0.05))
+
+                
+                
+                // To next build profile prompts!
+                Button {
+                    action()
+                } label: {
+                    Text("next")
+                        .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)                        .font(.poppins(.semibold, size: 18))
+                }
+                .buttonStyle(FilledButton())
+                .offset(y: -(geometry.size.height * 0.05))
+
+                ProgressView(value: 0.23)   // arbitrarily valued
+                    .frame(width:   geometry.size.width * 0.80, height:   geometry.size.height * 0.02)
+                    .offset(y: -(geometry.size.height * 0.04))
+                
+                
+                
             }
         }
-        .ignoresSafeArea()
     }
 }
 

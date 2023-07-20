@@ -13,84 +13,87 @@ struct PictureUploadView: View {
     let action: () -> Void
     
     var body: some View {
-        VStack (alignment: .center) {
-            Text("and one last thing...")
-                .font(.poppins(.semibold, size: 23))
-                .padding(.top, 130)
+        GeometryReader { geometry in
             
-            ZStack {
-                if selectedImage != nil {
-                    CircleImage(image:
-                                    Image(uiImage: selectedImage!)
-                        .resizable()
-                    )
-                    .frame(width: 250, height: 250)
-                    .padding(.top, 40)
-                    
-                }
-                else {
-                    CircleImage(image:
-                                    Image("defaultUser")
-                        .resizable()
-                    )
-                    .frame(width: 250, height: 250)
-                    .overlay {
-                        Circle().stroke(Color.theme.accent, lineWidth: 3)
+            VStack (alignment: .center) {
+                Text("and one last thing...")
+                    .font(.poppins(.semibold, size: 25))
+                    .padding(.top, geometry.size.height * 0.16)
+
+                ZStack {
+                    if selectedImage != nil {
+                        CircleImage(image:
+                                        Image(uiImage: selectedImage!)
+                            .resizable()
+                        )
+                        .frame(width: geometry.size.width * 0.80,  height: geometry.size.width * 0.70)
+                        .padding(.top, geometry.size.height * 0.05)
+
                     }
-                    .padding(.top, 40)
+                    else {
+                        CircleImage(image:
+                                        Image("defaultUser")
+                            .resizable()
+                        )
+                        .frame(width: geometry.size.width * 0.80,  height: geometry.size.width * 0.70)
+                        .overlay {
+                            Circle().stroke(Color.theme.accent, lineWidth: 3)
+                        }
+                        .padding(.top, geometry.size.height * 0.05)
+                    }
+                    
+                    Button {
+                        isPickerShowing = true
+                        
+                    } label: {
+                        Text("+")
+                            .font(.poppins(.semibold, size: 40))
+                            .foregroundColor(.white)
+                    }
+                    .background(Circle()
+                        .fill(Color.theme.accent)
+                        .frame(width: geometry.size.width * 0.15,  height: geometry.size.width * 0.15)
+                    )
+                    .offset(x: geometry.size.width * 0.25, y: geometry.size.width * 0.30)
                 }
                 
-                Button {
-                    isPickerShowing = true
-                    
-                } label: {
-                    Text("+")
-                        .font(.poppins(.semibold, size: 40))
-                        .foregroundColor(.white)
+                Group {
+                    Text("upload a ") +
+                    Text("profile photo").foregroundColor(Color.theme.accent)
                 }
-                .background(Circle()
-                    .fill(Color.theme.accent)
-                    .frame(width: 45, height: 45)
-                )
-                .offset(x: 90, y: 110)
+                .font(.poppins(.semibold, size: 23))
+                .padding(.top, 20)
+                
+                Divider()
+                    .frame(height: geometry.size.height * 0.002)
+                    .overlay(Color.theme.grey)
+                    .padding(.top, 10)
+                
+                Spacer()
+                
+                // Need to be hooked up to backend for saving all data.
+                Button {
+                    action()
+                } label: {
+                    Text("finish")
+                        .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)
+                        .font(.poppins(.semibold, size: 18))
+                }
+                .buttonStyle(FilledButton())
+                .offset(y: -(geometry.size.height * 0.05))
+
+                ProgressView(value: 1)
+                    .frame(width:   geometry.size.width * 0.80, height:   geometry.size.height * 0.02)
+                    .offset(y: -(geometry.size.height * 0.04))
+                
             }
-            
-            Group {
-                Text("upload a ") +
-                Text("profile photo").foregroundColor(Color.theme.accent)
-            }
-            .font(.poppins(.semibold, size: 23))
-            .padding(.top, 20)
-                        
-            Divider()
-                .frame(height: 1.5)
-                .overlay(Color.theme.grey)
-                .padding(.horizontal, 70)
-                .padding(.top, 10)
-            
-            Spacer()
-            
-            // Need to be hooked up to backend for saving all data.
-            Button {
-                action()
-            } label: {
-                Text("finish")
-                    .frame(width: 280, height: 16)
-                    .font(.poppins(.semibold, size: 18))
-            }
-            .buttonStyle(FilledButton())
-            .padding(.bottom, 30)
-            
-            ProgressView(value: 1)
-                .padding(.horizontal, 40)
-                .padding(.bottom, 70)
-            
+            .padding(.horizontal, geometry.size.width * 0.1)
+
         }
         .sheet(isPresented: $isPickerShowing) {
             // Image picker
             ImagePicker(selectedImage: $selectedImage, isPickerShowing: $isPickerShowing)
         }
-        .ignoresSafeArea()
     }
 }
 
