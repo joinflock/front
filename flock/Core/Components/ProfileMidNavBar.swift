@@ -23,6 +23,14 @@ struct ProfileMidNavBar: View {
     var body: some View {
         VStack {
             Divider()
+                .overlay(
+                    Rectangle()
+                        .foregroundColor(Color.theme.accent)
+                        .padding(
+                            (onUserInfo || onPaths) ? (onPaths ? .horizontal : .trailing) : .leading
+                                , onPaths ? width/3 : width/(3/2)
+                        )
+                )
             
             HStack {
                 Button {
@@ -31,7 +39,7 @@ struct ProfileMidNavBar: View {
                     onPaths = false
                     onSettings = false
                 } label: {
-                    Image(systemName: "person.fill")
+                    Image(systemName: "info.circle.fill")
                         .resizable()
                         .frame(width: width/15, height: height/30)
                         .foregroundColor(onUserInfo ? Color.theme.accent : Color.black)
@@ -60,7 +68,7 @@ struct ProfileMidNavBar: View {
                     onPaths = false
                     onSettings = true
                 } label: {
-                    Image(systemName: "gear")
+                    Image(systemName: "person.badge.shield.checkmark.fill")
                         .resizable()
                         .frame(width: width/15, height: height/30)
                         .foregroundColor(onSettings ? Color.theme.accent : Color.black)

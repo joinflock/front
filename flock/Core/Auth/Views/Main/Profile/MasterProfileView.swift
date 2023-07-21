@@ -14,15 +14,21 @@ struct MasterProfileView: View {
     @State private var onPaths : Bool = false
     @State private var onSettings : Bool = false
     
+    let action: () -> Void
+    
     var body: some View {
         
         // Hardcoded for now.
-        let start = DateComponents(year: 2023, month: 7, day: 19)
-        let end = DateComponents(year: 2023, month: 7, day: 29)
+        let start1 = DateComponents(year: 2023, month: 6, day: 15)
+        let end1 = DateComponents(year: 2023, month: 6, day: 29)
+        let start2 = DateComponents(year: 2023, month: 7, day: 10)
+        let end2 = DateComponents(year: 2023, month: 7, day: 14)
+        let start3 = DateComponents(year: 2023, month: 8, day: 1)
+        let end3 = DateComponents(year: 2023, month: 8, day: 29)
         
-        let path1 = Path(locationText: "LOCATION NAME", startTime: Calendar.current.date(from: start) ?? Date(), endTime: Calendar.current.date(from: end) ?? Date(), isCurrent: false)
-        let path2 = Path(locationText: "LOCATION NAME", startTime: Calendar.current.date(from: start) ?? Date(), endTime: Calendar.current.date(from: end) ?? Date(), isCurrent: false)
-        let path3 = Path(locationText: "LOCATION NAME", startTime: Calendar.current.date(from: start) ?? Date(), endTime: Calendar.current.date(from: end) ?? Date(), isCurrent: true)
+        let path1 = Path(locationText: "Princeton, NJ", startTime: Calendar.current.date(from: start1) ?? Date(), endTime: Calendar.current.date(from: end1) ?? Date(), isCurrent: false)
+        let path2 = Path(locationText: "Long Island, NY", startTime: Calendar.current.date(from: start2) ?? Date(), endTime: Calendar.current.date(from: end2) ?? Date(), isCurrent: false)
+        let path3 = Path(locationText: "Los Angeles, CA", startTime: Calendar.current.date(from: start3) ?? Date(), endTime: Calendar.current.date(from: end3) ?? Date(), isCurrent: true)
         
         let paths = [path1, path2, path3]
         
@@ -32,12 +38,25 @@ struct MasterProfileView: View {
             let width = geometry.size.width
             
             VStack (alignment: .center){
-                Text("Profile")
-                    .padding(.top, height/35)
-                    .padding(.leading, width/10)
-                    .padding(.bottom, height/600)
-                    .font(.poppins(.semibold, size: height/28))
-                    .offset(x: -width/3)
+                HStack {
+                    Text("Profile")
+                        .padding(.top, height/105)
+                        .padding(.leading, width/10)
+                        .padding(.bottom, height/600)
+                        .font(.poppins(.semibold, size: height/28))
+                    
+                    Spacer()
+                    
+                    Button {
+                        action()
+                    } label: {
+                        Image(systemName: "gearshape.fill")
+                            .resizable()
+                            .frame(width: width/15, height: height/30)
+                            .padding(.trailing, width/10)
+                            .foregroundColor(Color.gray)
+                    }
+                }
                 
                 Divider()
                     .offset(y: height/100)
@@ -74,10 +93,10 @@ struct MasterProfileView: View {
                         UserInfoView(personalIdentity: ["Germany", "Male", "Asian", "Princeton University"], languages:  ["English", "German", "French"], interests: ["Basketball", "Software Development", "Art", "Beaches", "Media", "Music"], height: height)
                         .padding(.horizontal, width/10) }
                     else if (onPaths) {
-                        ProfilePathView(height: height, width: width, pathsDisplay: paths)
+                        ProfilePathView(height: height, width: width, pathsDisplay: paths) {}
                     }
                     else {
-                        SettingsView()
+                        PrivacyView()
                     }
                 }
             }
@@ -87,7 +106,7 @@ struct MasterProfileView: View {
 
 struct MasterProfileView_Previews: PreviewProvider {
     static var previews: some View {
-        MasterProfileView()
+        MasterProfileView() {}
             .environmentObject(SessionManager())
     }
 }

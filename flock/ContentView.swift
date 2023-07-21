@@ -31,7 +31,7 @@ struct ContentView: View {
                         .environmentObject(session)
                         .ignoresSafeArea()
                 case .loggedIn:
-                    MasterProfileView()
+                    MasterProfileView() {}
                         .environmentObject(session)
                 case .loggedOut:
                     StarterView()

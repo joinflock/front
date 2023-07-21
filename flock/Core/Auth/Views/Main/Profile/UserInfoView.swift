@@ -17,7 +17,7 @@ struct UserInfoView: View {
             
             VStack (alignment: .leading){
                 Text("Personal/Identity")
-                    .padding(.top, height/30)
+                    .padding(.top, height/35)
                     .font(.poppins(.regular, size: height/45))
                     .foregroundColor(Color.gray)
                 
