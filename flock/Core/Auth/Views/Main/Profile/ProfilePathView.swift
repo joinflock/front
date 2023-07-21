@@ -19,26 +19,27 @@ struct ProfilePathView: View {
     var body: some View {
         VStack (alignment: .center) {
             
-                Button {
-                    action()
-                } label: {
-                    Image(systemName: "plus.app.fill")
-                        .resizable()
-                        .frame(width: width/15, height: height/30)
-                }
-                .offset(x: width/2.65)
-                .padding(.top, height/35)
-            
             HStack {
+                Spacer()
                 // ASSUMES THAT ARRAY IS DATA MODEL AND MOST RECENT LOCATION IS AT END OF ARRAY (INDEX .COUNT -1)
                 Group {
-                    Text("currently in: ") + Text(pathsDisplay[pathsDisplay.count-1].locationText)
+                    Text("currently: ") + Text(pathsDisplay[pathsDisplay.count-1].locationText)
                         .foregroundColor(Color.theme.accent)
                 }
                 .multilineTextAlignment(.center)
+                .padding(.trailing, width/20)
                 
+                Button {
+                    action()
+                } label: {
+                    Image(systemName: "plus.square.fill.on.square.fill")
+                        .resizable()
+                        .frame(width: width/15, height: height/30)
+                }
+                Spacer()
             }
             .font(.poppins(.regular, size: height/40))
+            .padding(.top, height/35)
             .padding(.bottom, height/55)
             
             
