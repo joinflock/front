@@ -13,7 +13,10 @@ struct CircleImage: View {
     var body: some View {
         image
             .clipShape(Circle())
-            .shadow(radius: 7)
+            .overlay (
+                Circle()
+                    .stroke(Color.theme.accent)
+            )
     }
 }
 

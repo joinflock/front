@@ -22,20 +22,22 @@ struct PathStopView: View {
     
     var body: some View {
         VStack (alignment: .leading) {
-            HStack {
-                Image(systemName: "bird.fill")
-                    .resizable()
-                    .frame(width: width/7.5, height: height/15)
-                .offset(x: width/20)
-                
-//                Spacer()
-//
-//                Image(systemName: "line.3.horizontal.circle.fill")
-//                    .resizable()
-//                    .frame(width: width/15, height: height/30)
-//                    .padding(.trailing, width/20)
-//                    .offset(x: -width/85, y: -height/75)
-            }
+//            if pathToDisplay.isCurrent {
+                HStack {
+                    Image(systemName: "bird.fill")
+                        .resizable()
+                        .frame(width: width/7.5, height: height/15)
+                    .offset(x: width/20)
+                    
+    //                Spacer()
+    //
+    //                Image(systemName: "line.3.horizontal.circle.fill")
+    //                    .resizable()
+    //                    .frame(width: width/15, height: height/30)
+    //                    .padding(.trailing, width/20)
+    //                    .offset(x: -width/85, y: -height/75)
+                }
+//            }
             
             
             VStack (alignment: .center){

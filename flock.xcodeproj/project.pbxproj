@@ -33,6 +33,8 @@
 		241A1D5B2A6AD9E00028325F /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D5A2A6AD9E00028325F /* PrivacyView.swift */; };
 		241A1D5D2A6B08120028325F /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D5C2A6B08120028325F /* SettingsView.swift */; };
 		241A1D602A6B26E90028325F /* AddPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D5F2A6B26E90028325F /* AddPathView.swift */; };
+		241A1D652A6EBF0C0028325F /* OtherProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D642A6EBF0C0028325F /* OtherProfileCardView.swift */; };
+		241A1D672A6ECABD0028325F /* SmallMutualIntersectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D662A6ECABD0028325F /* SmallMutualIntersectionsView.swift */; };
 		2453E9282A5888290099C530 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9272A5888290099C530 /* CircleImage.swift */; };
 		2453E92E2A58A7CB0099C530 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E92D2A58A7CB0099C530 /* CategoryTab.swift */; };
 		2453E9302A5C524B0099C530 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E92F2A5C524B0099C530 /* testView.swift */; };
@@ -120,6 +122,8 @@
 		241A1D5A2A6AD9E00028325F /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		241A1D5C2A6B08120028325F /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		241A1D5F2A6B26E90028325F /* AddPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPathView.swift; sourceTree = "<group>"; };
+		241A1D642A6EBF0C0028325F /* OtherProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileCardView.swift; sourceTree = "<group>"; };
+		241A1D662A6ECABD0028325F /* SmallMutualIntersectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallMutualIntersectionsView.swift; sourceTree = "<group>"; };
 		2453E9272A5888290099C530 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		2453E92D2A58A7CB0099C530 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
 		2453E92F2A5C524B0099C530 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
@@ -249,6 +253,15 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		241A1D632A6EBEA40028325F /* Individual Intersections */ = {
+			isa = PBXGroup;
+			children = (
+				241A1D642A6EBF0C0028325F /* OtherProfileCardView.swift */,
+				241A1D662A6ECABD0028325F /* SmallMutualIntersectionsView.swift */,
+			);
+			path = "Individual Intersections";
+			sourceTree = "<group>";
+		};
 		2453E93F2A606E780099C530 /* Build Profile Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -362,6 +375,7 @@
 		5BA73F122A422BB600D30795 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				241A1D632A6EBEA40028325F /* Individual Intersections */,
 				241A1D5E2A6B26BC0028325F /* Profile */,
 				2453E93F2A606E780099C530 /* Build Profile Components */,
 				5BA73F1A2A4235D800D30795 /* CustomInputField.swift */,
@@ -558,6 +572,7 @@
 				5BA73F1B2A4235D800D30795 /* CustomInputField.swift in Sources */,
 				5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */,
 				5B409F282A422B0900F07255 /* ContentView.swift in Sources */,
+				241A1D652A6EBF0C0028325F /* OtherProfileCardView.swift in Sources */,
 				2453E9322A5D94E30099C530 /* CustomInterestsButton.swift in Sources */,
 				5B1270CA2A5754A400C84872 /* CreateViewModel.swift in Sources */,
 				5BA73F462A44981000D30795 /* Font.swift in Sources */,
@@ -571,6 +586,7 @@
 				2453E9302A5C524B0099C530 /* testView.swift in Sources */,
 				2453E93E2A606E6F0099C530 /* LanguagesSectionView.swift in Sources */,
 				5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */,
+				241A1D672A6ECABD0028325F /* SmallMutualIntersectionsView.swift in Sources */,
 				241A1D552A69C6230028325F /* ProfilePathView.swift in Sources */,
 				5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */,
 				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
