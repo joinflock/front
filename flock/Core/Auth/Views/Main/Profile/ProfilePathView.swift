@@ -16,6 +16,8 @@ struct ProfilePathView: View {
     
     let action: () -> Void
     
+    @State private var showEdit = false
+    
     var body: some View {
         VStack (alignment: .center) {
             
@@ -31,6 +33,7 @@ struct ProfilePathView: View {
                 
                 Button {
                     action()
+                    showEdit = true
                 } label: {
                     Image(systemName: "plus.square.fill.on.square.fill")
                         .resizable()
@@ -41,6 +44,9 @@ struct ProfilePathView: View {
             .font(.poppins(.regular, size: height/40))
             .padding(.top, height/35)
             .padding(.bottom, height/55)
+            .popover(isPresented: $showEdit) {
+                Text("testing!")
+            }
             
             
             // Hardcoded for now. Will need do some ForEach once we have more and more stops. 
