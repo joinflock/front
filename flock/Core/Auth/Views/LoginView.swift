@@ -13,38 +13,43 @@ struct LoginView: View {
     @State var phoneNumber: String
     
     var body: some View {
-   
-        VStack(alignment: .center, spacing: 15) {
-                
-            Text("welcome back")
-                    .font(.poppins(.semibold))
-                    .foregroundColor(Color.theme.text)
-                    .padding(.top, 100)
-                    .padding(.bottom, 10)
+        GeometryReader { geometry in
+
+        VStack(alignment: .center) {
             
-                // .constant for now.... need something to take in and check with database
-                CustomInputField(imageName: "circle", placeholderText: "phone number", text: $phoneNumber)
-                    .padding(.bottom, 10)
-                    .keyboardType(.phonePad)
-                    
-                
-                Text("log back in using your phone number")
-                    .font(.poppins(.regular, size: 12))
-                    .foregroundColor(Color.theme.text)
-                
-                Button{
-                    session.signIn()
-                } label: {
-                    Text("login")
-                        .font(.poppins(.semibold, size: 18))
-                        .frame(width: 280, height: 16)
-                }
-                .buttonStyle(FilledButton())
-                .padding(.top, 200)
-                .padding(.bottom, 60)
-           
+            Text("welcome back!")
+                .font(.system(size: 30, weight: .semibold))                .foregroundColor(Color.theme.text)
+                .padding(.top, geometry.size.height * 0.30)
+                .padding(.bottom, geometry.size.height * 0.1)
+
+            
+            
+            // .constant for now.... need something to take in and check with database
+            CustomInputField(imageName: "circle", placeholderText: "phone number", text: $phoneNumber)
+                .keyboardType(.phonePad)
+                .padding(.bottom, geometry.size.height * 0.02)
+
+            
+            
+            Text("log back in using your phone number")
+                .font(.system(size: 16, weight: .regular))                .foregroundColor(Color.theme.text)
+            
+            Spacer()
+            
+            Button{
+                session.signIn()
+            } label: {
+                Text("login")
+                    .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)
+                    .font(.system(size: 20, weight: .semibold))
             }
-            .padding(.horizontal, 60)
+            .buttonStyle(FilledButton())
+            .offset(y: -(geometry.size.height * 0.09))
+            
+        }
+        .padding(.horizontal, geometry.size.width * 0.1)
+
+        }
     }
 }
 

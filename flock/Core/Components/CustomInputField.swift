@@ -29,8 +29,8 @@ struct CustomInputField: View {
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 10)
-                    .stroke(Color.black, lineWidth: 0.7)
-                    .frame(height: 40)
+                    .stroke(Color.black, lineWidth: 1)
+                    .frame(height: 45)
             )
             
         }
