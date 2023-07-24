@@ -7,6 +7,27 @@
 
 import SwiftUI
 
-class OTPViewModel: ObservableObject {
-    @Published var otpFields: [String] = Array(repeating: "", count: 4)
+final class OTPViewModel: ObservableObject {
+    
+    @Published var otp: String = ""
+    
+    func postOtp() {
+        
+        let encoder = JSONEncoder()
+        let data = try? encoder.encode(otp)
+        
+        Network.shared.request(methodType: .POST(data: data), "accounts/login/", type: String.self) { res in
+            DispatchQueue.main.async {
+                switch res {
+                    
+                case .success(let response):
+                    print(response)
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+    }
 }
+
+

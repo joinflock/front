@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Profile {
+struct Profile: Decodable, Encodable {
     
     // Basic details, from onboarding.
     var firstName: String
@@ -24,7 +24,10 @@ struct Profile {
     var homeCountryState : String
     
     var gender: String
-    var ethnicity: String
+    var ethnicity: [Bool]
+    
+    var interests: [String]
+    var preferences: String
     
     // Best way to represent?
     var paths : [Path]? = nil
@@ -32,6 +35,6 @@ struct Profile {
 //    var interests : String
     
     static let `default` = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(), university: "", collegeEmail: "",
-                                   languages_known: "", homeCountryState: "", gender: "", ethnicity: "")
+                                   languages_known: "", homeCountryState: "", gender: "", ethnicity: [Bool](repeating: false, count: 8), interests: [], preferences: "")
     
 }
