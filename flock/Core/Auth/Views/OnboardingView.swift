@@ -90,7 +90,7 @@ struct OnboardingView: View {
 //        .ignoresSafeArea()
         .alert(isPresented: $manager.hasError, error: manager.error) {}
         .navigationBarBackButtonHidden()
-        
+    
     }
 }
 
