@@ -11,6 +11,8 @@ struct MultiselectTabView: View {
 
     let text : String
     @State var isSelected: Bool = false
+    let index: Int
+    @Binding var arr: [Bool]
     
 //    @Binding var otherInput: String
     
@@ -18,7 +20,10 @@ struct MultiselectTabView: View {
     
     var body: some View {
         VStack {
-            Button(action: {isSelected.toggle()}, label: {
+            Button(action: {
+                isSelected.toggle()
+                self.arr[index] = !self.arr[index]
+            }, label: {
                 HStack {
                     Text(text)
                         .foregroundColor(Color.black)
@@ -38,6 +43,6 @@ struct MultiselectTabView: View {
 
 struct MultiselectTabView_Previews: PreviewProvider {
     static var previews: some View {
-        MultiselectTabView(text: "Other") {}
+        MultiselectTabView(text: "Other", index: 0, arr: .constant([])) {}
     }
 }

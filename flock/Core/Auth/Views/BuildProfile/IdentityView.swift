@@ -92,11 +92,7 @@ struct IdentityView: View {
                         
                     
                         ForEach(self.ethnicities.indices, id: \.self) { i in
-                            MultiselectTabView(text: self.ethnicities[i]) {
-                                print(self.ethnicity[i])
-                                print(!self.ethnicity[i])
-                                self.ethnicity[i] = !self.ethnicity[i]
-                            }
+                            MultiselectTabView(text: self.ethnicities[i], index: i, arr: $ethnicity) {}
                             .padding(.horizontal, 50)
                             .padding(.vertical, 5)
                         }

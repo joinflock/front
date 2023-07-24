@@ -72,7 +72,6 @@ final class OnboardingManager: ObservableObject {
     
     func validateIdentityField() {
         var t = true
-        print(profile.ethnicity)
         print("Gender: " + profile.gender)
         for i in profile.ethnicity.indices {
             if profile.ethnicity[i] {
