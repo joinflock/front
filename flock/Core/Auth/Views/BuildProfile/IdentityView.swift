@@ -9,7 +9,7 @@ import SwiftUI
 
 struct IdentityView: View {
     @State private var selectedGender: String? = nil
-   
+    
     @State private var otherEthnicity: String? = nil
     
     // Used to retrieve "other" input.
@@ -37,19 +37,10 @@ struct IdentityView: View {
     ]
     
     var body: some View {
-        VStack (alignment: .center){
+        GeometryReader { geometry in
             
-            Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -180)
-                .padding(.top, -20)
-            
-            ZStack {
-                RoundedRectangle(cornerRadius: 40)
-                    .fill(.white)
-                    .overlay (
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(.black, lineWidth: 0.3)
-                    )
+            VStack (alignment: .center){
+                
                 
                 VStack {
                     ScrollView {
@@ -90,63 +81,60 @@ struct IdentityView: View {
                             .font(.poppins(.medium, size: 18))
                             .padding(.bottom, 15)
                         
-                    
+                        
                         ForEach(self.ethnicities.indices, id: \.self) { i in
                             MultiselectTabView(text: self.ethnicities[i], index: i, arr: $ethnicity) {}
-                            .padding(.horizontal, 50)
-                            .padding(.vertical, 5)
+                                .padding(.horizontal, 50)
+                                .padding(.vertical, 5)
                         }
-
-
                         
-
+                        
+                        Divider()
+                        
+                        
+                        Group {
+                            Text("your information is safe with us. view our ") +
+                            Text("privacy policy").underline() +
+                            Text(" .")
+                        }
+                        
+                        .multilineTextAlignment(.center)
+                        .font(.system(size: 14, weight: .regular))
+                        .offset(y: -(geometry.size.height * 0.05))
+                        .padding(.top, geometry.size.height * 0.06)
+                        
+                        
+                        
+                        
+                        // To next build profile prompts!
+                        Button {
+                            action()
+                        } label: {
+                            Text("next")
+                                .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)                        .font(.system(size: 20, weight: .semibold))
+                        }
+                        .buttonStyle(FilledButton())
+                        .offset(y: -(geometry.size.height * 0.05))
+                        
+                        ProgressView(value: 0.23)   // arbitrarily valued
+                            .frame(width:   geometry.size.width * 0.80, height:   geometry.size.height * 0.02)
+                            .offset(y: -(geometry.size.height * 0.04))
+                        
+                        
+                        
                     }
-                    Spacer()
-                    
-                    Group {
-                        Text("your information is safe with us. view our ") +
-                        Text("privacy policy").underline() +
-                        Text(" .")
-                    }
-                    .multilineTextAlignment(.center)
-                    .font(.poppins(.regular, size: 12))
-                    .padding(.vertical, 15)
-                    .padding(.horizontal, 40)
-                    
-                    
-                    // To next build profile prompts!
-                    Button {
-                        print(ethnicity)
-                        action()
-                    } label: {
-                        Text("next")
-                            .frame(width: 280, height: 16)
-                            .font(.poppins(.semibold, size: 18))
-                    }
-                    .buttonStyle(FilledButton())
-                    .padding(.bottom, 30)
-                    
-                    ProgressView(value: 0.23)   // arbitrarily valued
-                        .padding(.horizontal, 40)
-                        .padding(.bottom, 70)
-                    
+                    .padding(.horizontal, geometry.size.width * 0.1)
                 }
             }
         }
-        .ignoresSafeArea()
     }
 }
 
+
+    
 struct IdentityView_Previews: PreviewProvider {
     static var previews: some View {
-        PreviewWrapper()
+        IdentityView(gender: .constant(""), ethnicity: .constant([])) {}
     }
-    
-    struct PreviewWrapper: View {
-            @State private var selectedGender = ""
-            
-            var body: some View {
-                IdentityView(gender: .constant(""), ethnicity: .constant([])) {}
-            }
-        }
 }
+

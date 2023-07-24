@@ -29,6 +29,9 @@ struct Profile: Decodable, Encodable {
     var interests: [String]
     var preferences: String
     
+    // Best way to represent?
+    var paths : [Path]? = nil
+    
 //    var interests : String
     
     static let `default` = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(), university: "", collegeEmail: "",

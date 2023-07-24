@@ -12,6 +12,16 @@ struct ContentView: View {
     @StateObject private var session = SessionManager()
     @EnvironmentObject var network: Network
     
+    // For navigation bar.
+    @State private var selection: Tab = .profile    // profile as default?
+    
+    enum Tab {
+        case individuals
+        case communities
+        case messages
+        case profile
+    }
+    
     var body: some View {
         NavigationStack {
             ZStack {
@@ -22,7 +32,7 @@ struct ContentView: View {
                         .environmentObject(session)
                         .ignoresSafeArea()
                 case .loggedIn:
-                    ProfileView()
+                    MasterProfileView() {}
                         .environmentObject(session)
                 case .loggedOut:
                     StarterView()

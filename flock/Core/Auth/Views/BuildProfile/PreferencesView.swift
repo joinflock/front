@@ -1,3 +1,4 @@
+
 //
 //  PreferencesView.swift
 //  flock
@@ -42,100 +43,185 @@ struct PreferencesView: View {
     
     // Categories to be ranked.
     @State private var draggedItem: String?
-//    @State private var ranking : [String] = [" 1", "2", "3", "4", "5"]
+   // @State private var ranking : [String] = [" 1", "2", "3", "4", "5"]
     @State private var categories: [String] = ["age", "hobbies", "interests", "identity", "university"]
     
-    let action: () -> Void
+    
+    var action: () -> Void
+    // OnboardingManager().finish()
+    
     
     var body: some View {
-        VStack (alignment: .center) {
+        
             
-            Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -180)
-                .padding(.top, -20)
-            
-            ZStack {
+            GeometryReader { geometry in
                 
-                RoundedRectangle(cornerRadius: 40)
-                    .fill(.white)
-                    .overlay (
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(.black, lineWidth: 0.3)
-                    )
-                
-                VStack {
-                    Group {
-                        Text("what matters to you ") +
-                        Text("matters").underline() +
-                        Text(" to us.")
-                    }
-                    .font(.poppins(.semibold, size: 25))
-                    .padding(.top, 40)
-                    .padding(.bottom, 30)
-                    .padding(.horizontal, 40)
-                    .multilineTextAlignment(.center)
-                
+                VStack (alignment: .center) {
+                  /*  Image("BuildProfile_blurPhoto")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: geometry.size.width)
+                        .frame(height: geometry.size.height * 0.30)
+                        .clipped()*/
+                       // .edgesIgnoringSafeArea(.all)
                     
-                    // Tabs to be ranked.
-                    ZStack {
-                        VStack (spacing: 19) {
-                            ForEach(1..<6) { num in
-                                Text(String(num))
-                                    .offset(x : 100)
-                                    .font(.poppins(.light, size: 28))
-                            }
-                        }
+                    
+                    
+                    //Spacer()
+                    
+                        /*RoundedRectangle(cornerRadius: 10)
+                            .fill(.white)
+                            .frame(width: geometry.size.width)
+                            .frame(height: geometry.size.height * 0.10)
+                          .padding(.top, geometry.size.height * 0.20)
+                           // .edgesIgnoringSafeArea(.bottom )*/
                         
-                        VStack {
-                            ForEach(categories, id: \.self) { cat in
-
-                                CategoryTab(text: cat)
-                                    .onDrag {
-                                        self.draggedItem = cat
-                                        return NSItemProvider()
-                                    }
-                                    .onDrop(of: [.text],
-                                        delegate: DropViewDelegate(destinationItem: cat, categories: $categories, draggedItem: $draggedItem)
-                                    )
-                                    .padding(.trailing, 60)
-                                    .padding(.leading, 80)
-                            }
-                        }
-                    }
-       
-                    
-                    Spacer()
-                    
-                    Text("this will help us find better intersections for you!")
+                        
+                        //.offset(y: geometry.size.height * -0.25 )
+                        
+                        //VStack (alignment: .center){
+                        
+                        
+                        // )
+                        
+                        
+                        
+                        
+                        
+                    /*Spacer()
+                        .padding(.vertical, geometry.size.height * 0.01)*/
+                            
+                   
+                    Group {Text("what matters to you ") +
+                                 Text("matters").underline() +
+                              Text(" to us.")}
+                        .font(.system(size: 35, weight: .semibold))
                         .multilineTextAlignment(.center)
-                        .font(.poppins(.regular, size: 12))
-                        .padding(.bottom, 15)
-                        .padding(.horizontal, 40)
+                        .padding(.top, geometry.size.height * 0.10)
+                        .padding(.bottom, geometry.size.height * 0.1)
+                            
+                            // .frame(height:100)
                     
-                    // To next build profile prompts!
-                    Button {
-                        action()
-                    } label: {
-                        Text("next")
-                            .frame(width: 280, height: 16)
-                            .font(.poppins(.semibold, size: 18))
-                    }
-                    .buttonStyle(FilledButton())
-                    .padding(.bottom, 30)
+                            
+                           
+                            
+                        
                     
-                    ProgressView(value: 0.90)
-                        .padding(.horizontal, 40)
-                        .padding(.bottom, 60)
+                            //.offset(y: geometry.size.height * 0.075)
+                            // .frame(height:100)
+                            
+                            
+                            
+                            //.offset(y:geometry.size.height * 0.25)
+                            
+                            
+                            
+                            HStack(spacing: 0){
+                                VStack (spacing: 0){
+                                    ForEach(categories, id: \.self) { cat in
+                                        
+                                        CategoryTab(text: cat)
+                                            .onDrag {
+                                                self.draggedItem = cat
+                                                return NSItemProvider()
+                                            }
+                                            .onDrop(of: [.text],
+                                                    delegate: DropViewDelegate(destinationItem: cat, categories: $categories, draggedItem: $draggedItem)
+                                            )
+                                        
+                                    }
+                                }
+                                
+                                //     .padding(.leading, geometry.size.width * 0.1)
+                                    VStack (spacing: geometry.size.width * 0.09) {
+                                        ForEach(1..<6) { num in
+                                            Text(String(num))
+                                                .overlay(
+                                                    Circle()
+                                                        .stroke()
+                                                        .frame(width: geometry.size.width * 0.12, height: geometry.size.width * 0.12)
+                                                        .shadow(color: (Color.theme.grey), radius: 1.5, x: 0, y: 0)
+                                                )
+                                                .font(.system(size: 20, weight: .semibold))
+                                        }
+                                    }
+                                
+                                    .padding(.leading, geometry.size.width * 0.075)
+                                
+                            }
+                            
+                           // .padding(.top, geometry.size.height * 0.05)
+                           
+                            
+                    Spacer()
+
+                            
+                            Text("this will help us find better intersections for you!")
+                                .multilineTextAlignment(.center)
+                                .font(.system(size: 16, weight: .regular))
+                                
+                               // .padding(.bottom, geometry.size.height * 0.01)
+                                .offset(y: -(geometry.size.height * 0.05))
+
+                    
+
+                            //   .padding(.vertical, 15)
+                            //  .padding(.horizontal, 40)
+                            
+                            // To next build profile prompts!
+                            Button {
+                                action()
+                            } label: {
+                                Text("next")
+                                //.frame(width: 280, height: 16)
+                                // .frame(width: 280, height: 16)
+                                    .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)
+                                // .padding(.horizontal, geometry.size.width *)
+                                    .font(.system(size: 20, weight: .semibold))
+                            }
+                            .buttonStyle(FilledButton())
+                            .offset(y: -(geometry.size.height * 0.05))
+
+                           // .padding(.bottom, geometry.size.height * 0.03)
+                   
+                            //   .padding(.bottom, 30)
+                            
+                            ProgressView(value: 0.90)
+                                .frame(width:   geometry.size.width * 0.80, height:   geometry.size.height * 0.02)
+                                .offset(y: -(geometry.size.height * 0.04))
+                            //Spacer()
+
+                            
+                        
+
+                        
+                        // .aspectRatio(contentMode: .fit)
+                        
+                        
+                        
+                    
+                    //.edgesIgnoringSafeArea(.all)
                     
                 }
+                .padding(.horizontal, geometry.size.width * 0.1)
+
             }
+            
+            
         }
-        .ignoresSafeArea()
+
     }
-}
+
+
+        
+    
+
+
 
 struct PreferencesView_Previews: PreviewProvider {
     static var previews: some View {
         PreferencesView() {}
     }
 }
+
+

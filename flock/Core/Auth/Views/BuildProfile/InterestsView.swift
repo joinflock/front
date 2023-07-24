@@ -14,27 +14,20 @@ struct InterestsView: View {
     let action: () -> Void
     
     var body: some View {
-        VStack (alignment: .center) {
-            
-            Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -180)
-                .padding(.top, -20)
-            
-            ZStack {
-                RoundedRectangle(cornerRadius: 40)
-                    .fill(.white)
-                    .overlay (
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(.black, lineWidth: 0.3)
-                    )
-                
-                VStack {
-                    Spacer()
-                        .frame(height: 40)
-                    
-                    ScrollView {
-                        Text("what interests you?")
-                            .font(.poppins(.semibold, size: 25))
+        GeometryReader { geometry in
+
+            VStack (alignment: .center) {
+            Text("what interests you?")
+                    .font(.system(size: 35, weight: .semibold))
+                    .multilineTextAlignment(.center)
+                .padding(.top, geometry.size.height * 0.10)
+                .padding(.bottom, geometry.size.height * 0.01)
+
+            Divider()
+
+
+        ScrollView {
+                        
                         
                         var sortedHeaders : [String] = Array(interestsList.keys).sorted()
                         
@@ -48,41 +41,42 @@ struct InterestsView: View {
                                     Divider()
                                         .frame(height: 0.4)
                                         .overlay(Color.theme.grey)
-                                        .padding(.horizontal, 20)
+                                        
                                 }
                             }
                         }
-                        .padding(.horizontal, 40)
                     }
                     
                     Spacer()
-                    
+            Divider()
+
                     Text("pick at least 5 and at max 10!")
                                             .multilineTextAlignment(.center)
-                                            .font(.poppins(.regular, size: 14))
-                                            .padding(.horizontal, 40)
-                                            .padding(.bottom, 5)
-                                            .padding(.top, 10)
+                                            .font(.system(size: 16, weight: .regular))
+                                            
+                                            .offset(y: -(geometry.size.height * 0.05))
+                                            .padding(.top, geometry.size.height * 0.06)
+            
                     
                     // To next build profile prompts!
                     Button {
                         action()
                     } label: {
                         Text("next")
-                            .frame(width: 280, height: 16)
-                            .font(.poppins(.semibold, size: 18))
+                            .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)
+                            .font(.system(size: 20, weight: .semibold))
                     }
                     .buttonStyle(FilledButton())
-                    .padding(.bottom, 30)
-                    
+                    .offset(y: -(geometry.size.height * 0.05))
+            
                     ProgressView(value: 0.70)
-                        .padding(.horizontal, 40)
-                        .padding(.bottom, 70)
+                .frame(width:   geometry.size.width * 0.80, height:   geometry.size.height * 0.02)
+                .offset(y: -(geometry.size.height * 0.04))
                 
-                }
+                
             }
+        .padding(.horizontal, geometry.size.width * 0.1)
         }
-        .ignoresSafeArea()
     }
     
     // Placed lower here for code visibility above. 
