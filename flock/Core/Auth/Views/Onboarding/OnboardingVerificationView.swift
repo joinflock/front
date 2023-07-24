@@ -15,45 +15,49 @@ struct OnboardingVerificationView: View {
     let action: () -> Void
     
     var body: some View {
-        VStack (alignment: .center, spacing: 15) {
+        GeometryReader { geometry in
+
+        VStack (alignment: .center) {
             Text("verify your number")
-                .font(.poppins(.semibold))
-                .foregroundColor(Color.theme.text)
+                .font(.system(size: 35, weight: .semibold))                .foregroundColor(Color.theme.text)
+                .padding(.top, geometry.size.height * 0.25)
+                .padding(.bottom, geometry.size.height * 0.01)
 
             
-            Text("check your phone, we sent you a code ;)")
-                .font(.poppins(.regular, size: 12))
-                .padding(.bottom, 50)
             
+            
+            Text("check your phone, we sent you a code ;)")
+                .font(.system(size: 16, weight: .regular))
+                .padding(.bottom, geometry.size.height * 0.075)
+
             TextField("verification code", text: $code)
                 .multilineTextAlignment(.center)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.theme.accent, lineWidth: 0.7)
-                        .frame(height: 40)
+                        .stroke(Color.theme.accent, lineWidth: 1)
+                        .frame(height: geometry.size.height*0.05)
                 )
-                .padding(.horizontal, 60)
-                .padding(.bottom, 10)
+                .padding(.bottom, geometry.size.height*0.02)
                 .keyboardType(.decimalPad)
             
             Text("didn't receive a code? resend in 1:00")
-                .font(.poppins(.regular, size: 12))
-                .foregroundColor(Color.theme.text)
+                .font(.system(size: 16, weight: .regular))          .foregroundColor(Color.theme.text)
                 .multilineTextAlignment(.center)
-                .padding(.bottom, 50)
-            
+                .padding(.bottom, geometry.size.height*0.01)
+            Spacer()
             // Finish.
             Button {
                 action()
             } label: {
                 Text("verify")
-                    .frame(width: 280, height: 16)
-                    .font(.poppins(.semibold, size: 18))
-            }
+                    .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)
+                .font(.system(size: 20, weight: .semibold))                   }
             .buttonStyle(FilledButton())
-            .padding(.top, 80)
+            .offset(y: -(geometry.size.height * 0.09))
         }
-        
+        .padding(.horizontal, geometry.size.width * 0.1)
+
+    }
     }
 }
 

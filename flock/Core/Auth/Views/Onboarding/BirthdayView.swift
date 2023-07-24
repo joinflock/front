@@ -22,34 +22,39 @@ struct BirthdayView: View {
 
     let action: () -> Void
     var body: some View {
-        VStack (alignment: .center, spacing: 15) {
-            Text("when's your birthday?")
-                .font(.poppins(.semibold))
-                .foregroundColor(Color.theme.text)
-                .padding(.bottom, 5)
+        GeometryReader { geometry in
+            
+            VStack (alignment: .center) {
+                Text("when's your birthday?")
+                    .font(.system(size: 35, weight: .semibold))
+                    .foregroundColor(Color.theme.text)
+                    .padding(.top, geometry.size.height * 0.25)
+                    .padding(.bottom, geometry.size.height * 0.05)
                 
-            DatePicker(selection: $birthday, in: dateRange, displayedComponents: .date) {
-            }
+                DatePicker(selection: $birthday, in: dateRange, displayedComponents: .date) {
+                }
                 .labelsHidden()
                 .datePickerStyle(.wheel)
-                
-            Text("flock is for 18+ only")
-                .font(.poppins(.regular, size: 12))
-                .foregroundColor(Color.theme.text)
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 100)
-            
-            // Move onto next onboarding step.
-            Button {
-                action()
-            } label: {
-                Text("next")
-                    .frame(width: 280, height: 16)
-                    .font(.poppins(.semibold, size: 18))
-            }
-            .buttonStyle(FilledButton())
-            .padding(.bottom, 5)
-            }
+               
+                Text("flock is for 18+ only")
+                    .font(.system(size: 14, weight: .regular))              .foregroundColor(Color.theme.text)
+                    .multilineTextAlignment(.center)
+                    
+                Spacer()
+
+                // Move onto next onboarding step.
+                Button {
+                    action()
+                } label: {
+                    Text("next")
+                        .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)
+                    .font(.system(size: 20, weight: .semibold))                }
+                .buttonStyle(FilledButton())
+                .offset(y: -(geometry.size.height * 0.09))            }
+            .padding(.horizontal, geometry.size.width * 0.1)
+
+        }
+        
         }
     }
 

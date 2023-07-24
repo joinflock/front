@@ -89,6 +89,7 @@
 		5BF7AE482A5A0FD200AAE123 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */; };
 		5BF7AE4A2A5C54EA00AAE123 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE492A5C54EA00AAE123 /* TermsView.swift */; };
 		9A937DE02A5DE396006A3621 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A937DDF2A5DE396006A3621 /* MessagesView.swift */; };
+		B8DE5A162A68752F00119C7F /* ViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE5A152A68752F00119C7F /* ViewLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -176,6 +177,7 @@
 		5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		5BF7AE492A5C54EA00AAE123 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		9A937DDF2A5DE396006A3621 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		B8DE5A152A68752F00119C7F /* ViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 				24B8A3562A5875A3005C3157 /* PreferencesView.swift */,
 				5B5186C22A4E0FF500DC86C5 /* PictureUploadView.swift */,
 				2453E92F2A5C524B0099C530 /* testView.swift */,
+				B8DE5A152A68752F00119C7F /* ViewLayout.swift */,
 			);
 			path = BuildProfile;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				5BA73F172A422C9C00D30795 /* TitleView.swift in Sources */,
 				5B5186C52A4E102300DC86C5 /* ImagePicker.swift in Sources */,
 				24B8A3572A5875A3005C3157 /* PreferencesView.swift in Sources */,
+				B8DE5A162A68752F00119C7F /* ViewLayout.swift in Sources */,
 				241A1D5D2A6B08120028325F /* SettingsView.swift in Sources */,
 				241A1D462A6707A60028325F /* MasterProfileView.swift in Sources */,
 				5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */,

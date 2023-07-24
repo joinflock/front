@@ -12,47 +12,42 @@ struct LanguageView: View {
     let action: () -> Void
     
     var body: some View {
+        GeometryReader { geometry in
         VStack (alignment: .center) {
-            Image("BuildProfile_blurPhoto")
-                .padding(.bottom, -180)
-                .padding(.top, -20)
+           
             
-            ZStack {
-                RoundedRectangle(cornerRadius: 40)
-                    .fill(.white)
-                    .overlay (
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(.black, lineWidth: 0.3)
-                    )
+            Text("what languages do you speak?")
+                .multilineTextAlignment(.center)
+                .font(.system(size: 35, weight: .semibold))
+                .padding(.top, geometry.size.height * 0.1)
+                .padding(.bottom, geometry.size.height * 0.04)
                 
-                VStack {
-                    Spacer()
-                        .frame(height: 40)
+
+
+        
                     
                     ScrollView {
-                        Text("what languages do you speak?")
-                            .multilineTextAlignment(.center)
-                            .font(.poppins(.semibold, size: 25))
-                            .padding(.horizontal, 40)
-
+                       
                         var sortedHeaders : [String] = Array(languageList.keys).sorted()
                         
                         ForEach(0..<sortedHeaders.count) { index in
                             if let items = languageList[sortedHeaders[index]] {
                                 LanguagesSectionView(header: sortedHeaders[index], list: items)
-                                    .padding(.bottom, 50)
-                                    .padding(.top, 10)
                                 
+                                    .padding(.bottom, geometry.size.height * 0.06)
+                                    .padding(.top, geometry.size.height * 0.012)
+
                                 if (index != sortedHeaders.count - 1) {
                                     Divider()
                                         .frame(height: 0.4)
                                         .overlay(Color.theme.grey)
-                                        .padding(.horizontal, 20)
                                 }
                             }
                         }
-                        .padding(.horizontal, 40)
+                       
                     }
+                    .padding(.bottom, geometry.size.height * 0.05)
+
                     Spacer()
 
 //                    Text("pick at least 1!")
@@ -67,21 +62,24 @@ struct LanguageView: View {
                         action()
                     } label: {
                         Text("next")
-                            .frame(width: 280, height: 16)
-                            .font(.poppins(.semibold, size: 18))
+                            .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)                            .font(.system(size: 20, weight: .semibold))
+                            
                     }
                     .buttonStyle(FilledButton())
-                    .padding(.bottom, 30)
-                    .padding(.top, 20)
+                    .padding(.top, geometry.size.height * 0.04)
+
+                    .offset(y: -(geometry.size.height * 0.05))
+
+                    
 
                     ProgressView(value: 0.15)
-                        .padding(.horizontal, 40)
-                        .padding(.bottom, 70)
+                .frame(width:   geometry.size.width * 0.80, height:   geometry.size.height * 0.02)
+                .offset(y: -(geometry.size.height * 0.04))
                 }
+        .padding(.horizontal, geometry.size.width * 0.1)
                 
-            }
+            
         }
-        .ignoresSafeArea()
     }
     
     @State private var languageList = [

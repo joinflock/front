@@ -12,25 +12,29 @@ struct VerificationView: View {
     // TextField FocusState
     @FocusState var activeField: OTPField?
     var body: some View {
-        VStack(alignment: .center, spacing: 10) {
-            Text("verify your number")
-                .font(.poppins(.semibold, size: 30))
-                .padding(.top, 200)
+        GeometryReader { geometry in
+            VStack(alignment: .center) {
+                Text("verify your number")
+                    .font(.system(size: 35, weight: .semibold))
+                    .padding(.top, geometry.size.height * 0.25)
+                    .padding(.bottom, geometry.size.height * 0.005)
+
+                Text("enter the verification code sent to you")
+                    .font(.system(size: 16, weight: .regular))
+                    .padding(.bottom, geometry.size.height * 0.1)
                 
-            Text("enter the verification code sent to you")
-                .font(.poppins(.regular, size: 16))
-            OTPField()
-                .padding(.top, 30)
-            
-            Text("didn't receive a verification code? [resend in 1:00](https://www.google.com)")
-                .font(.poppins(.light, size: 13))
-                .padding(.top, 20)
-        }
-        .padding()
+                    OTPField()
+                    
+
+                Text("didn't receive a verification code? [resend in 1:00](https://www.google.com)")
+                    .font(.system(size: 14, weight: .light))
+                .padding(.top, geometry.size.height * 0.03)        }
+        .padding(.horizontal, geometry.size.width * 0.1)
         .frame(maxHeight: .infinity, alignment: .top)
         .navigationTitle("Verification")
         .onChange(of: otpModel.otpFields) { newValue in
             OTPCondition(value: newValue)
+        }
         }
         
        
