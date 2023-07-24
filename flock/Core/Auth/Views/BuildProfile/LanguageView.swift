@@ -18,9 +18,10 @@ struct LanguageView: View {
             
             Text("what languages do you speak?")
                 .multilineTextAlignment(.center)
-                .font(.poppins(.semibold, size: 25))
-                .padding(.top, geometry.size.height * 0.075)
-                .padding(.horizontal, geometry.size.width * 0.1)
+                .font(.system(size: 35, weight: .semibold))
+                .padding(.top, geometry.size.height * 0.1)
+                .padding(.bottom, geometry.size.height * 0.04)
+                
 
 
         
@@ -40,11 +41,10 @@ struct LanguageView: View {
                                     Divider()
                                         .frame(height: 0.4)
                                         .overlay(Color.theme.grey)
-                                        .padding(.horizontal, geometry.size.width * 0.01)
                                 }
                             }
                         }
-                        .padding(.horizontal, geometry.size.width * 0.1)
+                       
                     }
                     .padding(.bottom, geometry.size.height * 0.05)
 
@@ -62,11 +62,11 @@ struct LanguageView: View {
                         action()
                     } label: {
                         Text("next")
-                            .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)                            .font(.poppins(.semibold, size: 18))
+                            .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)                            .font(.system(size: 20, weight: .semibold))
                             
                     }
                     .buttonStyle(FilledButton())
-                    .padding(.top, geometry.size.height * 0.03)
+                    .padding(.top, geometry.size.height * 0.04)
 
                     .offset(y: -(geometry.size.height * 0.05))
 
@@ -76,6 +76,7 @@ struct LanguageView: View {
                 .frame(width:   geometry.size.width * 0.80, height:   geometry.size.height * 0.02)
                 .offset(y: -(geometry.size.height * 0.04))
                 }
+        .padding(.horizontal, geometry.size.width * 0.1)
                 
             
         }

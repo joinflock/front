@@ -91,21 +91,21 @@ struct PreferencesView: View {
                     /*Spacer()
                         .padding(.vertical, geometry.size.height * 0.01)*/
                             
-                    Group () {
-                                (Text("what matters to you ") +
+                   
+                    Group {Text("what matters to you ") +
                                  Text("matters").underline() +
-                                 Text(" to us."))
-                            }
+                              Text(" to us.")}
+                        .font(.system(size: 35, weight: .semibold))
+                        .multilineTextAlignment(.center)
+                        .padding(.top, geometry.size.height * 0.10)
+                        .padding(.bottom, geometry.size.height * 0.1)
+                            
                             // .frame(height:100)
-                    .offset(y: geometry.size.height * 0.05)
-                            
-                            .font(.poppins(.semibold, size: 25))
                     
-                            .multilineTextAlignment(.center)
-                            .padding(.horizontal, geometry.size.width * 0.1)
-                            .padding(.top, geometry.size.height * 0.0)
                             
-                            .frame(height:   geometry.size.height * 0.20)
+                           
+                            
+                        
                     
                             //.offset(y: geometry.size.height * 0.075)
                             // .frame(height:100)
@@ -142,24 +142,24 @@ struct PreferencesView: View {
                                                         .frame(width: geometry.size.width * 0.12, height: geometry.size.width * 0.12)
                                                         .shadow(color: (Color.theme.grey), radius: 1.5, x: 0, y: 0)
                                                 )
-                                                .font(.poppins(.semibold, size: 20))
+                                                .font(.system(size: 20, weight: .semibold))
                                         }
                                     }
                                 
                                     .padding(.leading, geometry.size.width * 0.075)
                                 
                             }
-                            .padding(.horizontal, geometry.size.width * 0.1)
+                            
                            // .padding(.top, geometry.size.height * 0.05)
-                            .padding(.vertical, geometry.size.height * 0.06)
+                           
                             
                     Spacer()
 
                             
                             Text("this will help us find better intersections for you!")
                                 .multilineTextAlignment(.center)
-                                .font(.poppins(.regular, size: 12))
-                                .padding(.horizontal, geometry.size.width * 0.1)
+                                .font(.system(size: 16, weight: .regular))
+                                
                                // .padding(.bottom, geometry.size.height * 0.01)
                                 .offset(y: -(geometry.size.height * 0.05))
 
@@ -177,7 +177,7 @@ struct PreferencesView: View {
                                 // .frame(width: 280, height: 16)
                                     .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)
                                 // .padding(.horizontal, geometry.size.width *)
-                                    .font(.poppins(.semibold, size: 18))
+                                    .font(.system(size: 20, weight: .semibold))
                             }
                             .buttonStyle(FilledButton())
                             .offset(y: -(geometry.size.height * 0.05))
@@ -203,6 +203,8 @@ struct PreferencesView: View {
                     //.edgesIgnoringSafeArea(.all)
                     
                 }
+                .padding(.horizontal, geometry.size.width * 0.1)
+
             }
             
             

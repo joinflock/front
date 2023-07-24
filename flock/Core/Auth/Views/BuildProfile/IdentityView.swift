@@ -39,10 +39,18 @@ struct IdentityView: View {
         GeometryReader { geometry in
             
             VStack (alignment: .center){
+                
+                Text("identity")
+                    .font(.system(size: 35, weight: .semibold))
+                    .padding(.top, geometry.size.height * 0.10)
+                    .padding(.bottom, geometry.size.height * 0.02)
+                Divider()
+            
+                    
+                
+                  
                 ScrollView {
-                    Text("identity")
-                        .font(.poppins(.semibold, size: 25))
-                        .padding(.top, geometry.size.height * 0.10)
+                    
                     //                    CustomInputField(imageName: "circle", placeholderText: "gender", text: $gender)
                     //                        .padding(.horizontal, 40)
                     //                        .padding(.top, 50)
@@ -53,43 +61,46 @@ struct IdentityView: View {
                     //
                     
                     Text("gender")
-                        .font(.poppins(.medium, size: 18))
+                        .font(.system(size: 20, weight: .medium))
+                        .padding(.top, geometry.size.height * 0.01)
                     //                            .foregroundColor(Color.theme.grey)
-                        .padding(.vertical, geometry.size.height * 0.02)
 
                     ForEach(genders, id: \.self) { gender in
                         SingleSelectionView(selection: gender, selected: $selectedGender, otherInput: $gender)
                     }
-                    .padding(.horizontal, geometry.size.width * 0.125)                    .padding(.vertical, geometry.size.height * 0.005)
+                                        .padding(.vertical, geometry.size.height * 0.005)
                     
                     Divider()
-                        .padding(.horizontal, geometry.size.width * 0.125)
+                       
                         .padding(.vertical, geometry.size.height * 0.01)
 
                     
                     Text("ethnicity")
-                        .font(.poppins(.medium, size: 18))
-                        .padding(.vertical, geometry.size.height * 0.005)
+                        .font(.system(size: 20, weight: .medium))
+                       
                     
                     ForEach(ethnicities, id: \.self) { ethn in
                         MultiselectTabView(text: ethn, otherInput: $ethnicity)
-                            .font(.poppins(.regular, size: 16))
+                            .font(.system(size: 16, weight: .regular))
                     }
-                    .padding(.horizontal, geometry.size.width * 0.125)
+                    
                     .padding(.vertical, geometry.size.height * 0.005)
 
                 }
                 Spacer()
-                
+                Divider()
+                   
                 Group {
                     Text("your information is safe with us. view our ") +
                     Text("privacy policy").underline() +
                     Text(" .")
                 }
-                .padding(.top, geometry.size.height * 0.05)
+               
                 .multilineTextAlignment(.center)
-                .font(.poppins(.regular, size: 12))
+                .font(.system(size: 14, weight: .regular))
                 .offset(y: -(geometry.size.height * 0.05))
+                .padding(.top, geometry.size.height * 0.06)
+                
 
                 
                 
@@ -98,7 +109,7 @@ struct IdentityView: View {
                     action()
                 } label: {
                     Text("next")
-                        .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)                        .font(.poppins(.semibold, size: 18))
+                        .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)                        .font(.system(size: 20, weight: .semibold))
                 }
                 .buttonStyle(FilledButton())
                 .offset(y: -(geometry.size.height * 0.05))
@@ -110,6 +121,7 @@ struct IdentityView: View {
                 
                 
             }
+            .padding(.horizontal, geometry.size.width * 0.1)
         }
     }
 }

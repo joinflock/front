@@ -66,27 +66,29 @@ struct BeginBuildView: View {
             
             VStack (alignment: .center){
                 
-                Text("we'd hate to waste your time")
-                    .font(.system(size: 22, weight: .semibold))
+              /*  Text("we'd hate to waste your time")
+                    .multilineTextAlignment(.center)
+                    .font(.system(size: 25, weight: .semibold))
                     .padding(.top, geometry.size.height * 0.15)
                     .foregroundColor(.secondary)
-                
+                */
                 // Grouped to color a specific section of text.
                 Group {
                     Text("let's ") +
                     Text("build your profile ").foregroundColor(Color.theme.accent) +
                     Text("in less than a minute")
                 }
-                .font(.system(size: 25, weight: .semibold))
+                .font(.system(size: 35, weight: .semibold))
                 .multilineTextAlignment(.center)
-                .padding(.top, geometry.size.height * 0.01)
-                .padding(.bottom, geometry.size.height * 0.05)
-                
+                .padding(.top, geometry.size.height * 0.25)
+                .padding(.bottom, geometry.size.height * 0.10)
+
+
                 
                 
                 CustomInputField(imageName: "circle", placeholderText: "university", text: $university)
                     // .padding(.top, 20)
-                    .padding(.top, geometry.size.height * 0.01)
+                    
 
 
                     .onChange(of: university) { change in
@@ -108,11 +110,11 @@ struct BeginBuildView: View {
                 
                 
                 CustomInputField(imageName: "circle", placeholderText: "college email", text: $collegeEmail)
-                    .padding(.top, geometry.size.height * 0.03)
+                    .padding(.top, geometry.size.height * 0.04)
 
                 
                 CustomInputField(imageName: "circle", placeholderText: "home country or state", text: $homeCountryState)
-                    .padding(.top, geometry.size.height * 0.03)
+                    .padding(.top, geometry.size.height * 0.04)
                     .onChange(of: homeCountryState) { change in
                         // Always showing during mid-typing.
                         if clickedHome == false {
@@ -137,7 +139,7 @@ struct BeginBuildView: View {
                     action()
                 } label: {
                     Text("next")
-                        .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)                        .font(.poppins(.semibold, size: 18))
+                        .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)                        .font(.system(size: 20, weight: .semibold))
                 }
                 .buttonStyle(FilledButton())
                 .offset(y: -(geometry.size.height * 0.05))

@@ -17,8 +17,8 @@ struct PictureUploadView: View {
             
             VStack (alignment: .center) {
                 Text("and one last thing...")
-                    .font(.poppins(.semibold, size: 25))
-                    .padding(.top, geometry.size.height * 0.16)
+                    .font(.system(size: 35, weight: .semibold))
+                    .padding(.top, geometry.size.height * 0.10)
 
                 ZStack {
                     if selectedImage != nil {
@@ -47,7 +47,7 @@ struct PictureUploadView: View {
                         
                     } label: {
                         Text("+")
-                            .font(.poppins(.semibold, size: 40))
+                            .font(.system(size: 40, weight: .semibold))
                             .foregroundColor(.white)
                     }
                     .background(Circle()
@@ -61,13 +61,10 @@ struct PictureUploadView: View {
                     Text("upload a ") +
                     Text("profile photo").foregroundColor(Color.theme.accent)
                 }
-                .font(.poppins(.semibold, size: 23))
-                .padding(.top, 20)
+                .font(.system(size: 25, weight: .semibold))
+                .padding(.top, geometry.size.height * 0.025)
                 
-                Divider()
-                    .frame(height: geometry.size.height * 0.002)
-                    .overlay(Color.theme.grey)
-                    .padding(.top, 10)
+                
                 
                 Spacer()
                 
