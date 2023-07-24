@@ -49,7 +49,7 @@ struct OnboardingView: View {
                     .tag(OnboardingManager.Screen.language)
                 IdentityView(gender: $manager.profile.gender, ethnicity: $manager.profile.ethnicity) {
                     manager.validateIdentityField()
-                    if !manager.hasError || checksOff {
+                    if !manager.hasError {
                         manager.next()
                     }
                 }
@@ -60,12 +60,12 @@ struct OnboardingView: View {
                     .tag(OnboardingManager.Screen.preferences)
                 PictureUploadView (action: manager.postOnboarding)
                     .tag(OnboardingManager.Screen.profilePicture)
-                
-                
+
+
             }
             .animation(.easeInOut, value: manager.active)
             .tabViewStyle(.page(indexDisplayMode: .never))
-            
+
         }
         .overlay(alignment: .topLeading) {
             if showPrevBtn {

@@ -14,7 +14,7 @@ struct IdentityView: View {
     
     // Used to retrieve "other" input.
     @Binding var gender: String
-    @State var ethnicity: [Bool]
+    @Binding var ethnicity: [Bool]
     
     let action: () -> Void
     
@@ -90,11 +90,12 @@ struct IdentityView: View {
                             .font(.poppins(.medium, size: 18))
                             .padding(.bottom, 15)
                         
-                       
                     
                         ForEach(self.ethnicities.indices, id: \.self) { i in
                             MultiselectTabView(text: self.ethnicities[i]) {
-                                self.ethnicity[i].toggle()
+                                print(self.ethnicity[i])
+                                print(!self.ethnicity[i])
+                                self.ethnicity[i] = !self.ethnicity[i]
                             }
                             .padding(.horizontal, 50)
                             .padding(.vertical, 5)
@@ -119,6 +120,7 @@ struct IdentityView: View {
                     
                     // To next build profile prompts!
                     Button {
+                        print(ethnicity)
                         action()
                     } label: {
                         Text("next")
@@ -148,7 +150,7 @@ struct IdentityView_Previews: PreviewProvider {
             @State private var selectedGender = ""
             
             var body: some View {
-                IdentityView(gender: .constant(""), ethnicity: []) {}
+                IdentityView(gender: .constant(""), ethnicity: .constant([])) {}
             }
         }
 }

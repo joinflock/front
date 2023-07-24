@@ -10,7 +10,7 @@ import SwiftUI
 struct MultiselectTabView: View {
 
     let text : String
-    var isSelected: Bool = false
+    @State var isSelected: Bool = false
     
 //    @Binding var otherInput: String
     
@@ -18,14 +18,14 @@ struct MultiselectTabView: View {
     
     var body: some View {
         VStack {
-            Button(action: self.action) {
+            Button(action: {isSelected.toggle()}, label: {
                 HStack {
                     Text(text)
                         .foregroundColor(Color.black)
                     Spacer()
                     Image(systemName: self.isSelected ? "checkmark.square" : "square")
                 }
-            }
+            })
             
 //            // Once given other option, users can input something more personal.
 //            if text == "other" && self.isSelected {

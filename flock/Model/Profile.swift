@@ -32,6 +32,6 @@ struct Profile: Decodable, Encodable {
 //    var interests : String
     
     static let `default` = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(), university: "", collegeEmail: "",
-                                   languages_known: "", homeCountryState: "", gender: "", ethnicity: [], interests: [], preferences: "")
+                                   languages_known: "", homeCountryState: "", gender: "", ethnicity: [Bool](repeating: false, count: 8), interests: [], preferences: "")
     
 }
