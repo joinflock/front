@@ -61,7 +61,7 @@ struct PictureUploadView: View {
                     Text("upload a ") +
                     Text("profile photo").foregroundColor(Color.theme.accent)
                 }
-                .font(.system(size: 25, weight: .semibold))
+                .font(.system(size: 30, weight: .semibold))
                 .padding(.top, geometry.size.height * 0.025)
                 
                 

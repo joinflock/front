@@ -96,9 +96,9 @@ struct PreferencesView: View {
                                  Text("matters").underline() +
                               Text(" to us.")}
                         .font(.system(size: 35, weight: .semibold))
-                        .multilineTextAlignment(.center)
                         .padding(.top, geometry.size.height * 0.10)
-                        .padding(.bottom, geometry.size.height * 0.1)
+                    Spacer()
+
                             
                             // .frame(height:100)
                     

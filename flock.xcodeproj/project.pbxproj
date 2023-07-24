@@ -89,6 +89,9 @@
 		5BF7AE482A5A0FD200AAE123 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */; };
 		5BF7AE4A2A5C54EA00AAE123 /* TermsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE492A5C54EA00AAE123 /* TermsView.swift */; };
 		9A937DE02A5DE396006A3621 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A937DDF2A5DE396006A3621 /* MessagesView.swift */; };
+		B86C98B32A6EC8020008C55D /* DirectMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86C98B22A6EC8020008C55D /* DirectMessageView.swift */; };
+		B86C98B52A6F0E170008C55D /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86C98B42A6F0E170008C55D /* MessageBubble.swift */; };
+		B86C98B72A6F0E600008C55D /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B86C98B62A6F0E600008C55D /* MessageModel.swift */; };
 		B8DE5A162A68752F00119C7F /* ViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE5A152A68752F00119C7F /* ViewLayout.swift */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +180,9 @@
 		5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		5BF7AE492A5C54EA00AAE123 /* TermsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsView.swift; sourceTree = "<group>"; };
 		9A937DDF2A5DE396006A3621 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		B86C98B22A6EC8020008C55D /* DirectMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMessageView.swift; sourceTree = "<group>"; };
+		B86C98B42A6F0E170008C55D /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
+		B86C98B62A6F0E600008C55D /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		B8DE5A152A68752F00119C7F /* ViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -352,6 +358,7 @@
 			children = (
 				2453E93F2A606E780099C530 /* Build Profile Components */,
 				5BA73F1A2A4235D800D30795 /* CustomInputField.swift */,
+				B86C98B42A6F0E170008C55D /* MessageBubble.swift */,
 				5B5186C42A4E102300DC86C5 /* ImagePicker.swift */,
 				5BA73F4B2A44A86800D30795 /* FilledButton.swift */,
 				5BA73F512A44BC9200D30795 /* OutlinedButton.swift */,
@@ -379,6 +386,7 @@
 			children = (
 				5BA73F632A45D64C00D30795 /* OTPViewModel.swift */,
 				5B1270C92A5754A400C84872 /* CreateViewModel.swift */,
+				B86C98B62A6F0E600008C55D /* MessageModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -439,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				9A937DDF2A5DE396006A3621 /* MessagesView.swift */,
+				B86C98B22A6EC8020008C55D /* DirectMessageView.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -551,8 +560,10 @@
 				5B1270CA2A5754A400C84872 /* CreateViewModel.swift in Sources */,
 				5BA73F462A44981000D30795 /* Font.swift in Sources */,
 				2453E9282A5888290099C530 /* CircleImage.swift in Sources */,
+				B86C98B52A6F0E170008C55D /* MessageBubble.swift in Sources */,
 				249BA60F2A5717A50039B781 /* BeginBuildView.swift in Sources */,
 				249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */,
+				B86C98B32A6EC8020008C55D /* DirectMessageView.swift in Sources */,
 				241A1D512A6878020028325F /* ButtonsDisplay.swift in Sources */,
 				240179842A4E22EB0081A1AB /* PhoneInputView.swift in Sources */,
 				5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */,
@@ -591,6 +602,7 @@
 				241A1D5D2A6B08120028325F /* SettingsView.swift in Sources */,
 				241A1D462A6707A60028325F /* MasterProfileView.swift in Sources */,
 				5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */,
+				B86C98B72A6F0E600008C55D /* MessageModel.swift in Sources */,
 				2453E9382A6036F00099C530 /* InterestsSectionView.swift in Sources */,
 				241A1D572A69CB8D0028325F /* Path.swift in Sources */,
 				241A1D492A6711970028325F /* IndividualView.swift in Sources */,
