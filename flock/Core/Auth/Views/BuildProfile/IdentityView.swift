@@ -43,10 +43,11 @@ struct IdentityView: View {
                 
                 
                 VStack {
-                    ScrollView {
-                        Text("identity")
-                            .font(.poppins(.semibold, size: 25))
-                            .padding(.top, 40)
+                    Text("identity")
+                        .font(.system(size: 35, weight: .semibold))
+                        .padding(.top, geometry.size.height * 0.10)
+                        .padding(.bottom, geometry.size.height * 0.02)
+                    Divider()
                         
                         //                    CustomInputField(imageName: "circle", placeholderText: "gender", text: $gender)
                         //                        .padding(.horizontal, 40)
@@ -56,11 +57,14 @@ struct IdentityView: View {
                         //                        .padding(.horizontal, 40)
                         //                        .padding(.top, 35)
                         //
+                    ScrollView {
+
                         
                         Text("gender")
-                            .font(.poppins(.medium, size: 18))
+                            .font(.system(size: 20, weight: .medium))
                         //                            .foregroundColor(Color.theme.grey)
-                            .padding(.vertical, 15)
+                        
+                            .padding(.vertical, geometry.size.height * 0.01)
                         
                         ForEach(genders, id: \.self) { gender in
                             SingleSelectionView(selection: gender, selected: $selectedGender, otherInput: $gender)
@@ -70,25 +74,22 @@ struct IdentityView: View {
                                     }
                                 }
                         }
-                        .padding(.horizontal, 50)
-                        .padding(.vertical, 5)
+                        .padding(.vertical, geometry.size.height * 0.005)
                         
                         Divider()
-                            .padding(.horizontal, 40)
-                            .padding(.vertical, 25)
+                            .padding(.vertical, geometry.size.height * 0.01)
                         
                         Text("ethnicity")
-                            .font(.poppins(.medium, size: 18))
+                            .font(.system(size: 20, weight: .medium))
                             .padding(.bottom, 15)
                         
                         
                         ForEach(self.ethnicities.indices, id: \.self) { i in
                             MultiselectTabView(text: self.ethnicities[i], index: i, arr: $ethnicity) {}
-                                .padding(.horizontal, 50)
-                                .padding(.vertical, 5)
+                                .padding(.vertical, geometry.size.height * 0.005)
                         }
                         
-                        
+                        Spacer()
                         Divider()
                         
                         

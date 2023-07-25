@@ -30,7 +30,7 @@ struct Profile: Decodable, Encodable {
     var preferences: String
     
     // Best way to represent?
-    var paths : [Path]? = nil
+//    var paths : [Path]? = nil
     
 //    var interests : String
     
