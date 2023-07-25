@@ -35,7 +35,7 @@ struct OtherProfileCardView: View {
                 VStack {
                     Text(name + ", ") +
                     Text(age)
-                        .bold()
+                        .font(.poppins(.medium))
                 }
                 Text(university)
                     .foregroundColor(Color.theme.accent)

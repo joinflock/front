@@ -11,10 +11,11 @@ struct IndividualView: View {
     var height: CGFloat
     var width: CGFloat
     
+    // Should be update here with pull requests from database.
     var name : String
     var age : String
     var university : String
-    var otherProfileImage : Image
+    var otherProfileImages : [Image]
     var sharedInterests : [String]
     var mutualIntersections : [String]
     
@@ -24,7 +25,7 @@ struct IndividualView: View {
         VStack {
             HStack {
                 VStack (alignment: .leading) {
-                    Text("Intersections")
+                    Text("intersections")
                         .font(.poppins(.semibold, size: height/25))
                         .padding(.leading, width/15)
                         
@@ -32,7 +33,7 @@ struct IndividualView: View {
                             action()
                         } label : {
                             HStack {
-                                Text("Now")
+                                Text("now")
                                     .font(.poppins(.regular, size: height/40))
                                     .foregroundColor(Color.gray)
                                     .padding(.leading, width/15)
@@ -64,11 +65,13 @@ struct IndividualView: View {
                 Spacer()
                     .frame(height: height/35)
                 
-                // Hardcoded for now.
-                ForEach(1...10, id: \.self) { card in
-                    OtherProfileCardView(height: height, width: width, name: name, age: age, university: university, otherProfileImage: otherProfileImage, sharedInterests: sharedInterests, mutualIntersections: mutualIntersections)
+                // Hardcoded for now. Will need to finalize how we get these profiles to show.
+                LazyVStack {
+                    ForEach(0...otherProfileImages.count, id: \.self) { card in
+                        OtherProfileCardView(height: height, width: width, name: name, age: age, university: university, otherProfileImage: otherProfileImages[card], sharedInterests: sharedInterests, mutualIntersections: mutualIntersections)
+                    }
+                    .padding(.vertical, height/150)
                 }
-                .padding(.vertical, height/150)
                 
                 Spacer()
                     .frame(height: height/25)
@@ -81,7 +84,7 @@ struct IndividualView: View {
 struct IndividualView_Previews: PreviewProvider {
     static var previews: some View {
         GeometryReader { geo in
-            IndividualView(height: geo.size.height, width: geo.size.width, name: "Bucko Barton", age: "20", university: "Princeton University", otherProfileImage: Image("defaultUser"), sharedInterests: ["Agriculture", "Dancing", "Basketball", "Football", "Fishing"], mutualIntersections: ["defaultUser", "defaultUser","defaultUser","defaultUser","defaultUser"]) {}
+            IndividualView(height: geo.size.height, width: geo.size.width, name: "Bucko Barton", age: "20", university: "Princeton University", otherProfileImages: [Image("defaultUser"), Image("defaultUser"),Image("defaultUser"),Image("defaultUser"),Image("defaultUser"),Image("defaultUser"),Image("defaultUser"),Image("defaultUser"),Image("defaultUser"),Image("defaultUser"),Image("defaultUser")], sharedInterests: ["Agriculture", "Dancing", "Basketball", "Football", "Fishing"], mutualIntersections: ["defaultUser", "defaultUser","defaultUser","defaultUser","defaultUser"]) {}
         }
     }
 }

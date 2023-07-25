@@ -35,6 +35,7 @@
 		241A1D602A6B26E90028325F /* AddPathView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D5F2A6B26E90028325F /* AddPathView.swift */; };
 		241A1D652A6EBF0C0028325F /* OtherProfileCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D642A6EBF0C0028325F /* OtherProfileCardView.swift */; };
 		241A1D672A6ECABD0028325F /* SmallMutualIntersectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D662A6ECABD0028325F /* SmallMutualIntersectionsView.swift */; };
+		241A1D6A2A6F08EB0028325F /* CommunityCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 241A1D692A6F08EB0028325F /* CommunityCardView.swift */; };
 		2453E9282A5888290099C530 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E9272A5888290099C530 /* CircleImage.swift */; };
 		2453E92E2A58A7CB0099C530 /* CategoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E92D2A58A7CB0099C530 /* CategoryTab.swift */; };
 		2453E9302A5C524B0099C530 /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2453E92F2A5C524B0099C530 /* testView.swift */; };
@@ -124,6 +125,7 @@
 		241A1D5F2A6B26E90028325F /* AddPathView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPathView.swift; sourceTree = "<group>"; };
 		241A1D642A6EBF0C0028325F /* OtherProfileCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OtherProfileCardView.swift; sourceTree = "<group>"; };
 		241A1D662A6ECABD0028325F /* SmallMutualIntersectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallMutualIntersectionsView.swift; sourceTree = "<group>"; };
+		241A1D692A6F08EB0028325F /* CommunityCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityCardView.swift; sourceTree = "<group>"; };
 		2453E9272A5888290099C530 /* CircleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		2453E92D2A58A7CB0099C530 /* CategoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTab.swift; sourceTree = "<group>"; };
 		2453E92F2A5C524B0099C530 /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
@@ -262,6 +264,14 @@
 			path = "Individual Intersections";
 			sourceTree = "<group>";
 		};
+		241A1D682A6F08D30028325F /* Communities */ = {
+			isa = PBXGroup;
+			children = (
+				241A1D692A6F08EB0028325F /* CommunityCardView.swift */,
+			);
+			path = Communities;
+			sourceTree = "<group>";
+		};
 		2453E93F2A606E780099C530 /* Build Profile Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -375,6 +385,7 @@
 		5BA73F122A422BB600D30795 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				241A1D682A6F08D30028325F /* Communities */,
 				241A1D632A6EBEA40028325F /* Individual Intersections */,
 				241A1D5E2A6B26BC0028325F /* Profile */,
 				2453E93F2A606E780099C530 /* Build Profile Components */,
@@ -593,6 +604,7 @@
 				24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */,
 				2453E94D2A6582980099C530 /* UniversitiesData.swift in Sources */,
 				241A1D4F2A68719A0028325F /* UserInfoView.swift in Sources */,
+				241A1D6A2A6F08EB0028325F /* CommunityCardView.swift in Sources */,
 				2401794B2A4CA4200081A1AB /* ModelData.swift in Sources */,
 				5BF7AE4A2A5C54EA00AAE123 /* TermsView.swift in Sources */,
 				5B409F262A422B0900F07255 /* flockApp.swift in Sources */,
