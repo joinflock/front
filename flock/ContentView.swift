@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject private var session = SessionManager()
+    @EnvironmentObject var network: Network
     
     // For navigation bar.
     @State private var selection: Tab = .profile    // profile as default?
@@ -44,11 +45,14 @@ struct ContentView: View {
         }
         .toolbar(.hidden)
         
+
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(Network())
     }
 }

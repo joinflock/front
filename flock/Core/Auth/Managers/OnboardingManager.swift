@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 final class OnboardingManager: ObservableObject {
     
@@ -18,18 +19,21 @@ final class OnboardingManager: ObservableObject {
         case language
         case identity
         case interests
-        case hobbies
         case preferences
         case profilePicture
     }
     
+    var otpModel: OTPViewModel = .init()
+    
     @Published var active: Screen = Screen.allCases.first!
-    @Published var profile = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(),
-                                     university: "", collegeEmail: "", languages_known: "",
-                                     homeCountryState: "", gender: "", ethnicity: "")
+    @Published var profile = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "",
+                                     birthday: Date(), university: "", collegeEmail: "", languages_known: "",
+                                     homeCountryState: "", gender: "", ethnicity: [Bool](repeating: false, count: 8), interests: [], preferences: "")
     
     @Published var hasError = false
     @Published var error: RegistrationError?
+    
+
     
     // go to next screen
     func next() {
@@ -67,8 +71,63 @@ final class OnboardingManager: ObservableObject {
     }
     
     func validateIdentityField() {
-        hasError = profile.gender.isEmpty ||  profile.ethnicity.isEmpty
+        var t = true
+        print("Gender: " + profile.gender)
+        for i in profile.ethnicity.indices {
+            if profile.ethnicity[i] {
+                t = false
+                break
+            }
+        }
+        hasError = t || profile.gender.isEmpty
         error = hasError ? .emptyField : nil
+        
+        
+    }
+    
+    // creates a profile and generates an OTP
+    func postProfile() {
+        createProfile()
+        otpModel.postOtp()
+    }
+    
+//    func validateOtp() {
+//        otpModel.
+//    }
+    
+    func createProfile() {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        let data = try? encoder.encode(profile)
+        
+        Network.shared.request(methodType: .POST(data: data), "accounts/register",
+                               type: Profile.self) { res in
+            switch res {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
+    func postOnboarding() {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        let data = try? encoder.encode(profile)
+        
+        print("Post Onboarding")
+        print(data)
+        
+        Network.shared.request(methodType: .POST(data: data), "accounts/build/", type: Profile.self) { res in
+            switch res {
+            case .success(let response):
+                print(response)
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
     }
 }
 

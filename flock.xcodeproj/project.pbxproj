@@ -51,7 +51,7 @@
 		24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3502A575A77005C3157 /* IdentityView.swift */; };
 		24B8A3532A585017005C3157 /* InterestsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3522A585017005C3157 /* InterestsView.swift */; };
 		24B8A3572A5875A3005C3157 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B8A3562A5875A3005C3157 /* PreferencesView.swift */; };
-		5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C72A57547A00C84872 /* NetworkingManager.swift */; };
+		5B1270C82A57547A00C84872 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C72A57547A00C84872 /* Network.swift */; };
 		5B1270CA2A5754A400C84872 /* CreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1270C92A5754A400C84872 /* CreateViewModel.swift */; };
 		5B409F262A422B0900F07255 /* flockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B409F252A422B0900F07255 /* flockApp.swift */; };
 		5B409F282A422B0900F07255 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B409F272A422B0900F07255 /* ContentView.swift */; };
@@ -84,10 +84,10 @@
 		5BA73F462A44981000D30795 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F452A44981000D30795 /* Font.swift */; };
 		5BA73F4C2A44A86800D30795 /* FilledButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F4B2A44A86800D30795 /* FilledButton.swift */; };
 		5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F512A44BC9200D30795 /* OutlinedButton.swift */; };
-		5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F572A44C8C100D30795 /* WelcomeView.swift */; };
 		5BA73F5A2A44CFC600D30795 /* LogisticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F592A44CFC600D30795 /* LogisticsView.swift */; };
 		5BA73F622A45D4CA00D30795 /* VerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F612A45D4CA00D30795 /* VerificationView.swift */; };
 		5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA73F632A45D64C00D30795 /* OTPViewModel.swift */; };
+		5BCC77772A65D23700CA020C /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BCC77762A65D23700CA020C /* ProfileViewModel.swift */; };
 		5BF7AE402A58B9A000AAE123 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE3F2A58B9A000AAE123 /* SessionManager.swift */; };
 		5BF7AE462A58C10200AAE123 /* OnboardingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE452A58C10200AAE123 /* OnboardingManager.swift */; };
 		5BF7AE482A5A0FD200AAE123 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */; };
@@ -140,7 +140,7 @@
 		24B8A3502A575A77005C3157 /* IdentityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityView.swift; sourceTree = "<group>"; };
 		24B8A3522A585017005C3157 /* InterestsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterestsView.swift; sourceTree = "<group>"; };
 		24B8A3562A5875A3005C3157 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		5B1270C72A57547A00C84872 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetworkingManager.swift; path = flock/Utils/NetworkingManager.swift; sourceTree = SOURCE_ROOT; };
+		5B1270C72A57547A00C84872 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Network.swift; path = flock/Utils/Network.swift; sourceTree = SOURCE_ROOT; };
 		5B1270C92A5754A400C84872 /* CreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateViewModel.swift; sourceTree = "<group>"; };
 		5B409F222A422B0900F07255 /* flock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B409F252A422B0900F07255 /* flockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = flockApp.swift; sourceTree = "<group>"; };
@@ -176,10 +176,10 @@
 		5BA73F452A44981000D30795 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		5BA73F4B2A44A86800D30795 /* FilledButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledButton.swift; sourceTree = "<group>"; };
 		5BA73F512A44BC9200D30795 /* OutlinedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedButton.swift; sourceTree = "<group>"; };
-		5BA73F572A44C8C100D30795 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		5BA73F592A44CFC600D30795 /* LogisticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogisticsView.swift; sourceTree = "<group>"; };
 		5BA73F612A45D4CA00D30795 /* VerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationView.swift; sourceTree = "<group>"; };
 		5BA73F632A45D64C00D30795 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
+		5BCC77762A65D23700CA020C /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		5BF7AE3F2A58B9A000AAE123 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		5BF7AE452A58C10200AAE123 /* OnboardingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingManager.swift; sourceTree = "<group>"; };
 		5BF7AE472A5A0FD200AAE123 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -316,7 +316,7 @@
 		5B1270CC2A57553000C84872 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				5B1270C72A57547A00C84872 /* NetworkingManager.swift */,
+				5B1270C72A57547A00C84872 /* Network.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -415,6 +415,7 @@
 			children = (
 				5BA73F632A45D64C00D30795 /* OTPViewModel.swift */,
 				5B1270C92A5754A400C84872 /* CreateViewModel.swift */,
+				5BCC77762A65D23700CA020C /* ProfileViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -431,7 +432,6 @@
 				5BA73F162A422C9C00D30795 /* TitleView.swift */,
 				5BA73F612A45D4CA00D30795 /* VerificationView.swift */,
 				5BA73F592A44CFC600D30795 /* LogisticsView.swift */,
-				5BA73F572A44C8C100D30795 /* WelcomeView.swift */,
 				5BF7AE492A5C54EA00AAE123 /* TermsView.swift */,
 			);
 			path = Views;
@@ -592,14 +592,14 @@
 				249BA6012A4F2A5B0039B781 /* OnboardingVerificationView.swift in Sources */,
 				241A1D512A6878020028325F /* ButtonsDisplay.swift in Sources */,
 				240179842A4E22EB0081A1AB /* PhoneInputView.swift in Sources */,
-				5BA73F582A44C8C100D30795 /* WelcomeView.swift in Sources */,
 				5BF7AE402A58B9A000AAE123 /* SessionManager.swift in Sources */,
 				2453E9302A5C524B0099C530 /* testView.swift in Sources */,
 				2453E93E2A606E6F0099C530 /* LanguagesSectionView.swift in Sources */,
 				5BA73F642A45D64C00D30795 /* OTPViewModel.swift in Sources */,
+				5B1270C82A57547A00C84872 /* Network.swift in Sources */,
 				241A1D672A6ECABD0028325F /* SmallMutualIntersectionsView.swift in Sources */,
 				241A1D552A69C6230028325F /* ProfilePathView.swift in Sources */,
-				5B1270C82A57547A00C84872 /* NetworkingManager.swift in Sources */,
+				5B1270C82A57547A00C84872 /* Network.swift in Sources */,
 				5BA73F522A44BC9200D30795 /* OutlinedButton.swift in Sources */,
 				24B8A3512A575A77005C3157 /* IdentityView.swift in Sources */,
 				2453E94D2A6582980099C530 /* UniversitiesData.swift in Sources */,
@@ -624,6 +624,7 @@
 				240179472A4C8B7A0081A1AB /* StarterView.swift in Sources */,
 				241A1D372A65D1320028325F /* SingleSelectionView.swift in Sources */,
 				5BA73F172A422C9C00D30795 /* TitleView.swift in Sources */,
+				5BCC77772A65D23700CA020C /* ProfileViewModel.swift in Sources */,
 				5B5186C52A4E102300DC86C5 /* ImagePicker.swift in Sources */,
 				24B8A3572A5875A3005C3157 /* PreferencesView.swift in Sources */,
 				B8DE5A162A68752F00119C7F /* ViewLayout.swift in Sources */,

@@ -15,7 +15,7 @@
 //        encoder.keyEncodingStrategy = .convertToSnakeCase
 //        let data = try? encoder.encode(modelData)
 //
-//        NetworkingManager
+//        Network
 //            .shared
 //            .request(methodType: .POST(data: data),
 //                     "http://127.0.0.1:8000/signup/", { res in
