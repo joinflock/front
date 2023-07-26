@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LanguageView: View {
     
+    @Binding var languages: [String]
+    
     let action: () -> Void
     
     var body: some View {
@@ -28,11 +30,13 @@ struct LanguageView: View {
                     
                     ScrollView {
                        
-                        var sortedHeaders : [String] = Array(languageList.keys).sorted()
+                        let sortedHeaders : [String] = Array(languageList.keys).sorted()
                         
                         ForEach(0..<sortedHeaders.count) { index in
                             if let items = languageList[sortedHeaders[index]] {
-                                LanguagesSectionView(header: sortedHeaders[index], list: items)
+                                LanguagesSectionView(header: sortedHeaders[index],
+                                    list: items,
+                                    selectedLanguages: $languages)
                                 
                                     .padding(.bottom, geometry.size.height * 0.06)
                                     .padding(.top, geometry.size.height * 0.012)
@@ -220,6 +224,6 @@ struct LanguageView: View {
 
 struct LanguageView_Previews: PreviewProvider {
     static var previews: some View {
-        LanguageView() {}
+        LanguageView(languages: .constant([])) {}
     }
 }

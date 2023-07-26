@@ -11,9 +11,13 @@ struct InterestsSectionView: View {
     @State private var totalHeight
           = CGFloat.zero       // << variant for ScrollView/List
     //    = CGFloat.infinity   // << variant for VStack
+    
+    
         
     var header : String
     var list : [String]
+    
+    @Binding var selectedStrings: [String]
     
     var body: some View {
     
@@ -78,7 +82,15 @@ struct InterestsSectionView: View {
     }
 
     private func item(for text: String) -> some View {
-        CustomInterestsButton(text: text, action: {})
+        CustomInterestsButton(text: text, action: {
+            if selectedStrings.contains(text) {
+                let index = selectedStrings.firstIndex(of: text)
+                selectedStrings.remove(at: index!)
+            } else {
+                selectedStrings.append(text)
+            }
+            
+        })
     }
 
     private func viewHeightReader(_ binding: Binding<CGFloat>) -> some View {
@@ -106,6 +118,6 @@ struct InterestsSectionView_Previews: PreviewProvider {
             "Pop",
             "R&B",
             "Rock"
-          ])
+        ], selectedStrings: .constant([]))
     }
 }

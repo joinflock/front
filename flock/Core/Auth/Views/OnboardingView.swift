@@ -13,7 +13,7 @@ struct OnboardingView: View {
     @State private var showPrevBtn = false
     
     // FOR TESTING
-    let checksOff = true
+    let checksOff = false
     
     var body: some View {
         ZStack {
@@ -38,14 +38,19 @@ struct OnboardingView: View {
                     .tag(OnboardingManager.Screen.phoneNumber)
                 OnboardingVerificationView (action: manager.next)
                     .tag(OnboardingManager.Screen.phoneVerification)
-                BeginBuildView(university: $manager.profile.university, collegeEmail: $manager.profile.languages_known, homeCountryState: $manager.profile.homeCountryState) {
+                BeginBuildView(university: $manager.profile.university, collegeEmail: $manager.profile.collegeEmail, homeCountryState: $manager.profile.homeCountryState) {
                     manager.validateBeginField()
                     if !manager.hasError || checksOff {
                         manager.next()
                     }
                 }
                     .tag(OnboardingManager.Screen.build)
-                LanguageView(action: manager.next)
+                LanguageView(languages: $manager.profile.languages_known) {
+                    manager.validateLanguageField()
+                    if !manager.hasError {
+                        manager.next()
+                    }
+                }
                     .tag(OnboardingManager.Screen.language)
                 IdentityView(gender: $manager.profile.gender, ethnicity: $manager.profile.ethnicity) {
                     manager.validateIdentityField()
@@ -54,7 +59,12 @@ struct OnboardingView: View {
                     }
                 }
                     .tag(OnboardingManager.Screen.identity)
-                InterestsView(interests: $manager.profile.interests, action: manager.next)
+                InterestsView(interests: $manager.profile.interests) {
+                    manager.validateInterestsField()
+                    if !manager.hasError {
+                        manager.next()
+                    }
+                }
                     .tag(OnboardingManager.Screen.interests)
                 PreferencesView(action: manager.next)
                     .tag(OnboardingManager.Screen.preferences)
