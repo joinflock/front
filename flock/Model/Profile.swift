@@ -20,7 +20,7 @@ struct Profile: Decodable, Encodable {
     // Build Profile details.
     var university : String
     var collegeEmail : String
-    var languages_known: String
+    var languages_known: [String]
     var homeCountryState : String
     
     var gender: String
@@ -30,11 +30,11 @@ struct Profile: Decodable, Encodable {
     var preferences: String
     
     // Best way to represent?
-    var paths : [Path]? = nil
+//    var paths : [Path]? = nil
     
 //    var interests : String
     
     static let `default` = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "", birthday: Date(), university: "", collegeEmail: "",
-                                   languages_known: "", homeCountryState: "", gender: "", ethnicity: [Bool](repeating: false, count: 8), interests: [], preferences: "")
+                                   languages_known: [], homeCountryState: "", gender: "", ethnicity: [Bool](repeating: false, count: 8), interests: [], preferences: "")
     
 }

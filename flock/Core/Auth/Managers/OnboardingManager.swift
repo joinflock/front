@@ -27,7 +27,7 @@ final class OnboardingManager: ObservableObject {
     
     @Published var active: Screen = Screen.allCases.first!
     @Published var profile = Profile(firstName: "", lastName: "", phoneNumber: "", countryCode: "",
-                                     birthday: Date(), university: "", collegeEmail: "", languages_known: "",
+                                     birthday: Date(), university: "", collegeEmail: "", languages_known: [],
                                      homeCountryState: "", gender: "", ethnicity: [Bool](repeating: false, count: 8), interests: [], preferences: "")
     
     @Published var hasError = false
@@ -61,13 +61,35 @@ final class OnboardingManager: ObservableObject {
     }
     
     func validatePhoneNumber() {
-        hasError = profile.phoneNumber.count != 10
+        for char in profile.phoneNumber {
+            if !char.isNumber {
+                hasError = true
+            }
+        }
+        hasError = hasError || profile.phoneNumber.count != 10
         error = hasError ? .invalidPhoneNumber : nil
     }
     
     func validateBeginField() {
         hasError = profile.university.isEmpty || profile.homeCountryState.isEmpty || profile.languages_known.isEmpty
         error = hasError ? .emptyField : nil
+    }
+    
+    func validateLanguageField() {
+
+    }
+    
+    func validateInterestsField() {
+        if profile.interests.count < 5 {
+            hasError = true
+            error = .notEnoughInterests
+        } else if profile.interests.count > 10 {
+            hasError = true
+            error = .tooManyInterests
+        } else {
+            hasError = false
+            error = nil
+        }
     }
     
     func validateIdentityField() {
@@ -81,7 +103,6 @@ final class OnboardingManager: ObservableObject {
         }
         hasError = t || profile.gender.isEmpty
         error = hasError ? .emptyField : nil
-        
         
     }
     
@@ -136,6 +157,8 @@ extension OnboardingManager {
         case emptyName
         case invalidPhoneNumber
         case emptyField
+        case notEnoughInterests
+        case tooManyInterests
 
         var errorDescription: String? {
             switch self {
@@ -145,7 +168,13 @@ extension OnboardingManager {
                 return "please enter a valid phone number"
             case .emptyField:
                 return "please complete all the information"
+            case .notEnoughInterests:
+                return "please select at least 5 interests"
+            case .tooManyInterests:
+                return "please selected 10 or fewers interests"
             }
+            
+        
 
 
         }

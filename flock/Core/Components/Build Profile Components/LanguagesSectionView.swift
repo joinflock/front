@@ -16,6 +16,8 @@ struct LanguagesSectionView: View {
     var header : String
     var list : [String]
     
+    @Binding var selectedLanguages: [String]
+    
     var body: some View {
     
             VStack (alignment: .leading){
@@ -79,7 +81,14 @@ struct LanguagesSectionView: View {
     }
 
     private func item(for text: String) -> some View {
-        CustomInterestsButton(text: text, action: {})
+        CustomInterestsButton(text: text, action: {
+            if selectedLanguages.contains(text) {
+                let index = selectedLanguages.firstIndex(of: text)
+                selectedLanguages.remove(at: index!)
+            } else {
+                selectedLanguages.append(text)
+            }
+        })
     }
 
     private func viewHeightReader(_ binding: Binding<CGFloat>) -> some View {
@@ -101,6 +110,6 @@ struct LanguagesSectionView_Previews: PreviewProvider {
             "Arabic",
             "Assamese",
             "Awadhi"
-          ])
+        ], selectedLanguages: .constant([]))
     }
 }

@@ -24,16 +24,14 @@ struct InterestsView: View {
                 .padding(.bottom, geometry.size.height * 0.01)
 
             Divider()
-
-
+                
         ScrollView {
-                        
                         
                         var sortedHeaders : [String] = Array(interestsList.keys).sorted()
                         
                         ForEach(0..<sortedHeaders.count) { index in
                             if let items = interestsList[sortedHeaders[index]] {
-                                InterestsSectionView(header: sortedHeaders[index], list: items)
+                                InterestsSectionView(header: sortedHeaders[index], list: items, selectedStrings: $interests)
                                     .padding(.bottom, 50)
                                     .padding(.top, 20)
                                 
@@ -57,22 +55,20 @@ struct InterestsView: View {
                                             .offset(y: -(geometry.size.height * 0.05))
                                             .padding(.top, geometry.size.height * 0.06)
             
-                    
                     // To next build profile prompts!
                     Button {
                         action()
                     } label: {
                         Text("next")
-                            .frame(width:   geometry.size.width * 0.70, height:   geometry.size.height * 0.02)
+                            .frame(width: geometry.size.width * 0.70, height: geometry.size.height * 0.02)
                             .font(.system(size: 20, weight: .semibold))
                     }
                     .buttonStyle(FilledButton())
                     .offset(y: -(geometry.size.height * 0.05))
             
                     ProgressView(value: 0.70)
-                .frame(width:   geometry.size.width * 0.80, height:   geometry.size.height * 0.02)
+                .frame(width: geometry.size.width * 0.80, height: geometry.size.height * 0.02)
                 .offset(y: -(geometry.size.height * 0.04))
-                
                 
             }
         .padding(.horizontal, geometry.size.width * 0.1)
@@ -188,38 +184,38 @@ struct InterestsView: View {
           "Stop Asian Hate",
           "Voter rights"],
         "Academic & Professional" :[
-        "Agriculture",
-        "Art",
-        "Architecture",
-        "Biology",
-        "Business",
-        "Chemistry",
-        "Computer Science",
-        "Consulting",
-        "Education",
-        "Engineering",
-        "Entrepreneurship",
-        "Finance",
-        "Healthcare",
-        "History",
-        "Human Resources",
-        "Information Technology",
-        "Law",
-        "Management",
-        "Marketing",
-        "Mathematics",
-        "Media",
-        "Music",
-        "Nursing",
-        "Physics",
-        "Physicians",
-        "Psychiatrist",
-        "Safety and Security",
-        "Public Service",
-        "Research",
-        "Sales",
-        "Student",
-        "Software Development"]
+            "Agriculture",
+            "Art",
+            "Architecture",
+            "Biology",
+            "Business",
+            "Chemistry",
+            "Computer Science",
+            "Consulting",
+            "Education",
+            "Engineering",
+            "Entrepreneurship",
+            "Finance",
+            "Healthcare",
+            "History",
+            "Human Resources",
+            "Information Technology",
+            "Law",
+            "Management",
+            "Marketing",
+            "Mathematics",
+            "Media",
+            "Music",
+            "Nursing",
+            "Physics",
+            "Physicians",
+            "Psychiatrist",
+            "Safety and Security",
+            "Public Service",
+            "Research",
+            "Sales",
+            "Student",
+            "Software Development"]
       ]
 }
 
